@@ -1,0 +1,7 @@
+# ignore bundled submodule
+.vimrc.un~
+Sensitive.vim
+bundle
+init.vim
+swap
+undodir
