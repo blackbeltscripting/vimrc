@@ -252,8 +252,8 @@ vnoremap : ;
 " noremap j h
 " noremap i kzz
 " noremap k jzz
-noremap j jzz
-noremap k kzz
+" noremap j jzz
+" noremap k kzz
 
 " Right hand shift canvas control
 noremap L $zz
