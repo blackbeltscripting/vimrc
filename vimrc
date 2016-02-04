@@ -152,9 +152,9 @@ let g:ycm_key_list_select_completion   = ['<tab>', '<C-j>', '<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<s-tab>', '<C-p>', '<Up>']
 
 " Plugin 'SirVer/ultisnips'
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsExpandTrigger="<CR>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " }}}
 " Startify Custom Settings {{{
 
@@ -352,6 +352,7 @@ nnoremap <leader>m :cprev<cr>
 
 " Save & Reload
 nnoremap <leader>s :w<cr>
+noremap <leader>' :so $MYVIMRC<cr>
 
 " Quick indent in Visual Mode
 vnoremap > >gv
@@ -376,6 +377,38 @@ nnoremap <leader>cur :set cursorline! cursorcolumn!<cr>
 " nnoremap <leader>yi yi
 " nnoremap <leader>vi vi
 " }}}
+" Show Extra Whitespace {{{
+" Highlight trailing white space
+" http://vim.wikia.com/wiki/highlight_unwanted_spaces
+highlight extrawhitespace ctermbg=red guibg=red
+match extrawhitespace /\s\+$/
+autocmd BufWinEnter * match extrawhitespace /\s\+$/
+autocmd InsertEnter * match extrawhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match extrawhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+" Highlight Variable
+"autocmd CursorMoved * silent! execute printf('match IncSearch /\<%s\>/', expand('<cword>'))
+
+" }}}
+" Abbreviations {{{
+iabbrev waht what
+iabbrev tehn then
+iabbrev adn and
+
+iabbrev @@ ericg@arty-web-design.com
+" }}}
+" Open any file with pre-existing swapfile {{{
+augroup NoSimultaneousEdits
+	autocmd!
+	autocmd SwapExists * let v:swapchoice = 'o'
+	autocmd SwapExists * echomsg ErrorMsg
+	autocmd SwapExists * echo 'Duplicate edit session (readonly)'
+	autocmd SwapExists * echohl None
+	autocmd SwapExists * sleep 2
+augroup END
+" }}}
+
 " FTP Functions & Mapping {{{
 
 " Open the Remote File On Vertical Split
@@ -448,7 +481,7 @@ function! GetPaths()
 endfunction
 
 " END }}}
-" Git Functions {{{
+" Function & Mapping: GitGo() {{{
 
 command! -nargs=+ -complete=option GitUpload :call GitGo(<q-args>)
 nnoremap <leader>git :w<cr>:GitUpload<space>
@@ -464,7 +497,84 @@ function! GitGo(comment)
 endfunction
 
 " END }}}
-" SpaceTabRetab() Function & Mapping {{{
+" Function & Mapping: Base64Decode() {{{
+" var decodes and replaces
+function! Base64Decode()
+		let str = 'base64_decode([",''][^)]*)'
+		let total_str = search(str)
+		normal 14l
+		let quot = matchstr(getline('.'), '\%' . col('.') . 'c.')
+		exec "normal! yi" . quot
+		let decoded = system('base64 -d', @")
+		echom decoded
+		exec 'substitute/' . str . '/' . quot . escape(decoded, '\\/.*$^~[]') . quot . '/'
+endfunction
+
+nnoremap <leader>64 :call Base64Decode()<cr>
+" }}}
+" Function & Mapping: SwitchWord() {{{
+nnoremap <leader>ml :call SwitchWord('right')<cr>
+nnoremap <leader>mh :call SwitchWord('left')<cr>
+
+function! SwitchWord(position)
+	if a:position == 'right'
+		execute "normal! dawf ph"
+	elseif a:position == 'left'
+		execute "normal! dawBPh"
+	endif
+	echo "Word moved to the " . a:position
+endfunction
+" }}}
+" Function & Mapping: HLNext() {{{
+nnoremap <silent> n   n:call HLNext(0.4)<cr>
+nnoremap <silent> N   N:call HLNext(0.4)<cr>
+
+" briefly hide everything except the match
+function! HLNext (blinktime)
+	highlight BlackOnBlack ctermfg=black term=none
+	highlight WhiteOnRed ctermfg=white ctermbg=red
+	let [bufnum, lnum, col, off]  = getpos('.')
+	let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+	let hide_pat = '\%<'.lnum.'l.'
+				\ . '\|'
+				\ . '\%'.lnum.'l\%<'.col.'v.'
+				\ . '\|'
+				\ . '\%'.lnum.'l\%>'.(col+matchlen-1).'v.'
+				\ . '\|'
+				\ . '\%>'.lnum.'l.'
+	let target_pat = '\c\%#\%('.@/.'\)'
+	let ring = matchadd('BlackOnBlack', hide_pat, 101)
+	let ring1= matchadd('WhiteOnRed', target_pat, 101)
+	redraw
+	exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+	call matchdelete(ring)
+	call matchdelete(ring1)
+	redraw
+endfunction
+" }}}
+" Function & Mapping: Replace() {{{
+noremap <leader>r :call Replace()<CR>
+
+function! Replace()
+  let s:word = input("Replace " . expand('<cword>') . " with: ")
+  :execute 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge'
+  :unlet! s:word
+endfunction
+" }}}
+" Function & Mapping: HandleURL() {{{
+function! HandleURL()
+  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;]*')
+  echo s:uri
+  if s:uri != ""
+    exec "!gnome-open '".s:uri."'"
+  else
+    echo "No URI found in line."
+  endif
+endfunction
+
+noremap <leader>u :call HandleURL()<cr>
+" }}}
+" Function & Mapping: SpaceTabRetab() {{{
 
 " Trim white spaces, tab page, retab
 nnoremap <leader>tab :call SpaceTabRetab()<cr>
@@ -495,100 +605,5 @@ function! SpaceTabRetab()
 		exec "TrimSpaces"
 		exec "%s/\t=\t/ = "
 		exec "normal! " . line . "G"
-endfunction
-" }}}
-" Show Extra Whitespace {{{
-" Highlight trailing white space
-" http://vim.wikia.com/wiki/highlight_unwanted_spaces
-highlight extrawhitespace ctermbg=red guibg=red
-match extrawhitespace /\s\+$/
-autocmd BufWinEnter * match extrawhitespace /\s\+$/
-autocmd InsertEnter * match extrawhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match extrawhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
-
-" Highlight Variable
-"autocmd CursorMoved * silent! execute printf('match IncSearch /\<%s\>/', expand('<cword>'))
-
-" }}}
-" Base64Decode {{{
-" var decodes and replaces
-function! Base64Decode()
-		let str = 'base64_decode([",''][^)]*)'
-		let total_str = search(str)
-		normal 14l
-		let quot = matchstr(getline('.'), '\%' . col('.') . 'c.')
-		exec "normal! yi" . quot
-		let decoded = system('base64 -d', @")
-		echom decoded
-		exec 'substitute/' . str . '/' . quot . escape(decoded, '\\/.*$^~[]') . quot . '/'
-endfunction
-
-nnoremap <leader>64 :call Base64Decode()<cr>
-" }}}
-" Abbreviations {{{
-iabbrev waht what
-iabbrev tehn then
-iabbrev adn and
-
-iabbrev @@ ericg@arty-web-design.com
-" }}}
-" Highlight Search {{{
-nnoremap <silent> n   n:call HLNext(0.4)<cr>
-nnoremap <silent> N   N:call HLNext(0.4)<cr>
-
-" briefly hide everything except the match
-function! HLNext (blinktime)
-	highlight BlackOnBlack ctermfg=black term=none
-	highlight WhiteOnRed ctermfg=white ctermbg=red
-	let [bufnum, lnum, col, off]  = getpos('.')
-	let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-	let hide_pat = '\%<'.lnum.'l.'
-				\ . '\|'
-				\ . '\%'.lnum.'l\%<'.col.'v.'
-				\ . '\|'
-				\ . '\%'.lnum.'l\%>'.(col+matchlen-1).'v.'
-				\ . '\|'
-				\ . '\%>'.lnum.'l.'
-	let target_pat = '\c\%#\%('.@/.'\)'
-	let ring = matchadd('BlackOnBlack', hide_pat, 101)
-	let ring1= matchadd('WhiteOnRed', target_pat, 101)
-	redraw
-	exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-	call matchdelete(ring)
-	call matchdelete(ring1)
-	redraw
-endfunction
-" }}}
-" Open any file with pre-existing swapfile {{{
-augroup NoSimultaneousEdits
-	autocmd!
-	autocmd SwapExists * let v:swapchoice = 'o'
-	autocmd SwapExists * echomsg ErrorMsg
-	autocmd SwapExists * echo 'Duplicate edit session (readonly)'
-	autocmd SwapExists * echohl None
-	autocmd SwapExists * sleep 2
-augroup END
-" }}}
-" Switch words {{{
-nnoremap <leader>ml :call SwitchWord('right')<cr>
-nnoremap <leader>mj :call SwitchWord('left')<cr>
-
-function! SwitchWord(position)
-	if a:position == 'right'
-		execute "normal! dawf ph"
-	elseif a:position == 'left'
-		execute "normal! dawBPh"
-	endif
-	echo "Word moved to the " . a:position
-endfunction
-" }}}
-" Replace Word Function & Mapping {{{
-noremap <leader>r :call Replace()<CR>
-
-function! Replace()
-  let s:word = input("Replace " . expand('<cword>') . " with: ")
-  :execute 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge'
-  :unlet! s:word
 endfunction
 " }}}
