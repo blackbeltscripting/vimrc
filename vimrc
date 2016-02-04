@@ -19,36 +19,33 @@
 "        \  V  /  | ||  \/  | _ | |  | |_
 "         \___/   |_||_|  |_||_||_|  |___|
 " SET Variables {{{
-set nocompatible			" Be iMproved, required
-filetype plugin indent on	" Required
+set nocompatible				" Be iMproved, required
+filetype plugin indent on		" Required
 syntax enable
 
-set bs=indent,eol,start		" Allow backspacing
-set clipboard=unnamed		" Clipboard is now systemwide
-set diffopt=vertical		" Set Vertical Diff split as default
-set directory=~/.vim/swap	" Swap [buffer] File Directory
-set encoding=utf-8			" UTF encoding for vim
-" set foldopen=all			" Closes all?
-set foldcolumn=1			" Shows Marker Left Ln#. # = width
-set nofoldenable			" Enables Fold
-set foldmethod=indent		" Sets fold according to syntax
-set hlsearch				" Sets search highlighting
-set ignorecase				" Makes it so searches in / is case insensitive
-set laststatus=2			" Shows status bar by default
-set mouse=a					" Enables mouse for all modes
-set number numberwidth=4	" Turns on line with width up to 9999
-set nowrap					" Don't wrap
-set relativenumber			" Turns on relative numbering
-set shiftwidth=4			" Sets the tab in block to 1 tab
-set splitright				" vSplits to the right
-set t_co=256				" Sets the color index to 256 for airline
-set tabstop=4				" Sets the tabindex
-set textwidth=0				" Remove annoying autoWrap
-set undodir=~/.vim/undodir	" Undo Directory
-set undofile				" Maintain undo history between sessions
-set wildchar=<tab>			" Start wild expantion using tab
-set wildmenu				" Wild char completion menu
-set wildmode=list
+set bs=indent,eol,start			" Allow backspacing
+set clipboard=unnamed			" Clipboard is now systemwide
+set diffopt=vertical			" Set Vertical Diff split as default
+set directory=~/.vim/swap		" Swap [buffer] File Directory
+set encoding=utf-8				" UTF encoding for vim
+set foldcolumn=1				" Shows Marker Left Ln#. # = width
+set nofoldenable				" Enables Fold
+set foldmethod=indent			" Sets fold according to syntax
+set hlsearch					" Sets search highlighting
+set laststatus=2				" Shows status bar by default
+set mouse=a						" Enables mouse for all modes
+set number numberwidth=4		" Turns on line with width up to 9999
+set nowrap						" Don't wrap
+set relativenumber				" Turns on relative numbering
+set shiftwidth=4				" Sets the tab in block to 1 tab
+set splitright					" vSplits to the right
+set t_co=256					" Sets the color index to 256 for airline
+set tabstop=4					" Sets the tabindex
+set textwidth=0					" Remove annoying autoWrap
+set undodir=~/.vim/undodir		" Undo Directory
+set undofile					" Maintain undo history between sessions
+set wildmenu					" Wild char completion menu
+set wildmode=longest,list,full	" :<tab> progression
 
 " Display extra whitespace
 set list listchars=tab:\|·,trail:·,extends:❯,precedes:❮,eol:¬
@@ -106,6 +103,7 @@ Plugin 'benmills/vimux'				" Control Tmux with Vim
 Plugin 'xolox/vim-misc'				" Make Notes with Vim (Required)
 Plugin 'xolox/vim-notes'			" Make Notes with Vim
 Plugin 'will133/vim-dirdiff'		" Diff Directories
+Plugin 'dkprice/vim-easygrep'		" Replacement of AG?
 " Snippets plugins
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -146,6 +144,12 @@ let g:airline_mode_map = {
 
 " AG Map to current dir
 "let g:ag_working_path_mode="r"
+
+" Easy Grep Default Settings
+let g:EasyGrepRoot = "search:.git,.hg,.svn"
+let g:EasyGrepRecursive = 1
+let g:EasyGrepFilesToExclude='*.swp,*~,*.md'
+let g:EasyGrepIgnoreCase=0
 
 " YouCompleteMe and UltiSnips compatibility, with the helper of supertab
 let g:ycm_key_list_select_completion   = ['<tab>', '<C-j>', '<C-n>', '<Down>']
@@ -335,7 +339,7 @@ nnoremap <leader>o :Startify<cr>
 nnoremap <leader>vs :vs<cr>:Startify<cr>
 
 " Open this folder
-nnoremap <leader>vv :Vex<cr>
+" nnoremap <leader>vv :Vex<cr>
 
 " Open .vimrc
 nnoremap <leader>src :e $MYVIMRC<cr>
@@ -426,7 +430,7 @@ nnoremap <leader>DS :w<cr> :call SaveFTP()<cr>
 function! Search()
 	let file = GetPaths()
 	if type(file) == 4 && has_key(file, 'folder')
-		:Ag <C-R>/  . file.folder
+		execute ":Ag " . expand("<c-tags>") . " " . file.folder
 	else
 		echom "No Local Folder Found."
 	endif
@@ -482,21 +486,21 @@ endfunction
 
 " END }}}
 " Function & Mapping: GitGo() {{{
-
-command! -nargs=+ -complete=option GitUpload :call GitGo(<q-args>)
-nnoremap <leader>git :w<cr>:GitUpload<space>
-
-function! GitGo(comment)
-	let file = GetPaths()
-	if type(file) == 4 && has_key(file, 'git')
-		execute "cd " . file.git
-		execute "! sudo git add . | git commit -a -m '" . a:comment . "' | git push"
-	else
-		echom "Git File Not Found. Project not pushed."
-	endif
-endfunction
-
-" END }}}
+"
+" command! -nargs=+ -complete=option GitUpload :call GitGo(<q-args>)
+" nnoremap <leader>git :w<cr>:GitUpload<space>
+"
+" function! GitGo(comment)
+" 	let file = GetPaths()
+" 	if type(file) == 4 && has_key(file, 'git')
+" 		execute "cd " . file.git
+" 		execute "! sudo git add . | git commit -a -m '" . a:comment . "' | git push"
+" 	else
+" 		echom "Git File Not Found. Project not pushed."
+" 	endif
+" endfunction
+"
+" " END }}}
 " Function & Mapping: Base64Decode() {{{
 " var decodes and replaces
 function! Base64Decode()
