@@ -24,7 +24,7 @@ filetype plugin indent on		" Required
 syntax enable
 
 set bs=indent,eol,start		" Allow backspacing
-set clipboard=unnamed		" Clipboard is now systemwide
+set clipboard=unnamed		" Clipboard is now system wide
 set diffopt=vertical		" Set Vertical Diff split as default
 set directory=~/.vim/swap	" Swap [buffer] File Directory
 set encoding=utf-8			" UTF encoding for vim
@@ -38,6 +38,7 @@ set number numberwidth=4	" Turns on line with width up to 9999
 set nowrap					" Don't wrap
 set relativenumber			" Turns on relative numbering
 set shiftwidth=4			" Sets the tab in block to 1 tab
+set spell					" Turn on Spell Check
 set splitright				" vSplits to the right
 set t_co=256				" Sets the color index to 256 for airline
 set tabstop=4				" Sets the tabindex
@@ -188,7 +189,7 @@ let g:startify_custom_header = [
 let g:startify_list_order = [['   Recent Files:'], 'files', ['   Bookmarks'], 'bookmarks']
 
 " Startify Number per List
-let g:startify_files_number = 10
+let g:startify_files_number = 5
 
 " }}}
 " Color Scheme {{{
