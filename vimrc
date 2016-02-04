@@ -72,6 +72,9 @@ augroup END
 " PHP Syntax Folder
 let php_folder=1
 
+" Check Syntax of php file
+noremap <F5> :!php -l %<CR>
+
 " Change map leader
 let mapleader=","
 
@@ -105,6 +108,7 @@ Plugin 'xolox/vim-misc'				" Make Notes with Vim (Required)
 Plugin 'xolox/vim-notes'			" Make Notes with Vim
 Plugin 'will133/vim-dirdiff'		" Diff Directories
 Plugin 'dkprice/vim-easygrep'		" Replacement of AG?
+Plugin 'scrooloose/syntastic'		" Syntax Checker?
 " Snippets plugins
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -121,6 +125,16 @@ filetype plugin indent on	" Required
 source ~/vimrc/Sensitive.vim
 " }}}
 " Custom Variables: Auto-Pairs / Airline / AG / YMC {{{
+
+" Syntasic Basic Sets
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " AutoPairs: Disable annoying "jump" when trying to type close braces
 let g:AutoPairsMultilineClose = 0
@@ -142,9 +156,6 @@ let g:airline_mode_map = {
       \ 'S'  : 'S',
       \ '' : 'S',
       \ }
-
-" AG Map to current dir
-"let g:ag_working_path_mode="r"
 
 " Easy Grep Default Settings
 let g:EasyGrepRoot = "search:.git,.hg,.svn"
@@ -257,24 +268,11 @@ vnoremap ; :
 nnoremap : ;
 vnoremap : ;
 
-" Right hand canvas control
-" noremap j h
-" noremap i kzz
-" noremap k jzz
-" noremap j jzz
-" noremap k kzz
-
 " Right hand shift canvas control
 noremap L $zz
 noremap H ^zz
 noremap K <c-u>zz
 noremap J <c-d>zz
-
-" Left hand canvas control
-" nnoremap a i
-" nnoremap A I
-" nnoremap h a
-" nnoremap H A
 
 " Quickly Add an Empty Line
 nnoremap <silent><A-k> :set paste<CR>m`O<esc>``:set nopaste<CR>
@@ -287,7 +285,9 @@ nnoremap <c-i> <c-w><c-k><c-w>=<c-w>_
 nnoremap <c-k> <c-w><c-j><c-w>=<c-w>_
 
 " Move windows
-nnoremap <leader>j <c-w>H
+nnoremap <leader>h <c-w>H
+nnoremap <leader>j <c-w>J
+nnoremap <leader>k <c-w>K
 nnoremap <leader>l <c-w>L
 
 " Maximize/Restore split
@@ -379,12 +379,6 @@ nnoremap <leader>[] {v}
 " Toggles Cursor
 nnoremap <leader>cur :set cursorline! cursorcolumn!<cr>
 
-" }}}
-" Leader Mapping for i key {{{
-" nnoremap <leader>ci ci
-" nnoremap <leader>di di
-" nnoremap <leader>yi yi
-" nnoremap <leader>vi vi
 " }}}
 " Show Extra Whitespace {{{
 " Highlight trailing white space
@@ -616,3 +610,5 @@ function! SpaceTabRetab()
 		exec "normal! " . line . "G"
 endfunction
 " }}}
+" <C-S-J> try this later
+
