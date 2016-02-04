@@ -23,29 +23,29 @@ set nocompatible				" Be iMproved, required
 filetype plugin indent on		" Required
 syntax enable
 
-set bs=indent,eol,start			" Allow backspacing
-set clipboard=unnamed			" Clipboard is now systemwide
-set diffopt=vertical			" Set Vertical Diff split as default
-set directory=~/.vim/swap		" Swap [buffer] File Directory
-set encoding=utf-8				" UTF encoding for vim
-set foldcolumn=1				" Shows Marker Left Ln#. # = width
-set nofoldenable				" Enables Fold
-set foldmethod=indent			" Sets fold according to syntax
-set hlsearch					" Sets search highlighting
-set laststatus=2				" Shows status bar by default
-set mouse=a						" Enables mouse for all modes
-set number numberwidth=4		" Turns on line with width up to 9999
-set nowrap						" Don't wrap
-set relativenumber				" Turns on relative numbering
-set shiftwidth=4				" Sets the tab in block to 1 tab
-set splitright					" vSplits to the right
-set t_co=256					" Sets the color index to 256 for airline
-set tabstop=4					" Sets the tabindex
-set textwidth=0					" Remove annoying autoWrap
-set undodir=~/.vim/undodir		" Undo Directory
-set undofile					" Maintain undo history between sessions
-set wildmenu					" Wild char completion menu
-set wildmode=longest,list,full	" :<tab> progression
+set bs=indent,eol,start		" Allow backspacing
+set clipboard=unnamed		" Clipboard is now systemwide
+set diffopt=vertical		" Set Vertical Diff split as default
+set directory=~/.vim/swap	" Swap [buffer] File Directory
+set encoding=utf-8			" UTF encoding for vim
+set foldcolumn=1			" Shows Marker Left Ln#. # = width
+set nofoldenable			" Enables Fold
+set foldmethod=indent		" Sets fold according to syntax
+set hlsearch				" Sets search highlighting
+set laststatus=2			" Shows status bar by default
+set mouse=a					" Enables mouse for all modes
+set number numberwidth=4	" Turns on line with width up to 9999
+set nowrap					" Don't wrap
+set relativenumber			" Turns on relative numbering
+set shiftwidth=4			" Sets the tab in block to 1 tab
+set splitright				" vSplits to the right
+set t_co=256				" Sets the color index to 256 for airline
+set tabstop=4				" Sets the tabindex
+set textwidth=0				" Remove annoying autoWrap
+set undodir=~/.vim/undodir	" Undo Directory
+set undofile				" Maintain undo history between sessions
+set wildmenu				" Wild char completion menu
+set wildmode=full			" :<tab> progression
 
 " Display extra whitespace
 set list listchars=tab:\|·,trail:·,extends:❯,precedes:❮,eol:¬
@@ -231,6 +231,10 @@ hi IncSearch ctermfg=189 ctermbg=22
 
 " Tabspace
 hi SpecialKey ctermfg=60 ctermbg=none cterm=none
+
+" WildMenu
+hi StatusLine ctermfg=16 ctermbg=190 cterm=none
+hi WildMenu ctermfg=231 ctermbg=34 cterm=bold
 
 " Override the diff colours
 highlight DiffAdd term=reverse cterm=NONE ctermbg=darkblue ctermfg=white
