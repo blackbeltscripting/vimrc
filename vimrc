@@ -18,6 +18,7 @@
 "       \  \ /  /  _ | \  / |   |  _||  _|
 "        \  V  /  | ||  \/  | _ | |  | |_
 "         \___/   |_||_|  |_||_||_|  |___|
+
 " SET Variables {{{
 set nocompatible				" Be iMproved, required
 filetype plugin indent on		" Required
@@ -38,6 +39,7 @@ set number numberwidth=4	" Turns on line with width up to 9999
 set nowrap					" Don't wrap
 set relativenumber			" Turns on relative numbering
 set shiftwidth=4			" Sets the tab in block to 1 tab
+set smartcase				" Case-insensitive is all lowercase, else if at least 1 uppercase
 set spell					" Turn on Spell Check
 set splitright				" vSplits to the right
 set t_co=256				" Sets the color index to 256 for airline
@@ -51,6 +53,7 @@ set wildmode=full			" :<tab> progression
 " Display extra whitespace
 set list listchars=tab:\|·,trail:·,extends:❯,precedes:❮,eol:¬
 " }}}
+
 " VimFold autocmd {{{
 function! VimFold()
 	setl fdm=marker
@@ -67,6 +70,7 @@ augroup END
 
 
 " }}}
+
 " PHP Syntax Folder, Change Leaders {{{
 
 " PHP Syntax Folder
@@ -81,6 +85,7 @@ let mapleader=","
 " Change map local leader
 let maplocalleader = "\\"
 " }}}
+
 " Vundle Setup {{{
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -89,6 +94,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " }}}
+
 " Plugins {{{
 
 " Keep plugin commands between vundle#begin/end.
@@ -96,7 +102,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'			" git commands
 Plugin 'bling/vim-airline'			" statusbar pretty.
 Plugin 'tpope/vim-surround'			" Surround Plugin
-Plugin 'rking/ag.vim'				" Searching with AG
+" Plugin 'rking/ag.vim'				" Searching with AG
 Plugin 'kien/ctrlp.vim'				" ctrlp
 Plugin 'mhinz/vim-startify'			" pretty start-up screen
 Plugin 'Valloric/YouCompleteMe'		" autocompletion
@@ -115,15 +121,18 @@ Plugin 'honza/vim-snippets'
 
 
 " }}}
+
 " End Vundle {{{
 
 " All of your plugins must be added before the following line
 call vundle#end()			" Required
 filetype plugin indent on	" Required
 " }}}
+
 " Include Sensitive Information ignored by git {{{
 source ~/vimrc/Sensitive.vim
 " }}}
+
 " Custom Variables: Auto-Pairs / Airline / AG / YMC {{{
 
 " Syntasic Basic Sets
@@ -168,10 +177,11 @@ let g:ycm_key_list_select_completion   = ['<tab>', '<C-j>', '<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<s-tab>', '<C-p>', '<Up>']
 
 " Plugin 'SirVer/ultisnips'
-let g:UltiSnipsExpandTrigger="<CR>"
+let g:UltiSnipsExpandTrigger="<right>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " }}}
+
 " Startify Custom Settings {{{
 
 " Startify skip list
@@ -203,6 +213,7 @@ let g:startify_list_order = [['   Recent Files:'], 'files', ['   Bookmarks'], 'b
 let g:startify_files_number = 5
 
 " }}}
+
 " Color Scheme {{{
 
 " Set Arty Theme
@@ -258,6 +269,7 @@ highlight DiffText term=reverse cterm=bold ctermbg=brown ctermfg=white
 "highlight ColorColumn ctermbg=red ctermfg=blue
 "exec 'set colorcolumn=' . join(range(2,80,3), ',')
 " }}}
+
 " Canvas Control {{{
 " -------------------
 
@@ -314,10 +326,12 @@ endw
 set ttimeout ttimeoutlen=50
 
 " }}}
+
 " Copy/Paste {{{
 vnoremap <C-C> "+y
 inoremap <C-P> <esc>"+p
 " }}}
+
 " Leader Mapping {{{
 " ------------------
 
@@ -350,6 +364,10 @@ nnoremap <leader>vs :vs<cr>:Startify<cr>
 nnoremap <leader>src :e $MYVIMRC<cr>
 nnoremap <leader>vsr :vsplit $MYVIMRC<cr>
 
+" Copy Word
+nmap <leader>cw Bv$<C-C>:echom "Copied to clipboard!"
+nmap <leader>c v$<C-C>
+
 " Get snippet file
 nnoremap <leader>snip :vsplit ~/vimrc/bundle/vim-snippets/snippets/%:e.snippets<cr>
 
@@ -380,6 +398,7 @@ nnoremap <leader>[] {v}
 nnoremap <leader>cur :set cursorline! cursorcolumn!<cr>
 
 " }}}
+
 " Show Extra Whitespace {{{
 " Highlight trailing white space
 " http://vim.wikia.com/wiki/highlight_unwanted_spaces
@@ -394,6 +413,7 @@ autocmd BufWinLeave * call clearmatches()
 "autocmd CursorMoved * silent! execute printf('match IncSearch /\<%s\>/', expand('<cword>'))
 
 " }}}
+
 " Abbreviations {{{
 iabbrev waht what
 iabbrev tehn then
@@ -401,6 +421,7 @@ iabbrev adn and
 
 iabbrev @@ ericg@arty-web-design.com
 " }}}
+
 " Open any file with pre-existing swapfile {{{
 augroup NoSimultaneousEdits
 	autocmd!
@@ -484,6 +505,7 @@ function! GetPaths()
 endfunction
 
 " END }}}
+
 " Function & Mapping: GitGo() {{{
 "
 " command! -nargs=+ -complete=option GitUpload :call GitGo(<q-args>)
@@ -602,13 +624,19 @@ endfunction
 command! -bar -nargs=? ShowSpaces call ShowSpaces(<args>)
 command! -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
 
+" Mark line
+" Tab the whole file
+" Trim white extra white spaces at EOL
+" Substitutes "	=	" with " = "
+" Substitutes "	 " with "	"
+" Go Back to marked line
 function! SpaceTabRetab()
 		let line = line(".")
 		normal gg=G
 		exec "TrimSpaces"
 		exec "%s/\t=\t/ = "
+		exec "%s/\t /\t"
 		exec "normal! " . line . "G"
 endfunction
 " }}}
 " <C-S-J> try this later
-
