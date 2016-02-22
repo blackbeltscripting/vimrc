@@ -115,6 +115,7 @@ Plugin 'xolox/vim-notes'			" Make Notes with Vim
 Plugin 'will133/vim-dirdiff'		" Diff Directories
 Plugin 'dkprice/vim-easygrep'		" Replacement of AG?
 Plugin 'scrooloose/syntastic'		" Syntax Checker?
+Plugin 'Townk/vim-autoclose'		" Auto Closing Tags
 " Snippets plugins
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -397,6 +398,8 @@ nnoremap <leader>[] {v}
 " Toggles Cursor
 nnoremap <leader>cur :set cursorline! cursorcolumn!<cr>
 
+" Toggles Spell
+nnoremap <silent> <leader>sp :set spell!<CR>
 " }}}
 
 " Show Extra Whitespace {{{
