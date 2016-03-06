@@ -1,6 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/eric/vimrc'
-let g:netrw_dirhist_2='/home/eric/Public'
-let g:netrw_dirhist_3='/home/eric'
-let g:netrw_dirhist_4='/home/eric/vimrc'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/eric/Public/rootOOP/rootOOP'
+let g:netrw_dirhist_2='/home/eric/Public/rootOOP/rootOOP/includes'
+let g:netrw_dirhist_3='/home/eric/Public/rootOOP/rootOOP/includes/classes'

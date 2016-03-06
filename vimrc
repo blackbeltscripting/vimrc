@@ -115,7 +115,6 @@ Plugin 'xolox/vim-notes'			" Make Notes with Vim
 Plugin 'will133/vim-dirdiff'		" Diff Directories
 Plugin 'dkprice/vim-easygrep'		" Replacement of AG?
 Plugin 'scrooloose/syntastic'		" Syntax Checker?
-Plugin 'Townk/vim-autoclose'		" Auto Closing Tags
 " Snippets plugins
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -280,6 +279,10 @@ vnoremap ; :
 
 nnoremap : ;
 vnoremap : ;
+
+" Quicker Save/Quit
+nnoremap Z ZZ
+nnoremap Q ZQ
 
 " Right hand shift canvas control
 noremap L $zz
