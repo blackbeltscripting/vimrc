@@ -13,11 +13,11 @@
 "             |  _  | ___ | |_  _ _
 "             |     ||  _||  _|| | |
 "             |__|__||_|  |_|  |_  |
-"      ___     ___ _           |___|
-"      \  \   /  /|_| _    _     ___  ___
-"       \  \ /  /  _ | \  / |   |  _||  _|
-"        \  V  /  | ||  \/  | _ | |  | |_
-"         \___/   |_||_|  |_||_||_|  |___|
+"       ___     ___ _          |___|
+"       \  \   /  /|_| _    _  ___  ___
+"        \  \ /  /  _ | \  / ||  _||  _|
+"         \  V  /  | ||  \/  || |  | |_
+"          \___/   |_||_|  |_||_|  |___|
 
 " SET Variables {{{
 set nocompatible				" Be iMproved, required
@@ -40,7 +40,7 @@ set nowrap					" Don't wrap
 set relativenumber			" Turns on relative numbering
 set shiftwidth=4			" Sets the tab in block to 1 tab
 set smartcase				" Case-insensitive is all lowercase, else if at least 1 uppercase
-set spell					" Turn on Spell Check
+set nospell					" Turn off Spell Check
 set splitright				" vSplits to the right
 set t_co=256				" Sets the color index to 256 for airline
 set tabstop=4				" Sets the tabindex
