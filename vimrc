@@ -219,6 +219,10 @@ let g:startify_files_number = 5
 " Set Arty Theme
 syntax enable
 colorscheme ArtyFirst
+" colorscheme brogrammer
+
+" Search highlight
+hi Search ctermfg=white ctermbg=yellow
 
 " Special color changes
 hi Normal ctermbg=none
@@ -246,6 +250,7 @@ hi TabLineSel ctermfg=189 ctermbg=18 cterm=none cterm=bold
 
 " All other tab files
 hi TabLine ctermfg=17 ctermbg=23 cterm=bold
+
 " The tab empty space
 hi TabLineFill ctermfg=17 ctermbg=23 cterm=bold
 
@@ -287,12 +292,17 @@ nnoremap Q ZQ
 " Right hand shift canvas control
 noremap L $zz
 noremap H ^zz
-noremap K <c-u>zz
-noremap J <c-d>zz
+noremap K <c-u>
+noremap J <c-d>
 
-" Quickly Add an Empty Line
-nnoremap <silent><A-k> :set paste<CR>m`O<esc>``:set nopaste<CR>
-nnoremap <silent><A-j> :set paste<CR>m`o<esc>``:set nopaste<CR>
+" Quickly Add an Empty Line and go to it
+nnoremap <silent><A-k> :set paste<CR>m`O<esc>``:set nopaste<CR>k
+nnoremap <silent><A-j> :set paste<CR>m`o<esc>``:set nopaste<CR>j
+
+" Switch visual modes
+nnoremap V <C-V>
+nnoremap <c-v> v
+nnoremap v V
 
 " Move around windows
 nnoremap <c-j> <c-w>h
