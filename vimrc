@@ -19,6 +19,88 @@
 "         \  V  /  | ||  \/  || |  | |_
 "          \___/   |_||_|  |_||_|  |___|
 
+" Plugins {{{
+let g:plugins = [
+	\ 'tpope/vim-fugitive',
+	\ 'bling/vim-airline',
+	\ 'tpope/vim-surround',
+	\ 'rking/ag.vim',
+	\ 'kien/ctrlp.vim',
+	\ 'mhinz/vim-startify',
+	\ 'jiangmiao/auto-pairs',
+	\ 'eshion/vim-sync',
+	\ 'vim-scripts/tComment',
+	\ 'benmills/vimux',
+	\ 'xolox/vim-misc',
+	\ 'xolox/vim-notes',
+	\ 'will133/vim-dirdiff',
+	\ 'dkprice/vim-easygrep',
+	\ 'scrooloose/syntastic',
+	\ 'honza/vim-snippets',
+\ ]
+	" \ 'Valloric/YouCompleteMe',
+	" \ 'SirVer/ultisnips',
+" }}}
+
+
+if has('nvim')
+" NeoBundle Setup {{{
+	let bundleExists = 1
+	if (!isdirectory(expand("$HOME/.vim/bundle/neobundle.vim")))
+		call system(expand("mkdir -p $HOME/.vim/bundle"))
+		call system(expand("git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim"))
+		let bundleExists = 0
+	endif
+
+	set runtimepath^=$HOME/.vim/bundle/neobundle.vim
+	" Required. Instantiating Neobundle:
+	call neobundle#begin(expand('~/.vim/bundle/'))
+	" Required. Let Neobundle manage itself
+	NeoBundleFetch 'Shougo/neobundle.vim'
+
+	" Plugins:
+	for bundle in g:plugins
+		execute 'NeoBundle "' . bundle . '"'
+	endfor
+	call neobundle#end()
+	NeoBundleCheck
+" }}}
+else
+" Vundle Setup {{{
+	set nocompatible
+	filetype off
+	set rtp+=~/.vim/bundle/Vundle.vim
+	call vundle#begin()
+
+	" Let vundle manage vundle, required
+	Plugin 'VundleVim/Vundle.vim'
+
+	" Plugins:
+	for bundle in g:plugins
+		" Vundle looks for the variable in SINGLE QUOTES ONLY
+		let b="Plugin '" . bundle . "'"
+		execute b
+	endfor
+
+	" All of your plugins must be added before the following line
+	call vundle#end()			" Required
+	filetype plugin indent on	" Required
+" }}}
+endif
+
+" Include Sensitive Information ignored by git {{{
+source ~/vimrc/Sensitive.vim
+" }}}
+
+
+
+
+
+
+
+
+
+
 " SET Variables {{{
 set nocompatible				" Be iMproved, required
 filetype plugin indent on		" Required
@@ -35,7 +117,7 @@ set foldmethod=indent		" Sets fold according to syntax
 set hlsearch				" Sets search highlighting
 set laststatus=2			" Shows status bar by default
 set mouse=a					" Enables mouse for all modes
-set number numberwidth=4	" Turns on line with width up to 9999
+set number numberwidth=2	" Turns on line with width up to 9999
 set nowrap					" Don't wrap
 set relativenumber			" Turns on relative numbering
 set shiftwidth=4			" Sets the tab in block to 1 tab
@@ -68,7 +150,6 @@ augroup BGHighlight
 	autocmd InsertLeave * set nocursorline
 augroup END
 
-
 " }}}
 
 " PHP Syntax Folder, Change Leaders {{{
@@ -84,53 +165,6 @@ let mapleader=","
 
 " Change map local leader
 let maplocalleader = "\\"
-" }}}
-
-" Vundle Setup {{{
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Let vundle manage vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" }}}
-
-" Plugins {{{
-
-" Keep plugin commands between vundle#begin/end.
-" Plugin on github repo
-Plugin 'tpope/vim-fugitive'			" git commands
-Plugin 'bling/vim-airline'			" statusbar pretty.
-Plugin 'tpope/vim-surround'			" Surround Plugin
-" Plugin 'rking/ag.vim'				" Searching with AG
-Plugin 'kien/ctrlp.vim'				" ctrlp
-Plugin 'mhinz/vim-startify'			" pretty start-up screen
-Plugin 'Valloric/YouCompleteMe'		" autocompletion
-Plugin 'jiangmiao/auto-pairs'		" make autocompletion of brackets and quotes
-Plugin 'eshion/vim-sync'			" FTP/SSH tool
-Plugin 'vim-scripts/tComment'		" Fast Comment Toggler
-Plugin 'benmills/vimux'				" Control Tmux with Vim
-Plugin 'xolox/vim-misc'				" Make Notes with Vim (Required)
-Plugin 'xolox/vim-notes'			" Make Notes with Vim
-Plugin 'will133/vim-dirdiff'		" Diff Directories
-Plugin 'dkprice/vim-easygrep'		" Replacement of AG?
-Plugin 'scrooloose/syntastic'		" Syntax Checker?
-" Snippets plugins
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-
-
-" }}}
-
-" End Vundle {{{
-
-" All of your plugins must be added before the following line
-call vundle#end()			" Required
-filetype plugin indent on	" Required
-" }}}
-
-" Include Sensitive Information ignored by git {{{
-source ~/vimrc/Sensitive.vim
 " }}}
 
 " Custom Variables: Auto-Pairs / Airline / AG / YMC {{{
@@ -177,9 +211,21 @@ let g:ycm_key_list_select_completion   = ['<tab>', '<C-j>', '<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<s-tab>', '<C-p>', '<Up>']
 
 " Plugin 'SirVer/ultisnips'
-let g:UltiSnipsExpandTrigger="<right>"
+" This variable was <right>
+let g:UltiSnipsExpandTrigger="<nop>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+let g:ulti_expand_or_jump_res = 0
+function! <SID>ExpandSnippetOrReturn()
+  let snippet = UltiSnips#ExpandSnippetOrJump()
+  if g:ulti_expand_or_jump_res > 0
+    return snippet
+  else
+    return "\<CR>"
+  endif
+endfunction
+inoremap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "\<CR>"
 " }}}
 
 " Startify Custom Settings {{{
@@ -222,7 +268,7 @@ colorscheme ArtyFirst
 " colorscheme brogrammer
 
 " Search highlight
-hi Search ctermfg=white ctermbg=yellow
+hi Search ctermfg=235 ctermbg=green
 
 " Special color changes
 hi Normal ctermbg=none
@@ -233,17 +279,17 @@ hi CursorLine cterm=bold ctermbg=52 ctermfg=231
 hi CursorColumn ctermbg=29 ctermfg=231
 
 " Current line
-hi CursorLineNR ctermfg=231 ctermbg=45 cterm=bold
+hi CursorLineNR ctermfg=white ctermbg=red cterm=bold
 
 " Other lines
-hi LineNR ctermfg=17 ctermbg=23
+hi LineNR ctermfg=yellow ctermbg=none cterm=none
 
 " Folder
-hi Folded ctermfg=231 ctermbg=30
+hi Folded ctermfg=white ctermbg=34
 hi FoldColumn ctermfg=231 ctermbg=30 cterm=bold
 
 " Vertical Split
-hi VertSplit ctermfg=45 ctermbg=45
+hi VertSplit ctermfg=yellow ctermbg=yellow
 
 " The current tab file
 hi TabLineSel ctermfg=189 ctermbg=18 cterm=none cterm=bold
@@ -333,7 +379,11 @@ nnoremap } }zz
 " Enables Alt Usage in gnome-terminal
 let c='a'
 while c <= 'z'
-	exec "set <A-".c.">=\e".c
+	if has('nvim')
+		" do nothing
+	else
+		exec "set <A-".c.">=\e".c
+	endif
 	exec "imap \e".c." <A-".c.">"
 	let c = nr2char(1+char2nr(c))
 endw
@@ -409,10 +459,13 @@ nnoremap <leader>90 (v)
 nnoremap <leader>[] {v}
 
 " Toggles Cursor
-nnoremap <leader>cur :set cursorline! cursorcolumn!<cr>
+nnoremap <leader>cur :set cursorcolumn!<cr>
 
 " Toggles Spell
 nnoremap <silent> <leader>sp :set spell!<CR>
+
+" Set foldmethod to marker
+nnoremap <leader>fm :set foldmethod=marker<cr>za
 " }}}
 
 " Show Extra Whitespace {{{

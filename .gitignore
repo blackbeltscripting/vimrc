@@ -1,5 +1,6 @@
 # ignore bundled submodule
 .vimrc.un~
+.netrwhist
 Sensitive.vim
 bundle
 init.vim
