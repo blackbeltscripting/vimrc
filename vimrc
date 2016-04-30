@@ -19,121 +19,78 @@
 "         \  V  /  | ||  \/  || |  | |_
 "          \___/   |_||_|  |_||_|  |___|
 
+" SET Variables {{{
+set nocompatible				" Be iMproved, required
+syntax enable
+
+set bs=indent,eol,start				" Allow backspacing
+set clipboard=unnamed				" Clipboard is now system wide
+set diffopt=vertical				" Set Vertical Diff split as default
+set directory=~/.vim/swap			" Swap [buffer] File Directory
+" set encoding=utf-8				" UTF encoding for vim
+set foldcolumn=1					" Shows Marker Left Ln#. # = width
+set nofoldenable					" Enables Fold
+set foldmethod=indent				" Sets fold according to syntax
+set hlsearch						" Sets search highlighting
+set laststatus=2					" Shows status bar by default
+set mouse=a							" Enables mouse for all modes
+set number numberwidth=2			" Turns on line with width up to 9999
+set nowrap							" Don't wrap
+set relativenumber					" Turns on relative numbering
+set shiftwidth=4					" Sets the tab in block to 1 tab
+set smartcase						" Case-insensitive is all lowercase, else if at least 1 uppercase
+set nospell							" Turn off Spell Check
+set splitright						" vSplits to the right
+set t_co=256						" Sets the color index to 256 for airline
+set tabstop=4						" Sets the tabindex
+set timeoutlen=1000 ttimeoutlen=0	" Remove Esc Lag
+set textwidth=0						" Remove annoying autoWrap
+set undodir=~/.vim/undodir			" Undo Directory
+set undofile						" Maintain undo history between sessions
+set wildmenu						" Wild char completion menu
+set wildmode=full					" :<tab> progression
+
+" Display extra whitespace
+set list listchars=tab:\|·,trail:·,extends:❯,precedes:❮,eol:¬
+" }}}
+
 " Plugins {{{
 let g:plugins = [
-	\ 'tpope/vim-fugitive',
-	\ 'bling/vim-airline',
-	\ 'tpope/vim-surround',
-	\ 'rking/ag.vim',
-	\ 'kien/ctrlp.vim',
-	\ 'mhinz/vim-startify',
-	\ 'jiangmiao/auto-pairs',
-	\ 'eshion/vim-sync',
-	\ 'vim-scripts/tComment',
 	\ 'benmills/vimux',
+	\ 'bling/vim-airline',
+	\ 'dkprice/vim-easygrep',
+	\ 'eshion/vim-sync',
+	\ 'gorodinskiy/vim-coloresque',
+	\ 'honza/vim-snippets',
+	\ 'jiangmiao/auto-pairs',
+	\ 'kien/ctrlp.vim',
+	\ 'mattn/emmet-vim',
+	\ 'mhinz/vim-startify',
+	\ 'rking/ag.vim',
+	\ 'scrooloose/syntastic',
+	\ 'tpope/vim-fugitive',
+	\ 'tpope/vim-surround',
+	\ 'vim-airline/vim-airline-themes',
+	\ 'vim-scripts/tComment',
+	\ 'will133/vim-dirdiff',
 	\ 'xolox/vim-misc',
 	\ 'xolox/vim-notes',
-	\ 'will133/vim-dirdiff',
-	\ 'dkprice/vim-easygrep',
-	\ 'scrooloose/syntastic',
-	\ 'honza/vim-snippets',
 \ ]
 	" \ 'Valloric/YouCompleteMe',
 	" \ 'SirVer/ultisnips',
 " }}}
 
-
-if has('nvim')
-" NeoBundle Setup {{{
-	let bundleExists = 1
-	if (!isdirectory(expand("$HOME/.vim/bundle/neobundle.vim")))
-		call system(expand("mkdir -p $HOME/.vim/bundle"))
-		call system(expand("git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim"))
-		let bundleExists = 0
-	endif
-
-	set runtimepath^=$HOME/.vim/bundle/neobundle.vim
-	" Required. Instantiating Neobundle:
-	call neobundle#begin(expand('~/.vim/bundle/'))
-	" Required. Let Neobundle manage itself
-	NeoBundleFetch 'Shougo/neobundle.vim'
-
+" vim-plug Setup {{{
+	call plug#begin('.vim/plugged')
 	" Plugins:
 	for bundle in g:plugins
-		execute 'NeoBundle "' . bundle . '"'
+		execute "Plug '" . bundle . "'"
 	endfor
-	call neobundle#end()
-	NeoBundleCheck
+	call plug#end()
 " }}}
-else
-" Vundle Setup {{{
-	set nocompatible
-	filetype off
-	set rtp+=~/.vim/bundle/Vundle.vim
-	call vundle#begin()
-
-	" Let vundle manage vundle, required
-	Plugin 'VundleVim/Vundle.vim'
-
-	" Plugins:
-	for bundle in g:plugins
-		" Vundle looks for the variable in SINGLE QUOTES ONLY
-		let b="Plugin '" . bundle . "'"
-		execute b
-	endfor
-
-	" All of your plugins must be added before the following line
-	call vundle#end()			" Required
-	filetype plugin indent on	" Required
-" }}}
-endif
 
 " Include Sensitive Information ignored by git {{{
 source ~/vimrc/Sensitive.vim
-" }}}
-
-
-
-
-
-
-
-
-
-
-" SET Variables {{{
-set nocompatible				" Be iMproved, required
-filetype plugin indent on		" Required
-syntax enable
-
-set bs=indent,eol,start		" Allow backspacing
-set clipboard=unnamed		" Clipboard is now system wide
-set diffopt=vertical		" Set Vertical Diff split as default
-set directory=~/.vim/swap	" Swap [buffer] File Directory
-set encoding=utf-8			" UTF encoding for vim
-set foldcolumn=1			" Shows Marker Left Ln#. # = width
-set nofoldenable			" Enables Fold
-set foldmethod=indent		" Sets fold according to syntax
-set hlsearch				" Sets search highlighting
-set laststatus=2			" Shows status bar by default
-set mouse=a					" Enables mouse for all modes
-set number numberwidth=2	" Turns on line with width up to 9999
-set nowrap					" Don't wrap
-set relativenumber			" Turns on relative numbering
-set shiftwidth=4			" Sets the tab in block to 1 tab
-set smartcase				" Case-insensitive is all lowercase, else if at least 1 uppercase
-set nospell					" Turn off Spell Check
-set splitright				" vSplits to the right
-set t_co=256				" Sets the color index to 256 for airline
-set tabstop=4				" Sets the tabindex
-set textwidth=0				" Remove annoying autoWrap
-set undodir=~/.vim/undodir	" Undo Directory
-set undofile				" Maintain undo history between sessions
-set wildmenu				" Wild char completion menu
-set wildmode=full			" :<tab> progression
-
-" Display extra whitespace
-set list listchars=tab:\|·,trail:·,extends:❯,precedes:❮,eol:¬
 " }}}
 
 " VimFold autocmd {{{
@@ -265,6 +222,7 @@ let g:startify_files_number = 5
 " Set Arty Theme
 syntax enable
 colorscheme ArtyFirst
+let g:airline_theme='bubblegum'
 " colorscheme brogrammer
 
 " Search highlight
@@ -377,17 +335,17 @@ nnoremap { {zz
 nnoremap } }zz
 
 " Enables Alt Usage in gnome-terminal
-let c='a'
-while c <= 'z'
-	if has('nvim')
-		" do nothing
-	else
+if has('nvim')
+	" do nothing
+else
+	let c='a'
+	while c <= 'z'
 		exec "set <A-".c.">=\e".c
-	endif
-	exec "imap \e".c." <A-".c.">"
-	let c = nr2char(1+char2nr(c))
-endw
-set ttimeout ttimeoutlen=50
+		exec "imap \e".c." <A-".c.">"
+		let c = nr2char(1+char2nr(c))
+		set ttimeout ttimeoutlen=5
+	endwhile
+endif
 
 " }}}
 
