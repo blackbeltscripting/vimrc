@@ -56,37 +56,37 @@ set list listchars=tab:\|·,trail:·,extends:❯,precedes:❮,eol:¬
 
 " Plugins {{{
 let g:plugins = [
-	\ 'benmills/vimux',
-	\ 'bling/vim-airline',
-	\ 'dkprice/vim-easygrep',
-	\ 'eshion/vim-sync',
-	\ 'gorodinskiy/vim-coloresque',
-	\ 'honza/vim-snippets',
-	\ 'jiangmiao/auto-pairs',
-	\ 'kien/ctrlp.vim',
-	\ 'mattn/emmet-vim',
-	\ 'mhinz/vim-startify',
-	\ 'rking/ag.vim',
-	\ 'scrooloose/syntastic',
-	\ 'tpope/vim-fugitive',
-	\ 'tpope/vim-surround',
-	\ 'vim-airline/vim-airline-themes',
-	\ 'vim-scripts/tComment',
-	\ 'will133/vim-dirdiff',
-	\ 'xolox/vim-misc',
-	\ 'xolox/vim-notes',
-\ ]
-	" \ 'Valloric/YouCompleteMe',
-	" \ 'SirVer/ultisnips',
+			\ 'benmills/vimux',
+			\ 'bling/vim-airline',
+			\ 'dkprice/vim-easygrep',
+			\ 'eshion/vim-sync',
+			\ 'gorodinskiy/vim-coloresque',
+			\ 'honza/vim-snippets',
+			\ 'jiangmiao/auto-pairs',
+			\ 'kien/ctrlp.vim',
+			\ 'mattn/emmet-vim',
+			\ 'mhinz/vim-startify',
+			\ 'rking/ag.vim',
+			\ 'scrooloose/syntastic',
+			\ 'tpope/vim-fugitive',
+			\ 'tpope/vim-surround',
+			\ 'vim-airline/vim-airline-themes',
+			\ 'vim-scripts/tComment',
+			\ 'will133/vim-dirdiff',
+			\ 'xolox/vim-misc',
+			\ 'xolox/vim-notes',
+			\ ]
+" \ 'Valloric/YouCompleteMe',
+" \ 'SirVer/ultisnips',
 " }}}
 
 " vim-plug Setup {{{
-	call plug#begin('~/.vim/plugged')
-	" Plugins:
-	for bundle in g:plugins
-		execute "Plug '" . bundle . "'"
-	endfor
-	call plug#end()
+call plug#begin('~/.vim/plugged')
+" Plugins:
+for bundle in g:plugins
+	execute "Plug '" . bundle . "'"
+endfor
+call plug#end()
 " }}}
 
 " Include Sensitive Information ignored by git {{{
@@ -144,18 +144,18 @@ let g:airline_powerline_fonts = 1
 
 " Shortened Mode Map
 let g:airline_mode_map = {
-      \ '__' : '-',
-      \ 'n'  : 'N',
-      \ 'i'  : 'I',
-      \ 'R'  : 'R',
-      \ 'c'  : 'C',
-      \ 'v'  : 'V',
-      \ 'V'  : 'V',
-      \ '' : 'V',
-      \ 's'  : 'S',
-      \ 'S'  : 'S',
-      \ '' : 'S',
-      \ }
+			\ '__' : '-',
+			\ 'n'  : 'N',
+			\ 'i'  : 'I',
+			\ 'R'  : 'R',
+			\ 'c'  : 'C',
+			\ 'v'  : 'V',
+			\ 'V'  : 'V',
+			\ '' : 'V',
+			\ 's'  : 'S',
+			\ 'S'  : 'S',
+			\ '' : 'S',
+			\ }
 
 " Easy Grep Default Settings
 let g:EasyGrepRoot = "search:.git,.hg,.svn"
@@ -175,12 +175,12 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 let g:ulti_expand_or_jump_res = 0
 function! <SID>ExpandSnippetOrReturn()
-  let snippet = UltiSnips#ExpandSnippetOrJump()
-  if g:ulti_expand_or_jump_res > 0
-    return snippet
-  else
-    return "\<CR>"
-  endif
+	let snippet = UltiSnips#ExpandSnippetOrJump()
+	if g:ulti_expand_or_jump_res > 0
+		return snippet
+	else
+		return "\<CR>"
+	endif
 endfunction
 inoremap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "\<CR>"
 " }}}
@@ -192,20 +192,20 @@ let g:startify_skiplist = [ $HOME . '/.vimrc', $HOME . '/vimrc/*' ]
 
 " Cool ASCII
 let g:startify_custom_header = [
-	\ "                       ___",
-	\ "          ___....-----'---'-----....___",
-	\ "     =======================================",
-	\ "           ___'---..._______...---'___",
-	\ "          (___)      _|_|_|_      (___)",
-	\ "             \\____.-'_.---._'-.____/",
-	\ "              cccc'.__'---'__.'cccc",
-	\ "                      ccccc",
-	\ "               _____       _",
-	\ "              |  _  | ___ | |_  _ _",
-	\ "              |     ||  _||  _|| | |",
-	\ "              |__|__||_|  |_|  |_  |",
-	\ "                               |___|",
-\ ]
+			\ "                       ___",
+			\ "          ___....-----'---'-----....___",
+			\ "     =======================================",
+			\ "           ___'---..._______...---'___",
+			\ "          (___)      _|_|_|_      (___)",
+			\ "             \\____.-'_.---._'-.____/",
+			\ "              cccc'.__'---'__.'cccc",
+			\ "                      ccccc",
+			\ "               _____       _",
+			\ "              |  _  | ___ | |_  _ _",
+			\ "              |     ||  _||  _|| | |",
+			\ "              |__|__||_|  |_|  |_  |",
+			\ "                               |___|",
+			\ ]
 
 " let g:startify_custom_footer = map(split(system('fortune | cowsay -f tux'), '\n'), '"   ". v:val') + ['','']
 
@@ -222,7 +222,7 @@ let g:startify_files_number = 5
 " Set Arty Theme
 syntax enable
 colorscheme ArtyFirst
-" let g:airline_theme='bubblegum'
+let g:airline_theme='bubblegum'
 " colorscheme brogrammer
 
 " Search highlight
@@ -577,20 +577,20 @@ endfunction
 noremap <leader>r :call Replace()<CR>
 
 function! Replace()
-  let s:word = input("Replace " . expand('<cword>') . " with: ")
-  :execute 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge'
-  :unlet! s:word
+	let s:word = input("Replace " . expand('<cword>') . " with: ")
+	:execute 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge'
+	:unlet! s:word
 endfunction
 " }}}
 " Function & Mapping: HandleURL() {{{
 function! HandleURL()
-  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;]*')
-  echo s:uri
-  if s:uri != ""
-    exec "!gnome-open '".s:uri."'"
-  else
-    echo "No URI found in line."
-  endif
+	let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;]*')
+	echo s:uri
+	if s:uri != ""
+		exec "!gnome-open '".s:uri."'"
+	else
+		echo "No URI found in line."
+	endif
 endfunction
 
 noremap <leader>u :call HandleURL()<cr>
@@ -601,20 +601,20 @@ noremap <leader>u :call HandleURL()<cr>
 nnoremap <leader>tab :call SpaceTabRetab()<cr>
 
 function! ShowSpaces(...)
-		let @/='\v(\s+$)|( +\ze\t)'
-		let oldhlsearch=&hlsearch
-		if !a:0
-				let &hlsearch=!&hlsearch
-		else
-				let &hlsearch=a:1
-		end
-		return oldhlsearch
+	let @/='\v(\s+$)|( +\ze\t)'
+	let oldhlsearch=&hlsearch
+	if !a:0
+		let &hlsearch=!&hlsearch
+	else
+		let &hlsearch=a:1
+	end
+	return oldhlsearch
 endfunction
 
 function! TrimSpaces() range
-		let oldhlsearch=ShowSpaces(1)
-		execute a:firstline.",".a:lastline."substitute ///gec"
-		let &hlsearch=oldhlsearch
+	let oldhlsearch=ShowSpaces(1)
+	execute a:firstline.",".a:lastline."substitute ///gec"
+	let &hlsearch=oldhlsearch
 endfunction
 
 command! -bar -nargs=? ShowSpaces call ShowSpaces(<args>)
@@ -623,16 +623,16 @@ command! -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
 " Mark line
 " Tab the whole file
 " Trim white extra white spaces at EOL
-" Substitutes "	=	" with " = "
-" Substitutes "	 " with "	"
+" Substitutes " = " with " = "
+" Substitutes "	" with "	"
 " Go Back to marked line
 function! SpaceTabRetab()
-		let line = line(".")
-		normal gg=G
-		exec "TrimSpaces"
-		exec "%s/\t=\t/ = "
-		exec "%s/\t /\t"
-		exec "normal! " . line . "G"
+	let line = line(".")
+	normal gg=G
+	exec "TrimSpaces"
+	exec "%s/\t=\t/ = "
+	exec "%s/\t /\t"
+	exec "normal! " . line . "G"
 endfunction
 " }}}
 " <C-S-J> try this later
