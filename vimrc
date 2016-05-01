@@ -81,7 +81,7 @@ let g:plugins = [
 " }}}
 
 " vim-plug Setup {{{
-	call plug#begin('.vim/plugged')
+	call plug#begin('~/.vim/plugged')
 	" Plugins:
 	for bundle in g:plugins
 		execute "Plug '" . bundle . "'"
@@ -222,7 +222,7 @@ let g:startify_files_number = 5
 " Set Arty Theme
 syntax enable
 colorscheme ArtyFirst
-let g:airline_theme='bubblegum'
+" let g:airline_theme='bubblegum'
 " colorscheme brogrammer
 
 " Search highlight
@@ -533,37 +533,6 @@ endfunction
 
 " END }}}
 
-" Function & Mapping: GitGo() {{{
-"
-" command! -nargs=+ -complete=option GitUpload :call GitGo(<q-args>)
-" nnoremap <leader>git :w<cr>:GitUpload<space>
-"
-" function! GitGo(comment)
-" 	let file = GetPaths()
-" 	if type(file) == 4 && has_key(file, 'git')
-" 		execute "cd " . file.git
-" 		execute "! sudo git add . | git commit -a -m '" . a:comment . "' | git push"
-" 	else
-" 		echom "Git File Not Found. Project not pushed."
-" 	endif
-" endfunction
-"
-" " END }}}
-" Function & Mapping: Base64Decode() {{{
-" var decodes and replaces
-function! Base64Decode()
-		let str = 'base64_decode([",''][^)]*)'
-		let total_str = search(str)
-		normal 14l
-		let quot = matchstr(getline('.'), '\%' . col('.') . 'c.')
-		exec "normal! yi" . quot
-		let decoded = system('base64 -d', @")
-		echom decoded
-		exec 'substitute/' . str . '/' . quot . escape(decoded, '\\/.*$^~[]') . quot . '/'
-endfunction
-
-nnoremap <leader>64 :call Base64Decode()<cr>
-" }}}
 " Function & Mapping: SwitchWord() {{{
 nnoremap <leader>ml :call SwitchWord('right')<cr>
 nnoremap <leader>mh :call SwitchWord('left')<cr>
