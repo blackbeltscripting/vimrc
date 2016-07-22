@@ -35,7 +35,7 @@ set hlsearch						" Sets search highlighting
 set laststatus=2					" Shows status bar by default
 set mouse=a							" Enables mouse for all modes
 set number numberwidth=2			" Turns on line with width up to 9999
-set nowrap							" Don't wrap
+set wrap							" Do wrap
 set relativenumber					" Turns on relative numbering
 set shiftwidth=4					" Sets the tab in block to 1 tab
 set smartcase						" Case-insensitive is all lowercase, else if at least 1 uppercase
@@ -213,7 +213,7 @@ let g:startify_custom_header = [
 let g:startify_list_order = [['   Recent Files:'], 'files', ['   Bookmarks'], 'bookmarks']
 
 " Startify Number per List
-let g:startify_files_number = 5
+let g:startify_files_number = 15
 
 " }}}
 
@@ -296,8 +296,8 @@ nnoremap Q ZQ
 " Right hand shift canvas control
 noremap L $zz
 noremap H ^zz
-noremap K <c-u>
-noremap J <c-d>
+noremap K 47kzb
+noremap J 47jzt
 
 " Quickly Add an Empty Line and go to it
 nnoremap <silent><A-k> :set paste<CR>m`O<esc>``:set nopaste<CR>k
@@ -424,6 +424,16 @@ nnoremap <silent> <leader>sp :set spell!<CR>
 
 " Set foldmethod to marker
 nnoremap <leader>fm :set foldmethod=marker<cr>za
+
+" Fetch variable and its value
+nnoremap <leader>cvar "vdwdw"rd$dd
+
+" Search and paste value fetched
+nnoremap <leader>pvar /v<del><cr>viw"rp
+
+" Faster variable value fetching
+nnoremap <leader>cv "vdwdw"rd$dd/<C-r>v<del><cr>viw"rp
+nnoremap <leader>pv nviw"rp
 " }}}
 
 " Show Extra Whitespace {{{
