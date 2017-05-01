@@ -138,9 +138,6 @@ nnoremap <leader>wl <c-w>L
 " cv: Faster variable value fetching {{{
 nnoremap <leader>cv "vdwdw"rd$dd/<C-r>v<del><cr>viw"rp
 " }}}
-" vf: Calls VerticalFTP() a Deprecated function. {{{
-" nnoremap <leader>vf :call VerticalFTP()<cr>
-" }}}
 " cw: Copy Word {{{
 nmap <leader>cw Bv$<C-C>:echom "Copied to clipboard!"<cr>
 " }}}
@@ -152,9 +149,6 @@ nnoremap <leader>df :call DiffFTP()<cr><c-w>hgg]c
 " }}}
 " ds: Saves both files and returns to local {{{
 nnoremap <leader>ds :w<cr><C-W>l :w<cr><C-W>h
-" }}}
-" DS: Saves current file and also saves directly to FTP {{{
-nnoremap <leader>DS :w<cr> :call SaveFTP()<cr>
 " }}}
 " Vimgrep hotkeys {{{
 nnoremap <leader>find :call Search()<cr>
