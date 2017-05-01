@@ -1,10 +1,10 @@
-vimrc for Eric Ghiraldello
-==========================
+My Vim Config Files
+===================
 
 
-Goal
-----
-To download this repo and hit install and have our vimrc working inside any box.
+Description
+-----------
+Most of my configuration is stored here.  Only highly sensitive work will not be stored
 
 This WAS originally based on brooky-yen's vimrc (https://github.com/brooky-yen/vimrc)
 

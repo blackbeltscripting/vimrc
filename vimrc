@@ -59,10 +59,14 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 " Display extra whitespace
 set list listchars=tab:\|·,trail:·,extends:❯,precedes:❮,eol:¬
 " SET Options: }}}
+" Define: $VIMHOME {{{
+let $VIMHOME = $HOME . '/vimrc/'
+" }}}
 " Plugins: {{{
-if filereadable($HOME . '/Plugins.vim')
-    source ~/vimrc/Plugins.vim
-    call plug#begin('~/.vim/plugged')
+let plugfile = $VIMHOME . 'Plugins.vim'
+if filereadable(plugfile)
+    execute 'source '.plugfile
+    call plug#begin($VIMHOME . 'plugged')
     for bundle in g:plugins
         let trace = ''
         if len(bundle) > 1
@@ -314,9 +318,9 @@ let filestosource = [
             \ 'concatonate.vim',
             \ ]
 for f in filestosource
-    let file = $HOME . '/' . f
+    let file = $VIMHOME . f
     if filereadable(file)
-        source file
+        execute 'source '.file
     endif
 endfor
 " }}}
