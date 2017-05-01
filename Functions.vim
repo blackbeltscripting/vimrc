@@ -17,7 +17,7 @@ function! PopulateReadme()
     normal! 2j0d}k
     let line = []
     for p in g:functions
-        :call add(line, ' * `' . p[0] . '` ' . p[1])
+        :call add(line, ' * `' . p[0] . '()` ' . p[1])
     endfor
     :call sort(line)
     :put =line
