@@ -58,6 +58,7 @@ Functions
  * `ExecuteMacroOverVisualRange()` Don't remember what this does...
  * `GetFunctionName()` Prints word before the '(' in buffer.
  * `HandleURL()` Opens URL/URI
+ * `Install()` Upgrades Plug Install, Does Plug Install, Populate Readme
  * `MoveLeft()` Move selection to the left.
  * `MoveRight()` Move selection to the right.
  * `PopulateReadme()` Gets all Plugins, Functions, and Leader Maps and places them inside the README file.

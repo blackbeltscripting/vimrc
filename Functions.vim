@@ -103,6 +103,7 @@ function! HandleURL()
 endfunction
 " }}}
 let l = ['Install', "Upgrades Plug Install, Does Plug Install, Populate Readme"] " {{{
+:call add(g:functions, l)
 function! Install()
     :PlugUpgrade
     :PlugInstall
