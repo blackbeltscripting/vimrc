@@ -42,8 +42,15 @@ nnoremap <leader>l <c-w>10>
 " }}}
 let l = ['ml', "Move word to the right"] " {{{
 :call add(g:leader, l)
-:call add(g:leader, l)
 nnoremap <leader>ml :call SwitchWord('right')<cr>
+" }}}
+let l = ['mh', "Move word to the left"] " {{{
+:call add(g:leader, l)
+nnoremap <leader>mh :call SwitchWord('left')<cr>
+" }}}
+let l = ['o', "Open Startify on this window"] " {{{
+:call add(g:leader, l)
+nnoremap <leader>o :Startify<cr>
 " }}}
 let l = ['q', "Opens this file and dumps macro at reg q"] " {{{
 :call add(g:leader, l)
