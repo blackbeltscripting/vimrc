@@ -11,7 +11,7 @@ function! PutPlugins() " {{{
     /Leader Mapping
     normal! 2j0d}k
     for l in g:leader
-        let line = ' -`' . l[0] . '` ' . l[1]
+        let line = ' * `' . l[0] . '` ' . l[1]
         :put =line
     endfor
     normal! ZZ

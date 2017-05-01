@@ -52,28 +52,28 @@ Plugins
 
 Leader Mapping
 --------------
- -`<space>` Unhighlight Search word
- -`{` Make vim fold around block and closes it
- -`;` Adds semicolon at EOL
- -`c` Saves, then sends command to tmux
- -`cm` Sends make command to runner and focuses the pane
- -`conc` Concatonates inside parentheses using '.' delimiter
- -`ml` Move word to the right
- -`q` Opens this file and dumps macro at reg q
- -`s` Saves file
- -`so` sources .vimrc
- -`soz` sources .vimrc and closes
- -`src` Open .vimrc
- -`tab` Retabs the entire pane
- -`u` Open URI in chrome
- -`v` Open Startify [Default]
- -`vF` Open FZF
- -`vf` Open Functions.vim
- -`vh` Open help of <C-WORD>
- -`vk` Open KeyMapping.vim
- -`vl` Open LeaderMapping.vim
- -`vp` Open Plugins.vim
- -`vs` Open .vimrc
+ * `<space>` Unhighlight Search word
+ * `{` Make vim fold around block and closes it
+ * `;` Adds semicolon at EOL
+ * `c` Saves, then sends command to tmux
+ * `cm` Sends make command to runner and focuses the pane
+ * `conc` Concatonates inside parentheses using '.' delimiter
+ * `ml` Move word to the right
+ * `q` Opens this file and dumps macro at reg q
+ * `s` Saves file
+ * `so` sources .vimrc
+ * `soz` sources .vimrc and closes
+ * `src` Open .vimrc
+ * `tab` Retabs the entire pane
+ * `u` Open URI in chrome
+ * `v` Open Startify [Default]
+ * `vF` Open FZF
+ * `vf` Open Functions.vim
+ * `vh` Open help of <C-WORD>
+ * `vk` Open KeyMapping.vim
+ * `vl` Open LeaderMapping.vim
+ * `vp` Open Plugins.vim
+ * `vs` Open .vimrc
 
 
 INSTALL
