@@ -24,7 +24,6 @@ let l = ['conc', "Concatonates inside parentheses using '.' delimiter"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>conc :call Concatonate()<cr>
 " }}}
-" [h/j/k/l]: Resize Splits [left/maximize/restore/right] {{{
 let l = ['h', "Resize Split to the left"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>h <c-w>10<
@@ -40,7 +39,6 @@ nnoremap <leader>k <c-w>=<c-w>_
 let l = ['l', "Resize Split to the right"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>l <c-w>10>
-" }}}
 " }}}
 let l = ['ml', "Move word to the right"] " {{{
 :call add(g:leader, l)
@@ -67,7 +65,6 @@ let l = ['src', "Open .vimrc"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>src :e $MYVIMRC<cr>
 " }}}
-" t[l/s/w]: Toggles on/off [line/spell/wrap] {{{
 let l = ['tl', "Toggle relativenumber"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>tl :set number relativenumber!<cr>
@@ -80,7 +77,6 @@ let l = ['tw', "Toggle wrap"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>tw :set nowrap!<cr>
 " }}}
-" }}}
 let l = ['tab', "Retabs the entire pane"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>tab :call SpaceTabRetab()<cr>
@@ -89,7 +85,6 @@ let l = ['u', "Open URI in chrome"] " {{{
 :call add(g:leader, l)
 noremap <leader>u :call HandleURL()<cr>
 " }}}
-" v[Ff/h/k/g:l/p/s]: Open Visual Split [Default: Startify] {{{
 let l = ['v', "Open Startify [Defaul]" ] " {{{
 :call add(g:leader, l)
 nnoremap <leader>v :vs<cr>:Startify<cr>
@@ -122,8 +117,6 @@ let l = ['vs', "Open .vimrc"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>vs :vsplit $MYVIMRC<cr>
 " }}}
-" }}}
-" w[h/j/k/l]: Swap Window [left/down/up/right] {{{
 let l = ['wh', "Swap Window Left"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>wh <c-w>H
@@ -139,7 +132,6 @@ nnoremap <leader>wk <c-w>K
 let l = ['wl', "Swap Window Right"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>wl <c-w>L
-" }}}
 " }}}
 
 " Deprecated {{{

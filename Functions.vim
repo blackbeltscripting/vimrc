@@ -102,6 +102,15 @@ function! HandleURL()
     endif
 endfunction
 " }}}
+let l = ['Install', "Upgrades Plug Install, Does Plug Install, Populate Readme"] " {{{
+function! Install()
+    :PlugUpgrade
+    :PlugInstall
+    :call PopulateReadme()
+endfunction
+
+command! Install :call Install()
+" }}}
 let l = ['Replace', "Replaces word in all buffers (I think)."] " {{{
 :call add(g:functions, l)
 function! Replace()
