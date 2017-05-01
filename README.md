@@ -4,7 +4,7 @@ My Vim Config Files
 
 Description
 -----------
-Most of my configuration is stored here.  Only highly sensitive work will not be stored
+Most of my configuration is stored here.  Only highly sensitive work will not be stored online.
 
 This WAS originally based on brooky-yen's vimrc (https://github.com/brooky-yen/vimrc)
 
@@ -12,7 +12,7 @@ Then was changed by hightman's vimrc (https://github.com/hightman/vimrc)
 
 Now adapted for my work.
 
-Author: Eric Ghiraldello <ericg@arty-web-design.com>
+Author: Eric Ghiraldello
 
 
 Plugins
