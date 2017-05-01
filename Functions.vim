@@ -3,11 +3,13 @@ function! PutPlugins() " {{{
     :vs $HOME/vimrc/README.md
     /Plugins
     normal! 2j0d}k
+    let line = []
     for plug in g:plugins
         let p = split(plug[0], '/')
-        let line = ' * [' . p[1] . '](https://github.com/' . plug[0] . ')'
-        :put =line
+        :call add(line, ' * [' . p[1] . '](https://github.com/' . plug[0] . ')')
     endfor
+    :call sort(line)
+    :put =line
     /Leader Mapping
     normal! 2j0d}k
     for l in g:leader
@@ -15,7 +17,6 @@ function! PutPlugins() " {{{
         :put =line
     endfor
     normal! ZZ
-    echo 'README file has updated plugins, leader mapping.'
 endfunction
 " }}}"
 function! Col80() " {{{
