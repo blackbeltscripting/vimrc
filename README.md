@@ -83,8 +83,9 @@ Leader Mapping
  * `j` Maximize Splits
  * `k` Restore Splits
  * `l` Resize Split to the right
+ * `mh` Move word to the left
  * `ml` Move word to the right
- * `ml` Move word to the right
+ * `o` Open Startify on this window
  * `q` Opens this file and dumps macro at reg q
  * `s` Saves file
  * `so` sources .vimrc
