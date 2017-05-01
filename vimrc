@@ -307,9 +307,17 @@ inoremap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "
 " Import: Mapping, Functions, Sensitive {{{
 let mapleader="\<Space>"
 let maplocalleader = "\\"
-source ~/vimrc/KeyMapping.vim
-source ~/vimrc/LeaderMapping.vim
-source ~/vimrc/Functions.vim
-source ~/vimrc/Sensitive.vim
-source ~/vimrc/concatonate.vim
+let filestosource = [
+            \ 'KeyMapping.vim',
+            \ 'LeaderMapping.vim',
+            \ 'Functions.vim',
+            \ 'Sensitive.vim',
+            \ 'concatonate.vim',
+            \ ]
+for f in filestosource
+    let file = $HOME . '/' . f
+    if filereadable(file)
+        source file
+    endif
+endfor
 " }}}
