@@ -59,20 +59,19 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 " Display extra whitespace
 set list listchars=tab:\|·,trail:·,extends:❯,precedes:❮,eol:¬
 " SET Options: }}}
-" Import Plugins: {{{
-source ~/vimrc/Plugins.vim
-" }}}
-" vim-plug Setup {{{
-call plug#begin('~/.vim/plugged')
-" Plugins:
-for bundle in g:plugins
-    let trace = ''
-    if len(bundle) > 1
-        let trace = ', ' . bundle[1]
-    endif
-    execute "Plug '" . bundle[0] . "'" . trace
-endfor
-call plug#end()
+" Plugins: {{{
+if filereadable($HOME . '/Plugins.vim')
+    source ~/vimrc/Plugins.vim
+    call plug#begin('~/.vim/plugged')
+    for bundle in g:plugins
+        let trace = ''
+        if len(bundle) > 1
+            let trace = ', ' . bundle[1]
+        endif
+        execute "Plug '" . bundle[0] . "'" . trace
+    endfor
+    call plug#end()
+endif
 " }}}
 "  Color Scheme: {{{
 "
