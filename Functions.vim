@@ -1,5 +1,8 @@
 " Functions:
-function! PutPlugins() " {{{
+let g:functions = []
+let l = ['PopulateReadme', "Gets all Plugins, Functions, and Leader Maps and places them inside the README file."] " {{{
+:call add(g:functions, l)
+function! PopulateReadme()
     :vs $HOME/vimrc/README.md
     /Plugins
     normal! 2j0d}k
@@ -10,18 +13,28 @@ function! PutPlugins() " {{{
     endfor
     :call sort(line)
     :put =line
+    /Functions
+    normal! 2j0d}k
+    let line = []
+    for p in g:functions
+        :call add(line, ' * `' . p[0] . '` ' . p[1])
+    endfor
+    :call sort(line)
+    :put =line
     /Leader Mapping
     normal! 2j0d}k
     let line = []
-    for l in g:leader
-        :call add(line, ' * `' . l[0] . '` ' . l[1])
+    for p in g:leader
+        :call add(line, ' * `' . p[0] . '` ' . p[1])
     endfor
     :call sort(line)
     :put =line
     normal! ZZ
 endfunction
 " }}}"
-function! Col80() " {{{
+let l = ['Col80', "Fires a vertical line if cursor reaches over the 80th column."] " {{{
+:call add(g:functions, l)
+function! Col80()
     if virtcol('.') >= 80
         exec 'set colorcolumn=80'
     else
@@ -29,7 +42,9 @@ function! Col80() " {{{
     endif
 endfunction
 " }}}
-function! Base64Decode() " {{{
+let l = ['Base64Decode', "Decodes a Base64 String and pastes result."] " {{{
+:call add(g:functions, l)
+function! Base64Decode()
     let text = Concatonate()
     normal! F(hb
     let save_pos = getpos('.')
@@ -43,7 +58,9 @@ function! Base64Decode() " {{{
     endif
 endfunction
 " }}}
-function! Concatonate() " {{{
+let l = ['Concatonate', "Concatonates inside parentheses and pastes result."] " {{{
+:call add(g:functions, l)
+function! Concatonate()
     let save_pos = getpos('.')
     normal! di(
     let text = @
@@ -55,60 +72,27 @@ function! Concatonate() " {{{
     return text
 endfunction
 " }}}
-function! GetFunctionName() " {{{
+let l = ['GetFunctionName', "Prints word before the '(' in buffer."] " {{{
+:call add(g:functions, l)
+function! GetFunctionName()
     normal! F(hyiw
     let function = @
     return function
 endfunction
 " }}}
-function! DiffFTP() " {{{
-    let file = GetPaths()
-    execute "diffsplit " . file.ftp . expand('%')
-endfunction
-" }}}
-" function! ExecuteMacroOverVisualRange() {{{
-" Got this so it executes macro while in visual mode
-xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
-
+let l = ['ExecuteMacroOverVisualRange', "Don't remember what this does..."] " {{{
+:call add(g:functions, l)
 function! ExecuteMacroOverVisualRange()
   echo "@".getcmdline()
   execute ":'<,'>normal @".nr2char(getchar())
 endfunction
+
+" Got this so it executes macro while in visual mode
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 " }}}
-function! GetPaths() " {{{
-    " Go to this file's path
-    execute "cd " expand("%:p:h")
-    " Split the path into a list
-    let path = split(expand('%:p:h'), '/')
-    " We know that our path is in /home/Public/... so path must have at least 3 values
-    if len(path) > 2
-        if path[2] == 'Public'
-            " We instance each site in list
-            for site in g:arty_ftp_sites
-                " Do we have a local folder set?
-                if type(site) == 4 && site.local_folder == path[3]
-                    let ftp = site.ftp
-                    let subf = join(path[4:], '/')
-                    if !empty(subf)
-                        let ftp .= subf . '/'
-                    endif
-                    let git = ""
-                    if exists('site.git_folder')
-                        " Comparison statement and return the paths
-                        let max = len(split(site.git_folder, '/')) + 2
-                        if site.git_folder == join(path[3:max], '/')
-                            let git = '/' . join(path[:max], '/')
-                        endif
-                    endif
-                    let folder = join(path[:3], '/')
-                    return {'ftp' : ftp, 'git' : git, 'folder' : folder}
-                endif
-            endfor
-        endif
-    endif
-endfunction
-" }}}
-function! HandleURL() " {{{
+let l = ['HandleURL', "Opens URL/URI"] " {{{
+:call add(g:functions, l)
+function! HandleURL()
     let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;]*')
     echo s:uri
     if s:uri != ""
@@ -118,41 +102,17 @@ function! HandleURL() " {{{
     endif
 endfunction
 " }}}
-" function! HLNext(blinktime) " {{{
-"     " Briefly hide everything except the search match
-"     highlight BlackOnBlack ctermfg=black term=none
-"     highlight WhiteOnRed ctermfg=white ctermbg=red
-"     let [bufnum, lnum, col, off]  = getpos('.')
-"     let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-"     let hide_pat = '\%<'.lnum.'l.'
-"                 \ . '\|'
-"                 \ . '\%'.lnum.'l\%<'.col.'v.'
-"                 \ . '\|'
-"                 \ . '\%'.lnum.'l\%>'.(col+matchlen-1).'v.'
-"                 \ . '\|'
-"                 \ . '\%>'.lnum.'l.'
-"     let target_pat = '\c\%#\%('.@/.'\)'
-"     let ring = matchadd('BlackOnBlack', hide_pat, 101)
-"     let ring1= matchadd('WhiteOnRed', target_pat, 101)
-"     redraw
-"     exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-"     call matchdelete(ring)
-"     call matchdelete(ring1)
-"     redraw
-" endfunction
-" " }}}
-function! Replace() " {{{
+let l = ['Replace', "Replaces word in all buffers (I think)."] " {{{
+:call add(g:functions, l)
+function! Replace()
     let s:word = input("Replace " . expand('<cword>') . " with: ")
     :execute 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge'
     :unlet! s:word
 endfunction
 " }}}
-function! SaveFTP() " {{{
-    let file = GetPaths()
-    execute "Nwrite " . file.ftp . expand('%')
-endfunction
-" }}}
-function! Search() " {{{
+let l = ['Search', "Searches with Ag."] " {{{
+:call add(g:functions, l)
+function! Search()
     let file = GetPaths()
     if type(file) == 4 && has_key(file, 'folder')
         execute ":Ag " . expand("<c-tags>") . " " . file.folder
@@ -161,7 +121,9 @@ function! Search() " {{{
     endif
 endfunction
 " }}}
-function! ShowSpaces(...) " {{{
+let l = ['ShowSpaces', "Show extra white spaces before EOL."] " {{{
+:call add(g:functions, l)
+function! ShowSpaces(...)
     let @/='\v(\s+$)|( +\ze\t)'
     let oldhlsearch=&hlsearch
     if !a:0
@@ -172,7 +134,9 @@ function! ShowSpaces(...) " {{{
     return oldhlsearch
 endfunction
 " }}}
-function! SpaceTabRetab() " {{{
+let l = ['SpaceTabRetab', "ReTabs and removes the spaces from file."] " {{{
+:call add(g:functions, l)
+function! SpaceTabRetab()
     " Mark line
     " Tab the whole file
     " Trim white extra white spaces at EOL
@@ -187,22 +151,17 @@ function! SpaceTabRetab() " {{{
     exec "normal! " . line . "G"
 endfunction
 " }}}
-function! SwitchWord(position) " {{{
-    if a:position == 'right'
-        execute "normal! dawf ph"
-    elseif a:position == 'left'
-        execute "normal! dawBPh"
-    endif
-    echo "Word moved to the " . a:position
-endfunction
-" }}}
-function! TrimSpaces() range " {{{
+let l = ['TrimSpaces', "Removes extra white spaces before EOL."] " {{{
+:call add(g:functions, l)
+function! TrimSpaces() range
     let oldhlsearch=ShowSpaces(1)
     execute a:firstline.",".a:lastline."substitute ///gec"
     let &hlsearch=oldhlsearch
 endfunction
 " }}}
-function! Unobscure() " {{{
+let l = ['Unobscure', "... in alpha stage."] " {{{
+:call add(g:functions, l)
+function! Unobscure()
     %s/;/;\r/g
     %s/{/{\r/g
     %s/}/}\r/g
@@ -210,11 +169,8 @@ function! Unobscure() " {{{
     :%s/[\"|'] *\. *[\"|']//g
 endfunction
 " }}}
-function! VerticalFTP() " {{{
-    let file = GetPaths()
-    execute "vs " . file.ftp . expand('%')
-endfunction
-" }}}
+let l = ['VimFold', "Automatically folds some files."] " {{{
+:call add(g:functions, l)
 function! VimFold() " {{{
     setl fdm=marker
     norm! zM
@@ -227,6 +183,8 @@ let s:visual = 'visual'
 let s:motion = 'motion'
 let s:linewise = 'linewise'
 
+let l = ['MoveRight', "Move selection to the right."] " {{{
+:call add(g:functions, l)
 function! MoveRight(type, ...) abort
     let mode = Resolve_mode(a:type, a:0)
     if mode == s:motion
@@ -234,6 +192,8 @@ function! MoveRight(type, ...) abort
     endif
 endfunction
 
+let l = ['MoveLeft', "Move selection to the left."] " {{{
+:call add(g:functions, l)
 function! MoveLeft(type, ...) abort
     let mode = Resolve_mode(a:type, a:0)
     if mode == s:motion
@@ -241,6 +201,8 @@ function! MoveLeft(type, ...) abort
     endif
 endfunction
 
+let l = ['Resolve_mode', "Find out if type is linewise, blockwise, or motion."] " {{{
+:call add(g:functions, l)
 function! Resolve_mode(type, arg)
     let visual_mode = a:arg != 0
     if visual_mode
