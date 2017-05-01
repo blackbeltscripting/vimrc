@@ -5,7 +5,7 @@ function! PutPlugins() " {{{
     normal! 2j0d}k
     for plug in g:plugins
         let p = split(plug[0], '/')
-        let line = ' * [' . p[1] . '] (https://github.com/' . plug[0] . ')'
+        let line = ' * [' . p[1] . '](https://github.com/' . plug[0] . ')'
         :put =line
     endfor
     /Leader Mapping
