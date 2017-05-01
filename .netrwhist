@@ -1,6 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/eric/.fluxbox/styles'
-let g:netrw_dirhist_2='/home/eric/.fluxbox'
-let g:netrw_dirhist_3='/home/eric/.fluxbox/styles'
-let g:netrw_dirhist_4='/home/eric/vimrc/plugged/vim-dirdiff'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/eric'
+let g:netrw_dirhist_2='/home/eric/Public'
+let g:netrw_dirhist_3='/home/eric/Public/vim-paste-operator'
+let g:netrw_dirhist_4='/home/eric/Public/vim-paste-operator/plugin'
+let g:netrw_dirhist_5='/home/eric/Public/vim-paste-operator'
+let g:netrw_dirhist_6='/home/eric/vimrc/.git'

@@ -3,6 +3,7 @@
 .netrwhist
 plugged/
 Sensitive.vim
+concatonate.vim
 bundle
 init.vim
 swap

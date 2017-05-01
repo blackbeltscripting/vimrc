@@ -1,9 +1,9 @@
-vimrc for Arty // Web Design and Programming
-============
+vimrc for Eric Ghiraldello
+==========================
 
 
 Goal
-----------------
+----
 To download this repo and hit install and have our vimrc working inside any box.
 
 This WAS originally based on brooky-yen's vimrc (https://github.com/brooky-yen/vimrc)
@@ -15,49 +15,65 @@ Now adapted for my work.
 Author: Eric Ghiraldello <ericg@arty-web-design.com>
 
 
-Requisites
-----------------
-The distribution is designed to work with Vim >= 7.2.
+Plugins
+-------
+ * [vim-paste-operator] (https://github.com/blackbeltscripting/vim-paste-operator)
+ * [vimux] (https://github.com/benmills/vimux)
+ * [vim-airline] (https://github.com/bling/vim-airline)
+ * [vim-tmux-navigator] (https://github.com/christoomey/vim-tmux-navigator)
+ * [vim-tmux-runner] (https://github.com/christoomey/vim-tmux-runner)
+ * [vim-system-copy] (https://github.com/christoomey/vim-system-copy)
+ * [vim-easygrep] (https://github.com/dkprice/vim-easygrep)
+ * [vim-sync] (https://github.com/eshion/vim-sync)
+ * [vim-coloresque] (https://github.com/gorodinskiy/vim-coloresque)
+ * [vim-snippets] (https://github.com/honza/vim-snippets)
+ * [fzf] (https://github.com/junegunn/fzf)
+ * [auto-pairs] (https://github.com/jiangmiao/auto-pairs)
+ * [ctrlp.vim] (https://github.com/kien/ctrlp.vim)
+ * [emmet-vim] (https://github.com/mattn/emmet-vim)
+ * [undotree] (https://github.com/mbbill/undotree)
+ * [vim-startify] (https://github.com/mhinz/vim-startify)
+ * [ag.vim] (https://github.com/rking/ag.vim)
+ * [vim-srcery] (https://github.com/roosta/vim-srcery)
+ * [syntastic] (https://github.com/scrooloose/syntastic)
+ * [vim-multiple-cursors] (https://github.com/terryma/vim-multiple-cursors)
+ * [vim-tmux-focus-events] (https://github.com/tmux-plugins/vim-tmux-focus-events)
+ * [vim-commentary] (https://github.com/tpope/vim-commentary)
+ * [vim-fugitive] (https://github.com/tpope/vim-fugitive)
+ * [vim-surround] (https://github.com/tpope/vim-surround)
+ * [vim-repeat] (https://github.com/tpope/vim-repeat)
+ * [vim-visual-increment] (https://github.com/triglav/vim-visual-increment)
+ * [vim-airline-themes] (https://github.com/vim-airline/vim-airline-themes)
+ * [vim-dirdiff] (https://github.com/will133/vim-dirdiff)
+ * [vim-misc] (https://github.com/xolox/vim-misc)
+ * [vim-notes] (https://github.com/xolox/vim-notes)
+ * [ultisnips] (https://github.com/SirVer/ultisnips)
 
-The distribution also requires ack, ctags, git, ruby and rake. I recommend using the GUI version of VIM (gvim on Linux and Windows, MacVim on OSX) for some plugin only support GUI version (e.g. Command-T). You can [download MacVim here](https://github.com/b4winckler/macvim/downloads).
 
-
-Useful vim Plugins (maybe)Included
-----------------
- * [vim-autoclose](https://github.com/Townk/vim-autoclose)
- * [ack.vim](https://github.com/mileszs/ack.vim)
- * [vim-bufexplorer](https://github.com/thisivan/vim-bufexplorer)
- * [vim-easytag](https://github.com/xolox/vim-easytags)
- * [tagbar](https://github.com/majutsushi/tagbar)
- * [tagbar-phpctags](https://github.com/techlivezheng/tagbar-phpctags)
- * [nerdtree](https://github.com/scrooloose/nerdtree)
- * [nerdcommenter.git](https://github.com/scrooloose/nerdcommenter.git)
- * [YankRing.vim.git](https://github.com/vim-scripts/YankRing.vim.git)
- * [vim-fugitive](https://github.com/tpope/vim-fugitive)
- * [vim-repeat](https://github.com/tpope/vim-repeat)
- * [vim-surround](https://github.com/tpope/vim-surround)
- * [vim-eunuch](https://github.com/tpope/vim-eunuch)
- * [vim-markdown](https://github.com/tpope/vim-markdown)
- * [vim-endwise](https://github.com/tpope/vim-endwise)
- * [xmledit.git](https://github.com/sukima/xmledit.git)
- * [matchit.zip](https://github.com/vim-scripts/matchit.zip)
- * [vim-easymotion](https://github.com/Lokaltog/vim-easymotion)
- * [neocomplcache](https://github.com/Shougo/neocomplcache)
- * [neosnippet](https://github.com/Shougo/neosnippet)
- * [OmniCppComplete](https://github.com/vim-scripts/OmniCppComplete)
- * [syntastic](https://github.com/scrooloose/syntastic)
- * [vim-php-cs-fixer](https://github.com/stephpy/vim-php-cs-fixer)
- * [vim-php-namespace](https://github.com/arnaud-lb/vim-php-namespace)
- * [phpcomplete.vim](https://github.com/shawncplus/phpcomplete.vim)
- * [php.vim](https://github.com/shawncplus/php.vim)
- * [PDV--phpDocumentor-for-Vim](https://github.com/vim-scripts/PDV--phpDocumentor-for-Vim)
- * [vim-html5-fix](https://github.com/concise/vim-html5-fix)
- * [vim-haml](https://github.com/tpope/vim-haml)
- * [vim-javascript](https://github.com/pangloss/vim-javascript)
- * [vim-jquery](https://github.com/itspriddle/vim-jquery)
- * [php-search-doc](https://github.com/erikfercak/php-search-doc)
- * [vim-jquery-doc](https://github.com/lucapette/vim-jquery-doc)
- * [ctrlp.vim](https://github.com/kien/ctrlp.vim)
+Leader Mapping
+--------------
+ -`<space>` Unhighlight Search word
+ -`{` Make vim fold around block and closes it
+ -`;` Adds semicolon at EOL
+ -`c` Saves, then sends command to tmux
+ -`cm` Sends make command to runner and focuses the pane
+ -`conc` Concatonates inside parentheses using '.' delimiter
+ -`ml` Move word to the right
+ -`q` Opens this file and dumps macro at reg q
+ -`s` Saves file
+ -`so` sources .vimrc
+ -`soz` sources .vimrc and closes
+ -`src` Open .vimrc
+ -`tab` Retabs the entire pane
+ -`u` Open URI in chrome
+ -`v` Open Startify [Default]
+ -`vF` Open FZF
+ -`vf` Open Functions.vim
+ -`vh` Open help of <C-WORD>
+ -`vk` Open KeyMapping.vim
+ -`vl` Open LeaderMapping.vim
+ -`vp` Open Plugins.vim
+ -`vs` Open .vimrc
 
 
 INSTALL
@@ -77,7 +93,7 @@ INSTALL
 
 
 Conventions
-------------
+-----------
 
 * Backup enabled, the BAK file is saved as `~/.vim/bak/$NAME~`
 

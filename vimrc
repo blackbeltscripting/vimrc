@@ -1,6 +1,7 @@
 " Arty // Web Design and Programming
 " vimrc Config File
 " Begin my Version:
+" Note: <C-S-J> try this later
 "                       ___
 "          ___....-----'---'-----....___
 "     =======================================
@@ -19,153 +20,270 @@
 "         \  V  /  | ||  \/  || |  | |_
 "          \___/   |_||_|  |_||_|  |___|
 
-" SET Variables {{{
-set nocompatible				" Be iMproved, required
+" SET Options: {{{
+set nocompatible			" Be iMproved, required
 syntax enable
 
-set bs=indent,eol,start				" Allow backspacing
-set clipboard=unnamed				" Clipboard is now system wide
-set diffopt=vertical				" Set Vertical Diff split as default
-set directory=~/.vim/swap			" Swap [buffer] File Directory
-" set encoding=utf-8				" UTF encoding for vim
-set foldcolumn=1					" Shows Marker Left Ln#. # = width
-set nofoldenable					" Enables Fold
-set foldmethod=indent				" Sets fold according to syntax
-set hlsearch						" Sets search highlighting
-set laststatus=2					" Shows status bar by default
-set mouse=a							" Enables mouse for all modes
-set number numberwidth=2			" Turns on line with width up to 9999
-set wrap							" Do wrap
-set relativenumber					" Turns on relative numbering
-set shiftwidth=4					" Sets the tab in block to 1 tab
-set smartcase						" Case-insensitive is all lowercase, else if at least 1 uppercase
-set nospell							" Turn off Spell Check
-set splitright						" vSplits to the right
-set t_co=256						" Sets the color index to 256 for airline
-set tabstop=4						" Sets the tabindex
+set bs=indent,eol,start			" Allow backspacing
+set clipboard=unnamed			" Clipboard is now system wide
+set diffopt=vertical			" Set Vertical Diff split as default
+set directory=~/.vim/swap		" Swap [buffer] File Directory
+" set encoding=utf-8			" UTF encoding for vim
+set foldcolumn=1			" Shows Marker Left Ln#. # = width
+" set foldlevel=99                        " Opens all folds by default
+set nofoldenable			" Enables Fold
+set foldmethod=marker			" Sets fold according to syntax
+set ignorecase                          " Ignores Case in Search
+set hlsearch				" Sets search highlighting
+set laststatus=2			" Shows status bar by default
+set mouse=n				" Mouse touch in normal mode only
+set number numberwidth=2		" Turns on line with width up to 9999;
+set relativenumber			" Turns on relative numbering
+" set shiftwidth=4			" Sets the tab in block to 1 tab
+set smartcase				" Case-insensitive if it's all lowercase
+" set softtabstop=0			" Removing Tabs with the 'tab' button
+set nospell				" Turn off Spell Check
+set splitright				" vSplits to the right
+set t_co=256				" Sets the color index for airline
+" set tabstop=4				" Sets the tabindex
 set timeoutlen=1000 ttimeoutlen=0	" Remove Esc Lag
-set textwidth=0						" Remove annoying autoWrap
-set undodir=~/.vim/undodir			" Undo Directory
-set undofile						" Maintain undo history between sessions
-set wildmenu						" Wild char completion menu
-set wildmode=full					" :<tab> progression
+set textwidth=0				" Remove annoying autoWrap
+set undodir=~/.vim/undodir		" Undo Directory
+set undofile				" Maintain undo history
+" set updatetime=10000			" Insert Mode will go to Normal Mode
+set wildmenu				" Wild char completion menu
+set wildmode=full			" :<tab> progression
 
+" Tabs are now 4 spaces.
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 " Display extra whitespace
 set list listchars=tab:\|·,trail:·,extends:❯,precedes:❮,eol:¬
+" SET Options: }}}
+" Import Plugins: {{{
+source ~/vimrc/Plugins.vim
 " }}}
-
-" Plugins {{{
-let g:plugins = [
-			\ 'benmills/vimux',
-			\ 'bling/vim-airline',
-			\ 'dkprice/vim-easygrep',
-			\ 'eshion/vim-sync',
-			\ 'gorodinskiy/vim-coloresque',
-			\ 'honza/vim-snippets',
-			\ 'jiangmiao/auto-pairs',
-			\ 'kien/ctrlp.vim',
-			\ 'mattn/emmet-vim',
-			\ 'mhinz/vim-startify',
-			\ 'rking/ag.vim',
-			\ 'scrooloose/syntastic',
-			\ 'tpope/vim-fugitive',
-			\ 'tpope/vim-surround',
-			\ 'vim-airline/vim-airline-themes',
-			\ 'vim-scripts/tComment',
-			\ 'will133/vim-dirdiff',
-			\ 'xolox/vim-misc',
-			\ 'xolox/vim-notes',
-			\ ]
-" \ 'Valloric/YouCompleteMe',
-" \ 'SirVer/ultisnips',
-" }}}
-
 " vim-plug Setup {{{
 call plug#begin('~/.vim/plugged')
 " Plugins:
 for bundle in g:plugins
-	execute "Plug '" . bundle . "'"
+    let trace = ''
+    if len(bundle) > 1
+        let trace = ', ' . bundle[1]
+    endif
+    execute "Plug '" . bundle[0] . "'" . trace
 endfor
 call plug#end()
 " }}}
+"  Color Scheme: {{{
+"
+" " Set Arty Theme
+syntax enable
+" colorscheme ArtyFirst
+" colorscheme src
+let g:airline_theme='bubblegum'
+" colorscheme brogrammer
 
-" Include Sensitive Information ignored by git {{{
-source ~/vimrc/Sensitive.vim
+" Search highlight
+hi Search ctermfg=white ctermbg=green
+
+" Special color changes
+" hi Normal ctermbg=none
+" hi Comment ctermfg=11 cterm=bold
+"
+" " Cursor Line
+" hi CursorLine cterm=none ctermbg=52 ctermfg=231 hi CursorColumn ctermbg=red ctermfg=white
+"
+" " Current line
+" hi CursorLineNR ctermfg=white ctermbg=red cterm=bold
+"
+" " Other lines
+" hi LineNR ctermfg=yellow ctermbg=none cterm=none
+"
+" " Folder
+" hi Folded ctermfg=yellow ctermbg=black
+" " hi Folded ctermfg=white ctermbg=34
+" hi FoldColumn ctermfg=231 ctermbg=30 cterm=bold
+"
+" " Vertical Split
+" hi VertSplit ctermfg=yellow ctermbg=yellow
+"
+" " The current tab file
+" hi TabLineSel ctermfg=189 ctermbg=18 cterm=none cterm=bold
+"
+" " All other tab files
+" hi TabLine ctermfg=17 ctermbg=23 cterm=bold
+"
+" " The tab empty space
+" hi TabLineFill ctermfg=17 ctermbg=23 cterm=bold
+"
+" " Highlight search
+" hi IncSearch ctermfg=189 ctermbg=22
+"
+" " Tabspace
+" hi SpecialKey ctermfg=60 ctermbg=none cterm=none
+"
+" " WildMenu
+" hi StatusLine ctermfg=16 ctermbg=190 cterm=none
+" hi WildMenu ctermfg=231 ctermbg=34 cterm=bold
+"
+" " Override the diff colours
+" highlight DiffAdd term=reverse cterm=NONE ctermbg=darkblue ctermfg=white
+" highlight DiffDelete term=reverse cterm=NONE ctermbg=black ctermfg=blue
+" highlight DiffChange term=reverse cterm=NONE ctermbg=darkgray ctermfg=white
+" highlight DiffText term=reverse cterm=bold ctermbg=brown ctermfg=white
+"
+" Highlight trailing white space
+" http://vim.wikia.com/wiki/highlight_unwanted_spaces
+highlight extrawhitespace ctermbg=red guibg=red
+
+" Evil
+highlight ColorColumn ctermbg=red ctermfg=blue
+" exec 'set colorcolumn=' . join(range(2,80,3), ',')
 " }}}
+" Abbreviations: {{{
+iabbrev @@ ericg@arty-web-design.com
+iabbrev adn and
+iabbrev tehn then
+iabbrev waht what
+cabbrev h vert h
+" Abbreviations: }}}
+" AutoCommands: {{{
+au BufRead * normal zM
+" Custom AutoCommands: {{{
+" Fold all markers before loading file
+" autocmd BufWritePre,BufRead *.py :call VimFold()
 
-" VimFold autocmd {{{
-function! VimFold()
-	setl fdm=marker
-	norm! zM
-endfunction
+" Move from Insert Mode to Normal Mode
+" au CursorHoldI * stopinsert
 
-augroup BGHighlight
-	autocmd!
-	autocmd BufReadPre,FileReadPre .vimrc :call VimFold()
-	autocmd BufWritePost .vimrc so % | AirlineRefresh | :call VimFold()
-	autocmd InsertEnter * set cursorline
-	autocmd InsertLeave * set nocursorline
+" Highlight Column 80 when in Insert mode
+" au CursorMoved,CursorMovedI,InsertLeave * call Col80()
+
+" Highlight Variable
+"autocmd CursorMoved * silent! execute printf('match IncSearch /\<%s\>/', expand('<cword>'))
+" Custom AutoCommands: }}}
+" Show Trailing Whitespace {{{
+" Highlight trailing white space
+" http://vim.wikia.com/wiki/highlight_unwanted_spaces
+match extrawhitespace /\s\+$/
+autocmd BufWinEnter * match extrawhitespace /\s\+$/
+autocmd InsertEnter * match extrawhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match extrawhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+" }}}
+augroup BGHighlight " {{{
+    autocmd!
+    autocmd BufReadPre,FileReadPre .vimrc :call VimFold()
+    autocmd BufWritePost .vimrc so % | AirlineRefresh | :call VimFold()
+    autocmd InsertEnter * set cursorline
+    autocmd InsertLeave * set nocursorline
 augroup END
-
 " }}}
-
-" PHP Syntax Folder, Change Leaders {{{
-
-" PHP Syntax Folder
-let php_folder=1
-
-" Check Syntax of php file
-noremap <F5> :!php -l %<CR>
-
-" Change map leader
-let mapleader=","
-
-" Change map local leader
-let maplocalleader = "\\"
+augroup NoSimultaneousEdits " {{{
+    autocmd!
+    autocmd SwapExists * let v:swapchoice = 'o'
+    autocmd SwapExists * echomsg ErrorMsg
+    autocmd SwapExists * echo 'Duplicate edit session (readonly)'
+    autocmd SwapExists * echohl None
+    autocmd SwapExists * sleep 2
+augroup END
 " }}}
+" AutoCommands: }}}
 
-" Custom Variables: Auto-Pairs / Airline / AG / YMC {{{
+" Custom Variables For Plugins: {{{
+" Custom Variables: AG {{{
+" Easy Grep Default Settings
+let g:EasyGrepRoot = "search:.git,.hg,.svn"
+let g:EasyGrepRecursive = 1
+let g:EasyGrepFilesToExclude='*.swp,*~,*.md'
+let g:EasyGrepIgnoreCase=0
+" }}}
+" Custom Variables: Airline {{{
+" Makes airline statusbar work properly with uft-8 chars
+let g:airline_powerline_fonts = 1
 
+" Shortened Mode Map
+let g:airline_mode_map = {
+            \ '__' : '-',
+            \ 'n'  : 'N',
+            \ 'i'  : 'I',
+            \ 'R'  : 'R',
+            \ 'c'  : 'C',
+            \ 'v'  : 'V',
+            \ 'V'  : 'V',
+            \ '' : 'V',
+            \ 's'  : 'S',
+            \ 'S'  : 'S',
+            \ '' : 'S',
+            \ }
+" }}}
+" Custom Variables: Auto-Pairs {{{
 " Syntasic Basic Sets
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+
+" NOTE: This is giving me errors. Not sure why.
+" I think because I removed syntastic
+
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" END: NOTE
 
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_python_checkers = ['python3']
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " AutoPairs: Disable annoying "jump" when trying to type close braces
 let g:AutoPairsMultilineClose = 0
+" }}}
+" Custom Variables: Netrw {{{
+let g:netrw_liststyle = 2
+" }}}
+" Custom Variables: PHP Syntax Folder {{{
+let php_folder=1
+" }}}
+" Custom Variables: vim-tmux-runner {{{
+let g:VtrStripLeadingWhitespace = 0
+let g:VtrClearEmptyLines = 0
+let g:VtrAppendNewline = 1
+let g:VtrUseVtrMaps = 1
+" }}}
+" Custom Variables: Startify {{{
 
-" Makes airline statusbar work properly with uft-8 chars
-let g:airline_powerline_fonts = 1
+" Startify skip list
+let g:startify_skiplist = [ $HOME . '/.vimrc', $HOME . '/vimrc/*' ]
 
-" Shortened Mode Map
-let g:airline_mode_map = {
-			\ '__' : '-',
-			\ 'n'  : 'N',
-			\ 'i'  : 'I',
-			\ 'R'  : 'R',
-			\ 'c'  : 'C',
-			\ 'v'  : 'V',
-			\ 'V'  : 'V',
-			\ '' : 'V',
-			\ 's'  : 'S',
-			\ 'S'  : 'S',
-			\ '' : 'S',
-			\ }
+" Cool ASCII
+let g:startify_custom_header = [
+            \ "                       ___",
+            \ "          ___....-----'---'-----....___",
+            \ "     =======================================",
+            \ "           ___'---..._______...---'___",
+            \ "          (___)      _|_|_|_      (___)",
+            \ "             \\____.-'_.---._'-.____/",
+            \ "              cccc'.__'---'__.'cccc",
+            \ "                      ccccc",
+            \ "               _____       _",
+            \ "              |  _  | ___ | |_  _ _",
+            \ "              |     ||  _||  _|| | |",
+            \ "              |__|__||_|  |_|  |_  |",
+            \ "                               |___|",
+            \ ]
 
-" Easy Grep Default Settings
-let g:EasyGrepRoot = "search:.git,.hg,.svn"
-let g:EasyGrepRecursive = 1
-let g:EasyGrepFilesToExclude='*.swp,*~,*.md'
-let g:EasyGrepIgnoreCase=0
+" let g:startify_custom_footer = map(split(system('fortune | cowsay -f tux'), '\n'), '"   ". v:val') + ['','']
 
+" Startify list order
+let g:startify_list_order = [['   Recent Files:'], 'files', ['   Bookmarks'], 'bookmarks']
+
+" Startify Number per List
+let g:startify_files_number = 9
+
+" }}}
+" Custom Variables: YCM {{{
 " YouCompleteMe and UltiSnips compatibility, with the helper of supertab
-let g:ycm_key_list_select_completion   = ['<tab>', '<C-j>', '<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<s-tab>', '<C-p>', '<Up>']
+let g:ycm_key_list_select_completion   = ['<tab>', '<C-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<s-tab>', '<C-k>', '<Up>']
 
 " Plugin 'SirVer/ultisnips'
 " This variable was <right>
@@ -175,474 +293,23 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 let g:ulti_expand_or_jump_res = 0
 function! <SID>ExpandSnippetOrReturn()
-	let snippet = UltiSnips#ExpandSnippetOrJump()
-	if g:ulti_expand_or_jump_res > 0
-		return snippet
-	else
-		return "\<CR>"
-	endif
+    let snippet = UltiSnips#ExpandSnippetOrJump()
+    if g:ulti_expand_or_jump_res > 0
+        return snippet
+    else
+        return "\<CR>"
+    endif
 endfunction
 inoremap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "\<CR>"
 " }}}
+" Custom Variables For Plugins: }}}
 
-" Startify Custom Settings {{{
-
-" Startify skip list
-let g:startify_skiplist = [ $HOME . '/.vimrc', $HOME . '/vimrc/*' ]
-
-" Cool ASCII
-let g:startify_custom_header = [
-			\ "                       ___",
-			\ "          ___....-----'---'-----....___",
-			\ "     =======================================",
-			\ "           ___'---..._______...---'___",
-			\ "          (___)      _|_|_|_      (___)",
-			\ "             \\____.-'_.---._'-.____/",
-			\ "              cccc'.__'---'__.'cccc",
-			\ "                      ccccc",
-			\ "               _____       _",
-			\ "              |  _  | ___ | |_  _ _",
-			\ "              |     ||  _||  _|| | |",
-			\ "              |__|__||_|  |_|  |_  |",
-			\ "                               |___|",
-			\ ]
-
-" let g:startify_custom_footer = map(split(system('fortune | cowsay -f tux'), '\n'), '"   ". v:val') + ['','']
-
-" Startify list order
-let g:startify_list_order = [['   Recent Files:'], 'files', ['   Bookmarks'], 'bookmarks']
-
-" Startify Number per List
-let g:startify_files_number = 15
-
+" Import: Mapping, Functions, Sensitive {{{
+let mapleader="\<Space>"
+let maplocalleader = "\\"
+source ~/vimrc/KeyMapping.vim
+source ~/vimrc/LeaderMapping.vim
+source ~/vimrc/Functions.vim
+source ~/vimrc/Sensitive.vim
+source ~/vimrc/concatonate.vim
 " }}}
-
-" Color Scheme {{{
-
-" Set Arty Theme
-syntax enable
-colorscheme ArtyFirst
-let g:airline_theme='bubblegum'
-" colorscheme brogrammer
-
-" Search highlight
-hi Search ctermfg=235 ctermbg=green
-
-" Special color changes
-hi Normal ctermbg=none
-hi Comment ctermfg=11 cterm=bold
-
-" Cursor Line
-hi CursorLine cterm=bold ctermbg=52 ctermfg=231
-hi CursorColumn ctermbg=29 ctermfg=231
-
-" Current line
-hi CursorLineNR ctermfg=white ctermbg=red cterm=bold
-
-" Other lines
-hi LineNR ctermfg=yellow ctermbg=none cterm=none
-
-" Folder
-hi Folded ctermfg=white ctermbg=34
-hi FoldColumn ctermfg=231 ctermbg=30 cterm=bold
-
-" Vertical Split
-hi VertSplit ctermfg=yellow ctermbg=yellow
-
-" The current tab file
-hi TabLineSel ctermfg=189 ctermbg=18 cterm=none cterm=bold
-
-" All other tab files
-hi TabLine ctermfg=17 ctermbg=23 cterm=bold
-
-" The tab empty space
-hi TabLineFill ctermfg=17 ctermbg=23 cterm=bold
-
-" Highlight search
-hi IncSearch ctermfg=189 ctermbg=22
-
-" Tabspace
-hi SpecialKey ctermfg=60 ctermbg=none cterm=none
-
-" WildMenu
-hi StatusLine ctermfg=16 ctermbg=190 cterm=none
-hi WildMenu ctermfg=231 ctermbg=34 cterm=bold
-
-" Override the diff colours
-highlight DiffAdd term=reverse cterm=NONE ctermbg=darkblue ctermfg=white
-highlight DiffDelete term=reverse cterm=NONE ctermbg=black ctermfg=blue
-highlight DiffChange term=reverse cterm=NONE ctermbg=darkgray ctermfg=white
-highlight DiffText term=reverse cterm=bold ctermbg=brown ctermfg=white
-
-" Evil
-"highlight ColorColumn ctermbg=red ctermfg=blue
-"exec 'set colorcolumn=' . join(range(2,80,3), ',')
-" }}}
-
-" Canvas Control {{{
-" -------------------
-
-" Switch colon/semicolon
-nnoremap ; :
-vnoremap ; :
-
-nnoremap : ;
-vnoremap : ;
-
-" Quicker Save/Quit
-nnoremap Z ZZ
-nnoremap Q ZQ
-
-" Right hand shift canvas control
-noremap L $zz
-noremap H ^zz
-noremap K 47kzb
-noremap J 47jzt
-
-" Quickly Add an Empty Line and go to it
-nnoremap <silent><A-k> :set paste<CR>m`O<esc>``:set nopaste<CR>k
-nnoremap <silent><A-j> :set paste<CR>m`o<esc>``:set nopaste<CR>j
-
-" Switch visual modes
-nnoremap V <C-V>
-nnoremap <c-v> v
-nnoremap v V
-
-" Move around windows
-nnoremap <c-j> <c-w>h
-nnoremap <c-l> <c-w>l
-nnoremap <c-i> <c-w><c-k><c-w>=<c-w>_
-nnoremap <c-k> <c-w><c-j><c-w>=<c-w>_
-
-" Move windows
-nnoremap <leader>h <c-w>H
-nnoremap <leader>j <c-w>J
-nnoremap <leader>k <c-w>K
-nnoremap <leader>l <c-w>L
-
-" Maximize/Restore split
-nnoremap <leader>x <c-w><bar><c-w>_
-nnoremap <leader>k <c-w>=<c-w>_
-
-" undo/redo
-nnoremap U <c-r>
-
-" Ctrl-R will go to insert mode and wait for register
-nnoremap <C-R> i<C-R>
-
-" When searching through blocks, center screen
-nnoremap { {zz
-nnoremap } }zz
-
-" Enables Alt Usage in gnome-terminal
-if has('nvim')
-	" do nothing
-else
-	let c='a'
-	while c <= 'z'
-		exec "set <A-".c.">=\e".c
-		exec "imap \e".c." <A-".c.">"
-		let c = nr2char(1+char2nr(c))
-		set ttimeout ttimeoutlen=5
-	endwhile
-endif
-
-" }}}
-
-" Copy/Paste {{{
-vnoremap <C-C> "+y
-inoremap <C-P> <esc>"+p
-" }}}
-
-" Leader Mapping {{{
-" ------------------
-
-" Unhighlight
-nnoremap <leader><space> :nohls<cr>
-
-" Adds ';' at the end of line
-nnoremap <leader>; $a;<esc>
-inoremap ;; <esc>$a;
-
-" Enter button returns even in normal mode
-nnoremap <return> i<return><esc>
-
-" Same for backspace
-nnoremap <bs> i<bs><esc>l
-
-" Finally for space
-nnoremap <space> i<space><esc>l
-
-" Open Startify on this window
-nnoremap <leader>o :Startify<cr>
-
-" Create new vertical split with startify
-nnoremap <leader>vs :vs<cr>:Startify<cr>
-
-" Open this folder
-" nnoremap <leader>vv :Vex<cr>
-
-" Open .vimrc
-nnoremap <leader>src :e $MYVIMRC<cr>
-nnoremap <leader>vsr :vsplit $MYVIMRC<cr>
-
-" Copy Word
-nmap <leader>cw Bv$<C-C>:echom "Copied to clipboard!"
-nmap <leader>c v$<C-C>
-
-" Get snippet file
-nnoremap <leader>snip :vsplit ~/vimrc/bundle/vim-snippets/snippets/%:e.snippets<cr>
-
-" Vimgrep hotkeys
-nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
-nnoremap <leader>find :call Search()<cr>
-nnoremap <leader>n :cnext<cr>
-nnoremap <leader>m :cprev<cr>
-
-" Save & Reload
-nnoremap <leader>s :w<cr>
-noremap <leader>' :so $MYVIMRC<cr>
-
-" Quick indent in Visual Mode
-vnoremap > >gv
-vnoremap < <gv
-
-" Select Word
-nnoremap <leader>sw viw
-
-" Select Sentence
-nnoremap <leader>90 (v)
-
-" Select Block
-nnoremap <leader>[] {v}
-
-" Toggles Cursor
-nnoremap <leader>cur :set cursorcolumn!<cr>
-
-" Toggles Spell
-nnoremap <silent> <leader>sp :set spell!<CR>
-
-" Set foldmethod to marker
-nnoremap <leader>fm :set foldmethod=marker<cr>za
-
-" Fetch variable and its value
-nnoremap <leader>cvar "vdwdw"rd$dd
-
-" Search and paste value fetched
-nnoremap <leader>pvar /v<del><cr>viw"rp
-
-" Faster variable value fetching
-nnoremap <leader>cv "vdwdw"rd$dd/<C-r>v<del><cr>viw"rp
-nnoremap <leader>pv nviw"rp
-" }}}
-
-" Show Extra Whitespace {{{
-" Highlight trailing white space
-" http://vim.wikia.com/wiki/highlight_unwanted_spaces
-highlight extrawhitespace ctermbg=red guibg=red
-match extrawhitespace /\s\+$/
-autocmd BufWinEnter * match extrawhitespace /\s\+$/
-autocmd InsertEnter * match extrawhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match extrawhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
-
-" Highlight Variable
-"autocmd CursorMoved * silent! execute printf('match IncSearch /\<%s\>/', expand('<cword>'))
-
-" }}}
-
-" Abbreviations {{{
-iabbrev waht what
-iabbrev tehn then
-iabbrev adn and
-
-iabbrev @@ ericg@arty-web-design.com
-" }}}
-
-" Open any file with pre-existing swapfile {{{
-augroup NoSimultaneousEdits
-	autocmd!
-	autocmd SwapExists * let v:swapchoice = 'o'
-	autocmd SwapExists * echomsg ErrorMsg
-	autocmd SwapExists * echo 'Duplicate edit session (readonly)'
-	autocmd SwapExists * echohl None
-	autocmd SwapExists * sleep 2
-augroup END
-" }}}
-
-" FTP Functions & Mapping {{{
-
-" Open the Remote File On Vertical Split
-nnoremap <leader>vf :call VerticalFTP()<cr>
-
-" Do Difference of FTP file
-nnoremap <leader>df :call DiffFTP()<cr><c-w>hgg]c
-
-" Saves both files and returns to local
-nnoremap <leader>ds :w<cr><C-W>l :w<cr><C-W>h
-
-" Saves current file and also saves directly to FTP
-nnoremap <leader>DS :w<cr> :call SaveFTP()<cr>
-
-function! Search()
-	let file = GetPaths()
-	if type(file) == 4 && has_key(file, 'folder')
-		execute ":Ag " . expand("<c-tags>") . " " . file.folder
-	else
-		echom "No Local Folder Found."
-	endif
-endfunction
-
-function! SaveFTP()
-	let file = GetPaths()
-	execute "Nwrite " . file.ftp . expand('%')
-endfunction
-
-function! VerticalFTP()
-	let file = GetPaths()
-	execute "vs " . file.ftp . expand('%')
-endfunction
-
-function! DiffFTP()
-	let file = GetPaths()
-	execute "diffsplit " . file.ftp . expand('%')
-endfunction
-
-function! GetPaths()
-	" Go to this file's path
-	execute "cd " expand("%:p:h")
-	" Split the path into a list
-	let path = split(expand('%:p:h'), '/')
-	" We know that our path is in /home/Public/... so path must have at least 3 values
-	if len(path) > 2
-		if path[2] == 'Public'
-			" We instance each site in list
-			for site in g:arty_ftp_sites
-				" Do we have a local folder set?
-				if type(site) == 4 && site.local_folder == path[3]
-					let ftp = site.ftp
-					let subf = join(path[4:], '/')
-					if !empty(subf)
-						let ftp .= subf . '/'
-					endif
-					let git = ""
-					if exists('site.git_folder')
-						" Comparison statement and return the paths
-						let max = len(split(site.git_folder, '/')) + 2
-						if site.git_folder == join(path[3:max], '/')
-							let git = '/' . join(path[:max], '/')
-						endif
-					endif
-					let folder = join(path[:3], '/')
-					return {'ftp' : ftp, 'git' : git, 'folder' : folder}
-				endif
-			endfor
-		endif
-	endif
-endfunction
-
-" END }}}
-
-" Function & Mapping: SwitchWord() {{{
-nnoremap <leader>ml :call SwitchWord('right')<cr>
-nnoremap <leader>mh :call SwitchWord('left')<cr>
-
-function! SwitchWord(position)
-	if a:position == 'right'
-		execute "normal! dawf ph"
-	elseif a:position == 'left'
-		execute "normal! dawBPh"
-	endif
-	echo "Word moved to the " . a:position
-endfunction
-" }}}
-" Function & Mapping: HLNext() {{{
-nnoremap <silent> n   n:call HLNext(0.4)<cr>
-nnoremap <silent> N   N:call HLNext(0.4)<cr>
-
-" briefly hide everything except the match
-function! HLNext (blinktime)
-	highlight BlackOnBlack ctermfg=black term=none
-	highlight WhiteOnRed ctermfg=white ctermbg=red
-	let [bufnum, lnum, col, off]  = getpos('.')
-	let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-	let hide_pat = '\%<'.lnum.'l.'
-				\ . '\|'
-				\ . '\%'.lnum.'l\%<'.col.'v.'
-				\ . '\|'
-				\ . '\%'.lnum.'l\%>'.(col+matchlen-1).'v.'
-				\ . '\|'
-				\ . '\%>'.lnum.'l.'
-	let target_pat = '\c\%#\%('.@/.'\)'
-	let ring = matchadd('BlackOnBlack', hide_pat, 101)
-	let ring1= matchadd('WhiteOnRed', target_pat, 101)
-	redraw
-	exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-	call matchdelete(ring)
-	call matchdelete(ring1)
-	redraw
-endfunction
-" }}}
-" Function & Mapping: Replace() {{{
-noremap <leader>r :call Replace()<CR>
-
-function! Replace()
-	let s:word = input("Replace " . expand('<cword>') . " with: ")
-	:execute 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge'
-	:unlet! s:word
-endfunction
-" }}}
-" Function & Mapping: HandleURL() {{{
-function! HandleURL()
-	let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;]*')
-	echo s:uri
-	if s:uri != ""
-		exec "!gnome-open '".s:uri."'"
-	else
-		echo "No URI found in line."
-	endif
-endfunction
-
-noremap <leader>u :call HandleURL()<cr>
-" }}}
-" Function & Mapping: SpaceTabRetab() {{{
-
-" Trim white spaces, tab page, retab
-nnoremap <leader>tab :call SpaceTabRetab()<cr>
-
-function! ShowSpaces(...)
-	let @/='\v(\s+$)|( +\ze\t)'
-	let oldhlsearch=&hlsearch
-	if !a:0
-		let &hlsearch=!&hlsearch
-	else
-		let &hlsearch=a:1
-	end
-	return oldhlsearch
-endfunction
-
-function! TrimSpaces() range
-	let oldhlsearch=ShowSpaces(1)
-	execute a:firstline.",".a:lastline."substitute ///gec"
-	let &hlsearch=oldhlsearch
-endfunction
-
-command! -bar -nargs=? ShowSpaces call ShowSpaces(<args>)
-command! -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
-
-" Mark line
-" Tab the whole file
-" Trim white extra white spaces at EOL
-" Substitutes " = " with " = "
-" Substitutes "	" with "	"
-" Go Back to marked line
-function! SpaceTabRetab()
-	let line = line(".")
-	normal gg=G
-	exec "TrimSpaces"
-	exec "%s/\t=\t/ = "
-	exec "%s/\t /\t"
-	exec "normal! " . line . "G"
-endfunction
-" }}}
-" <C-S-J> try this later
