@@ -66,7 +66,7 @@ Leader Mapping
  * `src` Open .vimrc
  * `tab` Retabs the entire pane
  * `u` Open URI in chrome
- * `v` Open Startify [Default]
+ * `v` Open Startify [Defaul]
  * `vF` Open FZF
  * `vf` Open Functions.vim
  * `vh` Open help of <C-WORD>
