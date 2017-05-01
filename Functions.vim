@@ -12,10 +12,12 @@ function! PutPlugins() " {{{
     :put =line
     /Leader Mapping
     normal! 2j0d}k
+    let line = []
     for l in g:leader
-        let line = ' * `' . l[0] . '` ' . l[1]
-        :put =line
+        :call add(line, ' * `' . l[0] . '` ' . l[1])
     endfor
+    :call sort(line)
+    :put =line
     normal! ZZ
 endfunction
 " }}}"

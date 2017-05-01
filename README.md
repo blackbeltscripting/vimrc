@@ -52,12 +52,16 @@ Plugins
 
 Leader Mapping
 --------------
- * `<space>` Unhighlight Search word
- * `{` Make vim fold around block and closes it
  * `;` Adds semicolon at EOL
+ * `<space>` Unhighlight Search word
  * `c` Saves, then sends command to tmux
  * `cm` Sends make command to runner and focuses the pane
  * `conc` Concatonates inside parentheses using '.' delimiter
+ * `h` Resize Split to the left
+ * `j` Maximize Splits
+ * `k` Restore Splits
+ * `l` Resize Split to the right
+ * `ml` Move word to the right
  * `ml` Move word to the right
  * `q` Opens this file and dumps macro at reg q
  * `s` Saves file
@@ -65,15 +69,23 @@ Leader Mapping
  * `soz` sources .vimrc and closes
  * `src` Open .vimrc
  * `tab` Retabs the entire pane
+ * `tl` Toggle relativenumber
+ * `ts` Toggle spell
+ * `tw` Toggle wrap
  * `u` Open URI in chrome
- * `v` Open Startify [Defaul]
  * `vF` Open FZF
+ * `v` Open Startify [Defaul]
  * `vf` Open Functions.vim
  * `vh` Open help of <C-WORD>
  * `vk` Open KeyMapping.vim
  * `vl` Open LeaderMapping.vim
  * `vp` Open Plugins.vim
  * `vs` Open .vimrc
+ * `wh` Swap Window Left
+ * `wj` Swap Window Down
+ * `wk` Swap Window Up
+ * `wl` Swap Window Right
+ * `{` Make vim fold around block and closes it
 
 
 INSTALL

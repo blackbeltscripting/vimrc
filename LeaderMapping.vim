@@ -26,19 +26,24 @@ nnoremap <leader>conc :call Concatonate()<cr>
 " }}}
 " [h/j/k/l]: Resize Splits [left/maximize/restore/right] {{{
 let l = ['h', "Resize Split to the left"] " {{{
+:call add(g:leader, l)
 nnoremap <leader>h <c-w>10<
 " }}}
 let l = ['j', "Maximize Splits"] " {{{
+:call add(g:leader, l)
 nnoremap <leader>j <c-w><bar><c-w>_
 " }}}
 let l = ['k', "Restore Splits"] " {{{
+:call add(g:leader, l)
 nnoremap <leader>k <c-w>=<c-w>_
 " }}}
 let l = ['l', "Resize Split to the right"] " {{{
+:call add(g:leader, l)
 nnoremap <leader>l <c-w>10>
 " }}}
 " }}}
 let l = ['ml', "Move word to the right"] " {{{
+:call add(g:leader, l)
 :call add(g:leader, l)
 nnoremap <leader>ml :call SwitchWord('right')<cr>
 " }}}
@@ -64,12 +69,15 @@ nnoremap <leader>src :e $MYVIMRC<cr>
 " }}}
 " t[l/s/w]: Toggles on/off [line/spell/wrap] {{{
 let l = ['tl', "Toggle relativenumber"] " {{{
+:call add(g:leader, l)
 nnoremap <leader>tl :set number relativenumber!<cr>
 " }}}
 let l = ['ts', "Toggle spell"] " {{{
+:call add(g:leader, l)
 nnoremap <leader>ts :set spell!<CR>
 " }}}
 let l = ['tw', "Toggle wrap"] " {{{
+:call add(g:leader, l)
 nnoremap <leader>tw :set nowrap!<cr>
 " }}}
 " }}}
@@ -117,15 +125,19 @@ nnoremap <leader>vs :vsplit $MYVIMRC<cr>
 " }}}
 " w[h/j/k/l]: Swap Window [left/down/up/right] {{{
 let l = ['wh', "Swap Window Left"] " {{{
+:call add(g:leader, l)
 nnoremap <leader>wh <c-w>H
 " }}}
 let l = ['wj', "Swap Window Down"] " {{{
+:call add(g:leader, l)
 nnoremap <leader>wj <c-w>J
 " }}}
 let l = ['wk', "Swap Window Up"] " {{{
+:call add(g:leader, l)
 nnoremap <leader>wk <c-w>K
 " }}}
 let l = ['wl', "Swap Window Right"] " {{{
+:call add(g:leader, l)
 nnoremap <leader>wl <c-w>L
 " }}}
 " }}}
