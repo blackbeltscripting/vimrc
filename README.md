@@ -6,13 +6,13 @@ Description
 -----------
 Most of my configuration is stored here.  Only highly sensitive work will not be stored online.
 
-This WAS originally based on brooky-yen's vimrc (https://github.com/brooky-yen/vimrc)
+This readme (most likely) contains an up-to-date list of all Plugins, Vim Functions, and Leader Mappings.
 
-Then was changed by hightman's vimrc (https://github.com/hightman/vimrc)
+If it doesn't, then the `:call PopulateReadme()` command will populate this readme file.
 
-Now adapted for my work.
+So changing anything below this line is inadvisable.
 
-Author: Eric Ghiraldello
+Enjoy! \m/(~.^)\m/
 
 
 Plugins
@@ -111,33 +111,3 @@ Leader Mapping
  * `{` Make vim fold around block and closes it
 
 
-
-INSTALL
--------
-
-1. clone this vimrc
-    ```
-    git clone https://github.com/blackbeltscripting/vimrc.git
-    ```
-
-2. (Don't...)Run the install script(yet)
-    ```
-    sh vimrc/install.sh
-    ```
-
-3. Finished! Enjoy it :-)
-
-
-Conventions
------------
-
-* Backup enabled, the BAK file is saved as `~/.vim/bak/$NAME~`
-
-* Swap file is moved to `~/.vim/swap/$NAME.swp`
-
-* Undo Directors is moved to `~/.vim/undodir/`
-
-* Shourtcuts, the `<leader>` key is `,`
-  - `,s` Saves & sources
-  - `,r` Replace the current word in all opened files
-  - `,<space>` Clear search highlighting
