@@ -74,6 +74,7 @@ Insert No Remap:
 ----------------
  * `inoremap <C-A>` While in insert mode, press `<C-A>` and it will do mathematics. Ex: `5+3<C-A>`
  * `inoremap <C-P>` Pastes from clipboard
+
 Normal No Remap:
 ----------------
  * `nnoremap *` Don't move away when you hit the star key
