@@ -14,7 +14,7 @@ nnoremap <leader>; $a;<esc>
 " }}}
 let l = [';', "In visual mode, it will do `:@\"`"] " {{{
 :call add(g:leader, l)
-nnoremap <leader>; $a;<esc>
+vnoremap <leader>; y:@"<cr>
 " }}}
 let l = ['c', "Saves, then sends command to tmux"] " {{{
 :call add(g:leader, l)
