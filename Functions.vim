@@ -23,7 +23,7 @@ function! PopulateReadme()
     call sort(line)
     silent! put=line
     /Key Mapping
-    normal! 2j0d}k
+    normal! 2j0d3}k
     vs $HOME/vimrc/KeyMapping.vim
     normal! }jv}k"byZQ
     let lines = split(@b, '\n')
@@ -32,6 +32,8 @@ function! PopulateReadme()
         if l[0] == '"'
             if len(l[2:-5]) >  0
                 call add(line, l[2:-5])
+            else
+                call add(line, '')
             endif
         else
             let s = split(l, "| ")
@@ -40,7 +42,7 @@ function! PopulateReadme()
             call add(line, ll)
         endif
     endfor
-    silent! put=line
+    silent! put=line[:-3]
     /Leader Mapping
     normal! 2j0d}k
     let line = []

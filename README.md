@@ -4,9 +4,7 @@ Description
 -----------
 Most of my configuration is stored here.  Only highly sensitive work will not be stored online.
 
-This readme (most likely) contains an up-to-date list of all Plug-ins, Vim Functions, and Key and Leader Maps.
-
-Enjoy! \m/(~.^)\m/
+This readme (most likely) contains an up-to-date list of all Plug-ins, Funcs, and Key and Leader Maps.
 
 
 Plugins
@@ -96,6 +94,7 @@ Normal No Remap:
  * `nnoremap zo` Moves cursor to top of screen as you open vimfold
  * `nnoremap {` When searching through blocks, center screen
  * `nnoremap }` When searching through blocks, center screen
+
 No_Remap:
 ---------
  * `noremap <F5>` Toggles Undo Tree
