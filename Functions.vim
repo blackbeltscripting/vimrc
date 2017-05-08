@@ -1,5 +1,6 @@
 " Functions:
 let g:functions = []
+
 let l = ['PopulateReadme', "Gets all Plugins, Functions, and Leader Maps and places them inside the README file."] " {{{
 :call add(g:functions, l)
 function! PopulateReadme()
@@ -12,7 +13,6 @@ function! PopulateReadme()
         call add(line, ' * [' . p[1] . '](https://github.com/' . plug[0] . ')')
     endfor
     call sort(line)
-    echo 'Successfully added ' . len(line) . ' Plugins to file.'
     silent! put=line
     /Functions
     normal! 2j0d}k
@@ -21,16 +21,25 @@ function! PopulateReadme()
         call add(line, ' * `' . p[0] . '()` ' . p[1])
     endfor
     call sort(line)
-    echo 'Successfully added ' . len(line) . ' Functions to file.'
     silent! put=line
     /Key Mapping
     normal! 2j0d}k
+    vs $HOME/vimrc/KeyMapping.vim
+    normal! }jv}k"byZQ
+    let lines = split(@b, '\n')
     let line = []
-    for p in g:key
-        call add(line, ' * `' . p[0] . ' ' . p[1] . '` ' .p[2])
+    for l in lines
+        if l[0] == '"'
+            if len(l[2:-5]) >  0
+                call add(line, l[2:-5])
+            endif
+        else
+            let s = split(l, "| ")
+            let mapping = split(s[0], " ")
+            let ll = ' * `' . join(mapping[0:1], ' ') . '` ' . s[1][2:]
+            call add(line, ll)
+        endif
     endfor
-    call sort(line)
-    echo 'Successfully added ' . len(line) . ' Key Mapping to file.'
     silent! put=line
     /Leader Mapping
     normal! 2j0d}k
@@ -39,8 +48,7 @@ function! PopulateReadme()
         call add(line, ' * `' . p[0] . '` ' . p[1])
     endfor
     call sort(line)
-    echo 'Successfully added ' . len(line) . ' Leader Mapping to file.'
-    silent put=line
+    silent! put=line
     normal! ZZ
 endfunction
 " }}}"
