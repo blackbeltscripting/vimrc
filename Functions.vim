@@ -3,32 +3,44 @@ let g:functions = []
 let l = ['PopulateReadme', "Gets all Plugins, Functions, and Leader Maps and places them inside the README file."] " {{{
 :call add(g:functions, l)
 function! PopulateReadme()
-    :vs $HOME/vimrc/README.md
+    vs $HOME/vimrc/README.md
     /Plugins
     normal! 2j0d}k
     let line = []
     for plug in g:plugins
         let p = split(plug[0], '/')
-        :call add(line, ' * [' . p[1] . '](https://github.com/' . plug[0] . ')')
+        call add(line, ' * [' . p[1] . '](https://github.com/' . plug[0] . ')')
     endfor
-    :call sort(line)
-    :put =line
+    call sort(line)
+    echo 'Successfully added ' . len(line) . ' Plugins to file.'
+    silent! put=line
     /Functions
     normal! 2j0d}k
     let line = []
     for p in g:functions
-        :call add(line, ' * `' . p[0] . '()` ' . p[1])
+        call add(line, ' * `' . p[0] . '()` ' . p[1])
     endfor
-    :call sort(line)
-    :put =line
+    call sort(line)
+    echo 'Successfully added ' . len(line) . ' Functions to file.'
+    silent put=line
+    /Key Mapping
+    normal! 2j0d}k
+    let line = []
+    for p in g:key
+        call add(line, ' * `' . p[0] . ' ' . p[1] . '` ' .p[2])
+    endfor
+    call sort(line)
+    echo 'Successfully added ' . len(line) . ' Key Mapping to file.'
+    silent put=line
     /Leader Mapping
     normal! 2j0d}k
     let line = []
     for p in g:leader
-        :call add(line, ' * `' . p[0] . '` ' . p[1])
+        call add(line, ' * `' . p[0] . '` ' . p[1])
     endfor
-    :call sort(line)
-    :put =line
+    call sort(line)
+    echo 'Successfully added ' . len(line) . ' Leader Mapping to file.'
+    silent put=line
     normal! ZZ
 endfunction
 " }}}"
@@ -106,7 +118,7 @@ let l = ['Install', "Upgrades Plug Install, Does Plug Install, Populate Readme"]
 :call add(g:functions, l)
 function! Install()
     :PlugUpgrade
-    :PlugInstall
+    :PlugUpdate
     :call PopulateReadme()
 endfunction
 

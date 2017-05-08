@@ -48,11 +48,11 @@ let l = ['mh', "Move word to the left"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>mh :call SwitchWord('left')<cr>
 " }}}
-let l = ['o', "Open Startify on this window"] " {{{
+let l = ['o', "Open Startify"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>o :Startify<cr>
 " }}}
-let l = ['q', "Opens this file and dumps macro at reg q"] " {{{
+let l = ['q', "Vertical split LeaderMapping.vim and dumps macro at reg q"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>q :vsplit ~/vimrc/LeaderMapping.vim<cr>zMjzoztonnoremap normal! <esc>"vq0ea
 " }}}
@@ -92,35 +92,35 @@ let l = ['u', "Open URI in chrome"] " {{{
 :call add(g:leader, l)
 noremap <leader>u :call HandleURL()<cr>
 " }}}
-let l = ['v', "Open Startify [Defaul]" ] " {{{
+let l = ['v', "Vertical Split Startify [Default]" ] " {{{
 :call add(g:leader, l)
 nnoremap <leader>v :vs<cr>:Startify<cr>
 " }}}
-let l = ['vF', "Open FZF"] " {{{
+let l = ['vF', "Vertical Split FZF"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>vF :vs<cr>:FZF<cr>
 " }}}
-let l = ['vf', "Open Functions.vim"] " {{{
+let l = ['vf', "Vertical Split Functions.vim"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>vf :vsplit ~/vimrc/Functions.vim<cr>zM
 " }}}
-let l = ['vh', "Open help of <C-WORD>"] " {{{
+let l = ['vh', "Vertical Split help of current word in pointer"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>vh *:vert h <C-R>/<cr>
 " }}}
-let l = ['vk', "Open KeyMapping.vim"] " {{{
+let l = ['vk', "Vertical Split KeyMapping.vim"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>vk :vsplit ~/vimrc/KeyMapping.vim<cr>zM
 " }}}
-let l = ['vl', "Open LeaderMapping.vim"] " {{{
+let l = ['vl', "Vertical Split LeaderMapping.vim"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>vl :vsplit ~/vimrc/LeaderMapping.vim<cr>zM
 " }}}
-let l = ['vp', "Open Plugins.vim"] " {{{
+let l = ['vp', "Vertical Split Plugins.vim"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>vp :vsplit ~/vimrc/Plugins.vim<cr>zo
 " }}}
-let l = ['vs', "Open .vimrc"] " {{{
+let l = ['vs', "Vertical Split .vimrc"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>vs :vsplit $MYVIMRC<cr>
 " }}}

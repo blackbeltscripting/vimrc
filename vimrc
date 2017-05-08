@@ -246,6 +246,9 @@ let g:netrw_liststyle = 2
 " Custom Variables: PHP Syntax Folder {{{
 let php_folder=1
 " }}}
+" Custom Variables: Python-mode {{{
+let g:pymode_python = 'python3'
+" }}}
 " Custom Variables: vim-tmux-runner {{{
 let g:VtrStripLeadingWhitespace = 0
 let g:VtrClearEmptyLines = 0

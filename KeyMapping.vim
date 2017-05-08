@@ -1,24 +1,32 @@
 " Key Mapping:
-" Quick Save/Close {{{
-" Save and Close
-nnoremap Q ZQ
-" Close Without Saving
+let g:key = []
+
+let l = ['nno', 'Z', "Close with saving (ZQ)"] " {{{
+:call add(g:key, l)
 nnoremap Z ZZ
 " }}}
-" [i]<C-A>: Do Vim Math {{{;
+let l = ['ino', '<C-A>', "While in insert mode, press <C-A> and it will do mathematics. Ex: 5+3<C-A>"] " {{{
+:call add(g:key, l)
 ino <C-A> <C-O>yiW<End>=<C-R>=<C-R>0<CR>
 " }}}
-" Better Fold {{{
+let l = ['nno', 'zo', "Moves cursor to top of screen as you open vimfold"] " {{{
+:call add(g:key, l)
 nnoremap zo zozt
+" }}}
+let l = ['nno', 'zc', "Moves cursor to center of screen as you close vimfold"] " {{{
+:call add(g:key, l)
 nnoremap zc zczz
 " }}}
-" Redo {{{
+let l = ['nno', 'U', "Redo"] " {{{
+:call add(g:key, l)
 nnoremap U <c-r>
 " }}}
-" Leader is now ; so move ; to , {{{
+let l = ['nno', ',', "Repeat t/T/f/F"] " {{{
+:call add(g:key, l)
 nnoremap , ;
 " }}}
-" Don't Move when you hit the star key {{{
+let l = ['nno', '*', "Don't move away when you hit the star key"] " {{{
+:call add(g:key, l)
 nnoremap * *N
 " }}}
 " Ctrl-V will go to insert mode and wait for register to paste {{{
@@ -40,8 +48,12 @@ nnoremap <space> i<space><esc>l
 nnoremap <silent><A-k> :set paste<CR>m`O<esc>``:set nopaste<CR>
 nnoremap <silent><A-j> :set paste<CR>m`o<esc>``:set nopaste<CR>
 " }}}
-" Copy/Paste {{{
+let l = ['vno', '<C-C>', "Copies selection into system clipboard"] " {{{
+:call add(g:key, l)
 vnoremap <C-C> "+y
+" }}}
+let l = ['ino', '<C-P>', "Pastes from clipboard"] " {{{
+:call add(g:key, l)
 inoremap <C-P> <esc>"+p
 " }}}
 " Enables vim to use the Alt key through gnome-termial {{{

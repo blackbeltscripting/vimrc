@@ -16,6 +16,8 @@ let g:plugins = [
             \ ['mattn/emmet-vim'],
             \ ['mbbill/undotree'],
             \ ['mhinz/vim-startify'],
+            \ ['plasticboy/vim-markdown'],
+            \ ['python-mode/python-mode'],
             \ ['rking/ag.vim'],
             \ ['roosta/vim-srcery'],
             \ ['scrooloose/syntastic'],
