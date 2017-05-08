@@ -14,33 +14,33 @@ function! PopulateReadme()
     call sort(line)
     echo 'Successfully added ' . len(line) . ' Plugins to file.'
     silent! put=line
-    /Functions
-    normal! 2j0d}k
-    let line = []
-    for p in g:functions
-        call add(line, ' * `' . p[0] . '()` ' . p[1])
-    endfor
-    call sort(line)
-    echo 'Successfully added ' . len(line) . ' Functions to file.'
-    silent put=line
-    /Key Mapping
-    normal! 2j0d}k
-    let line = []
-    for p in g:key
-        call add(line, ' * `' . p[0] . ' ' . p[1] . '` ' .p[2])
-    endfor
-    call sort(line)
-    echo 'Successfully added ' . len(line) . ' Key Mapping to file.'
-    silent put=line
-    /Leader Mapping
-    normal! 2j0d}k
-    let line = []
-    for p in g:leader
-        call add(line, ' * `' . p[0] . '` ' . p[1])
-    endfor
-    call sort(line)
-    echo 'Successfully added ' . len(line) . ' Leader Mapping to file.'
-    silent put=line
+    " /Functions
+    " normal! 2j0d}k
+    " let line = []
+    " for p in g:functions
+    "     call add(line, ' * `' . p[0] . '()` ' . p[1])
+    " endfor
+    " call sort(line)
+    " echo 'Successfully added ' . len(line) . ' Functions to file.'
+    " silent put=line
+    " /Key Mapping
+    " normal! 2j0d}k
+    " let line = []
+    " for p in g:key
+    "     call add(line, ' * `' . p[0] . ' ' . p[1] . '` ' .p[2])
+    " endfor
+    " call sort(line)
+    " echo 'Successfully added ' . len(line) . ' Key Mapping to file.'
+    " silent put=line
+    " /Leader Mapping
+    " normal! 2j0d}k
+    " let line = []
+    " for p in g:leader
+    "     call add(line, ' * `' . p[0] . '` ' . p[1])
+    " endfor
+    " call sort(line)
+    " echo 'Successfully added ' . len(line) . ' Leader Mapping to file.'
+    " silent put=line
     normal! ZZ
 endfunction
 " }}}"

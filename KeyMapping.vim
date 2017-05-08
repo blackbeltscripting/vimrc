@@ -21,9 +21,12 @@ let l = ['nno', 'U', "Redo"] " {{{
 :call add(g:key, l)
 nnoremap U <c-r>
 " }}}
-let l = ['nno', ',', "Repeat t/T/f/F"] " {{{
+let l = ['nno', ':', "Repeat t/T/f/F"] " {{{
 :call add(g:key, l)
-nnoremap , ;
+nnoremap : ;
+nnoremap ; :
+vnoremap : ;
+vnoremap ; :
 " }}}
 let l = ['nno', '*', "Don't move away when you hit the star key"] " {{{
 :call add(g:key, l)
@@ -88,12 +91,6 @@ nnoremap v V
 vnoremap v <C-V>
 " Normal visual mode is 'V'
 nnoremap V v
-" }}}
-" Switch ;/: {{{
-nnoremap : ;
-nnoremap ; :
-vnoremap : ;
-vnoremap ; :
 " }}}
 " When searching through blocks, center screen {{{
 nnoremap { {zt

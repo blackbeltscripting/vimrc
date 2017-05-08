@@ -12,6 +12,10 @@ let l = [';', "Adds semicolon at EOL"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>; $a;<esc>
 " }}}
+let l = [';', "In visual mode, it will do `:@\"`"] " {{{
+:call add(g:leader, l)
+nnoremap <leader>; $a;<esc>
+" }}}
 let l = ['c', "Saves, then sends command to tmux"] " {{{
 :call add(g:leader, l)
 nnoremap <leader>c :w<cr>:VtrSendCommandToRunner<cr>:VtrFocusRunner<cr>

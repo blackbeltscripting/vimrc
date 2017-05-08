@@ -249,6 +249,9 @@ let php_folder=1
 " Custom Variables: Python-mode {{{
 let g:pymode_python = 'python3'
 " }}}
+" Custom Variables: vim-markdown {{{
+let g:vim_markdown_folding_disabled = 1
+" }}}
 " Custom Variables: vim-tmux-runner {{{
 let g:VtrStripLeadingWhitespace = 0
 let g:VtrClearEmptyLines = 0
@@ -312,10 +315,11 @@ inoremap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "
 
 " Import: Mapping, Functions, Sensitive {{{
 let mapleader="\<Space>"
-let maplocalleader = "\\"
+let maplocalleader = ",,"
 let filestosource = [
             \ 'KeyMapping.vim',
             \ 'LeaderMapping.vim',
+            \ 'LocalLeaderMapping.vim',
             \ 'Functions.vim',
             \ 'Sensitive.vim',
             \ 'concatonate.vim',
