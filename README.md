@@ -1,7 +1,5 @@
 My Vim Config Files
 ===================
-
-
 Description
 -----------
 Most of my configuration is stored here.  Only highly sensitive work will not be stored online.
@@ -12,7 +10,7 @@ Enjoy! \m/(~.^)\m/
 
 
 Plugins
--------
+=======
  * [ag.vim](https://github.com/rking/ag.vim)
  * [auto-pairs](https://github.com/jiangmiao/auto-pairs)
  * [ctrlp.vim](https://github.com/kien/ctrlp.vim)
@@ -49,7 +47,7 @@ Plugins
 
 
 Functions
----------
+=========
  * `Base64Decode()` Decodes a Base64 String and pastes result.
  * `Col80()` Fires a vertical line if cursor reaches over the 80th column.
  * `Concatonate()` Concatonates inside parentheses and pastes result.
@@ -71,7 +69,7 @@ Functions
 
 
 Key Mapping
------------
+===========
 Insert No Remap:
 ----------------
  * `inoremap <C-A>` While in insert mode, press `<C-A>` and it will do mathematics. Ex: `5+3<C-A>`
@@ -107,7 +105,7 @@ No_Remap:
 
 
 Leader Mapping
---------------
+==============
  * `;` Adds semicolon at EOL
  * `;` In visual mode, it will do `:@"`
  * `<space>` Unhighlight Search word
