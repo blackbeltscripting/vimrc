@@ -1,10 +1,14 @@
 My Vim Config Files
 ===================
+
+
 Description
------------
+===========
 Most of my configuration is stored here.  Only highly sensitive work will not be stored online.
 
-This readme (most likely) contains an up-to-date list of all Plug-ins, Funcs, and Key and Leader Maps.
+This readme (most likely) contains an up-to-date list of all Plug-ins, Vim Functions, and Key and Leader Maps.
+
+Enjoy! \m/(~.^)\m/
 
 
 Plugins
@@ -87,6 +91,7 @@ Normal No Remap:
  * `nnoremap <silent><A-j>` Alt-J/Alt-K
  * `nnoremap <silent><A-k>` Alt-J/Alt-K
  * `nnoremap <space>` Space button adds space in normal mode
+ * `nnoremap v` Pressing `v` now selects entire line.
  * `nnoremap U` Redo
  * `nnoremap Z` Close and save
  * `nnoremap Q` Close without saving
@@ -103,44 +108,112 @@ No_Remap:
  * `noremap K` Right hand shift canvas control
  * `noremap L` Right hand shift canvas control
 
+Visual No Remap:
+----------------
+ * `vnoremap :` Switch `:`/`;`
+ * `vnoremap ;` Switch `:`/`;`
+ * `vnoremap <` Quick indent in Visual Mode
+ * `vnoremap <C-C>` Copies selection into system clipboard
+ * `vnoremap v` Press `vv` to quickly get into Visual Block
+ * `vnoremap >` Quick indent in Visual Mode
+
+Normal No Remap:
+----------------
+ * `nnoremap *` Don't move away when you hit the star key
+ * `nnoremap :` Switch `:`/`;`
+ * `nnoremap ;` Switch `:`/`;`
+ * `nnoremap <bs>` Backspace button deletes even in normal mode
+ * `nnoremap <c-i>` Move around windows (Not Working)
+ * `nnoremap <c-j>` Move around windows (Not Working)
+ * `nnoremap <c-k>` Move around windows (Not Working)
+ * `nnoremap <c-l>` Move around windows (Not Working)
+ * `nnoremap <return>` Enter button returns even in normal mode
+ * `nnoremap <silent><A-j>` Alt-J/Alt-K
+ * `nnoremap <silent><A-k>` Alt-J/Alt-K
+ * `nnoremap <space>` Space button adds space in normal mode
+ * `nnoremap v` Pressing `v` now selects entire line.
+ * `nnoremap U` Redo
+ * `nnoremap Z` Close and save
+ * `nnoremap Q` Close without saving
+ * `nnoremap zc` Moves cursor to center of screen as you close vimfold
+ * `nnoremap zo` Moves cursor to top of screen as you open vimfold
+ * `nnoremap {` When searching through blocks, center screen
+ * `nnoremap }` When searching through blocks, center screen
+
+No_Remap:
+---------
+ * `noremap <F5>` Toggles Undo Tree
+ * `noremap H` Right hand shift canvas control
+ * `noremap J` Right hand shift canvas control
+ * `noremap K` Right hand shift canvas control
+ * `noremap L` Right hand shift canvas control
+
+Visual No Remap:
+----------------
+ * `vnoremap :` Switch `:`/`;`
+ * `vnoremap ;` Switch `:`/`;`
+ * `vnoremap <` Quick indent in Visual Mode
+ * `vnoremap <C-C>` Copies selection into system clipboard
+ * `vnoremap v` Press `vv` to quickly get into Visual Block
+ * `vnoremap >` Quick indent in Visual Mode
+
 
 Leader Mapping
 ==============
- * `;` Adds semicolon at EOL
- * `;` In visual mode, it will do `:@"`
- * `<space>` Unhighlight Search word
- * `c` Saves, then sends command to tmux
- * `cm` Sends make command to runner and focuses the pane
- * `conc` Concatonates inside parentheses using '.' delimiter
- * `h` Resize Split to the left
- * `j` Maximize Splits
- * `k` Restore Splits
- * `l` Resize Split to the right
- * `mh` Move word to the left
- * `ml` Move word to the right
- * `o` Open Startify
- * `q` Vertical split LeaderMapping.vim and dumps macro at reg q
- * `s` Saves file
- * `so` sources .vimrc
- * `soz` sources .vimrc and closes
- * `src` Open .vimrc
- * `tab` Retabs the entire pane
- * `tl` Toggle relativenumber
- * `ts` Toggle spell
- * `tw` Toggle wrap
- * `u` Open URI in chrome
- * `vF` Vertical Split FZF
- * `v` Vertical Split Startify [Default]
- * `vf` Vertical Split Functions.vim
- * `vh` Vertical Split help of current word in pointer
- * `vk` Vertical Split KeyMapping.vim
- * `vl` Vertical Split LeaderMapping.vim
- * `vp` Vertical Split Plugins.vim
- * `vs` Vertical Split .vimrc
- * `wh` Swap Window Left
- * `wj` Swap Window Down
- * `wk` Swap Window Up
- * `wl` Swap Window Right
- * `{` Make vim fold around block and closes it
+Normal No Remap:
+----------------
+ * `nnoremap <leader>;` Adds semicolon at EOL
+ * `nnoremap <leader><space>` Unhighlight Search word
+ * `nnoremap <leader>c` Saves, then sends command to tmux
+ * `nnoremap <leader>cm` Sends make command to runner and focuses the pane
+ * `nnoremap <leader>conc` Concatonates inside parentheses using '.' delimiter
+ * `nnoremap <leader>h` Resize Split to the left
+ * `nnoremap <leader>j` Maximize Splits
+ * `nnoremap <leader>k` Restore Splits
+ * `nnoremap <leader>l` Resize Split to the right
+ * `nnoremap <leader>mh` Move word to the left
+ * `nnoremap <leader>ml` Move word to the right
+ * `nnoremap <leader>o` Open Startify
+ * `nnoremap <leader>q` Vertical split LeaderMapping.vim and dumps macro at reg q
+ * `nnoremap <leader>s` Saves file
+ * `nnoremap <leader>src` Open .vimrc
+ * `nnoremap <leader>tab` Retabs the entire pane
+ * `nnoremap <leader>tl` Toggle relativenumber
+ * `nnoremap <leader>ts` Toggle spell
+ * `nnoremap <leader>tw` Toggle wrap
+ * `nnoremap <leader>v` Vertical Split Startify [Default]
+ * `nnoremap <leader>vF` Vertical Split FZF
+ * `nnoremap <leader>vf` Vertical Split Functions.vim
+ * `nnoremap <leader>vh` Vertical Split help of current word in pointer
+ * `nnoremap <leader>vk` Vertical Split KeyMapping.vim
+ * `nnoremap <leader>vl` Vertical Split LeaderMapping.vim
+ * `nnoremap <leader>vp` Vertical Split Plugins.vim
+ * `nnoremap <leader>vs` Vertical Split .vimrc
+ * `nnoremap <leader>wh` Swap Window Left
+ * `nnoremap <leader>wj` Swap Window Down
+ * `nnoremap <leader>wk` Swap Window Up
+ * `nnoremap <leader>wl` Swap Window Right
+ * `nnoremap <leader>ym` Yanks from mark `t` to mark `b`
+ * `nnoremap <leader>{` Make vim fold around block and closes it
+
+No_Remap:
+---------
+ * `noremap <leader>so` sources .vimrc
+ * `noremap <leader>soz` sources .vimrc and closes
+ * `noremap <leader>u` Open URI in chrome
+
+Visual No Remap:
+----------------
+ * `vnoremap <leader>;` In visual mode, it will do `:@\"`
+
+No_Remap:
+---------
+ * `noremap <leader>so` sources .vimrc
+ * `noremap <leader>soz` sources .vimrc and closes
+ * `noremap <leader>u` Open URI in chrome
+
+Visual No Remap:
+----------------
+ * `vnoremap <leader>;` In visual mode, it will do `:@\"`
 
 

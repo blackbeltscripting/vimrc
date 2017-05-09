@@ -22,10 +22,17 @@ function! PopulateReadme()
     endfor
     call sort(line)
     silent! put=line
-    /Key Mapping
-    normal! 2j0d3}k
-    vs $HOME/vimrc/KeyMapping.vim
-    normal! }jv}k"byZQ
+    normal! ZZ
+    call YankAndPutMapping('Key')
+    call YankAndPutMapping('Leader')
+endfunction
+" }}}"
+function! YankAndPutMapping(type)
+    vs $HOME/vimrc/README.md
+    call search(a:type . " Mapping", 'W')
+    normal! 2jma}kd'ak
+    execute ('vs $HOME/vimrc/' . a:type . 'Mapping.vim')
+    normal! }j"by}ZQ
     let lines = split(@b, '\n')
     let line = []
     for l in lines
@@ -42,18 +49,9 @@ function! PopulateReadme()
             call add(line, ll)
         endif
     endfor
-    silent! put=line[:-3]
-    /Leader Mapping
-    normal! 2j0d}k
-    let line = []
-    for p in g:leader
-        call add(line, ' * `' . p[0] . '` ' . p[1])
-    endfor
-    call sort(line)
-    silent! put=line
-    normal! ZZ
+    put=line
+    normal! ddZZ
 endfunction
-" }}}"
 let l = ['Col80', "Fires a vertical line if cursor reaches over the 80th column."] " {{{
 :call add(g:functions, l)
 function! Col80()

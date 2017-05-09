@@ -1,5 +1,6 @@
+" ============
 " Key Mapping:
-let g:key = []
+" ============
 
 " Insert No Remap: {{{
 " --------------------
@@ -20,6 +21,7 @@ nnoremap <return> i<return><esc>| " Enter button returns even in normal mode
 nnoremap <silent><A-j> :set paste<CR>m`o<esc>``:set nopaste<CR>| " Alt-J/Alt-K
 nnoremap <silent><A-k> :set paste<CR>m`O<esc>``:set nopaste<CR>| " Alt-J/Alt-K
 nnoremap <space> i<space><esc>l| " Space button adds space in normal mode
+nnoremap v V| " Pressing `v` now selects entire line.
 nnoremap U <c-r>| " Redo
 nnoremap Z ZZ| " Close and save
 nnoremap Q ZQ| " Close without saving
@@ -42,6 +44,7 @@ vnoremap : ;| " Switch `:`/`;`
 vnoremap ; :| " Switch `:`/`;`
 vnoremap < <gv| " Quick indent in Visual Mode
 vnoremap <C-C> "+y| " Copies selection into system clipboard
+vnoremap v <C-V>| " Press `vv` to quickly get into Visual Block
 vnoremap > >gv| " Quick indent in Visual Mode
 " }}}
 
