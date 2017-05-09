@@ -5,33 +5,44 @@ let l = ['PopulateReadme', "Gets all Plugins, Functions, and Leader Maps and pla
 :call add(g:functions, l)
 function! PopulateReadme()
     vs $HOME/vimrc/README.md
-    /Plugins
-    normal! 2j0d}k
-    let line = []
-    for plug in g:plugins
-        let p = split(plug[0], '/')
-        call add(line, ' * [' . p[1] . '](https://github.com/' . plug[0] . ')')
-    endfor
-    call sort(line)
-    silent! put=line
-    /Functions
-    normal! 2j0d}k
-    let line = []
-    for p in g:functions
-        call add(line, ' * `' . p[0] . '()` ' . p[1])
-    endfor
-    call sort(line)
-    silent! put=line
-    normal! ZZ
+    call YankAndPutVariables('Plugins')
+    call YankAndPutVariables('Functions')
     call YankAndPutMapping('Key')
     call YankAndPutMapping('Leader')
+    normal! ZZ
 endfunction
 " }}}"
-function! YankAndPutMapping(type)
-    vs $HOME/vimrc/README.md
-    call search(a:type . " Mapping", 'W')
-    normal! 2jma}kd'ak
-    execute ('vs $HOME/vimrc/' . a:type . 'Mapping.vim')
+function! YankAndPutVariables(t)
+    " vs $HOME/vimrc/README.md
+    call search(a:t . "\\n=*", 'W')
+    normal! 2j0d}k
+    let line = []
+    if a:t == 'Plugins'
+        let w_l = g:plugins
+    elseif a:t == 'Functions'
+        let w_l = g:functions
+    endif
+    for plug in w_l
+        if a:t == 'Plugins'
+            let p = split(plug[0], '/')
+            call add(line, ' * [' . p[1] . '](https://github.com/' . plug[0] . ')')
+        elseif a:t == 'Functions'
+            call add(line, ' * `' . plug[0] . '()` ' . plug[1])
+        endif
+    endfor
+    call sort(line)
+    silent! put=line
+    " normal! ZZ
+endfunction
+" }}}"
+
+function! YankAndPutMapping(t)
+    " vs $HOME/vimrc/README.md
+    call search(a:t . " Mapping\\n=*", 'W')
+    normal! 2j
+    call search("\\n\\n\\n", 'esW')
+    normal! kd`'ddk
+    execute ('vs $HOME/vimrc/' . a:t . 'Mapping.vim')
     normal! }j"by}ZQ
     let lines = split(@b, '\n')
     let line = []
@@ -50,7 +61,7 @@ function! YankAndPutMapping(type)
         endif
     endfor
     put=line
-    normal! ddZZ
+    " normal! ZZ
 endfunction
 let l = ['Col80', "Fires a vertical line if cursor reaches over the 80th column."] " {{{
 :call add(g:functions, l)

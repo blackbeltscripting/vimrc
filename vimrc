@@ -40,7 +40,7 @@ set mouse=n				" Mouse touch in normal mode only
 set number numberwidth=2		" Turns on line with width up to 9999;
 set relativenumber			" Turns on relative numbering
 " set shiftwidth=4			" Sets the tab in block to 1 tab
-set smartcase				" Case-insensitive if it's all lowercase
+set smartcase				" Case-insensitive for '/', '?'. 'n'. 'N' ':g' and ':s'
 " set softtabstop=0			" Removing Tabs with the 'tab' button
 set nospell				" Turn off Spell Check
 set splitright				" vSplits to the right
