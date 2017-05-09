@@ -11,6 +11,32 @@ This readme (most likely) contains an up-to-date list of all Plug-ins, Vim Funct
 Enjoy! \m/(~.^)\m/
 
 
+<!-- vim-markdown-toc GFM -->
+* [Plugins](#plugins)
+* [Functions](#functions)
+* [Key Mapping](#key-mapping)
+    * [Insert No Remap:](#insert-no-remap)
+    * [Normal No Remap:](#normal-no-remap)
+    * [No_Remap:](#no_remap)
+    * [Visual No Remap:](#visual-no-remap)
+    * [Normal No Remap:](#normal-no-remap-1)
+    * [No_Remap:](#no_remap-1)
+    * [Visual No Remap:](#visual-no-remap-1)
+    * [Normal No Remap:](#normal-no-remap-2)
+    * [No_Remap:](#no_remap-2)
+    * [Visual No Remap:](#visual-no-remap-2)
+* [Leader Mapping](#leader-mapping)
+    * [Normal No Remap:](#normal-no-remap-3)
+    * [No_Remap:](#no_remap-3)
+    * [Visual No Remap:](#visual-no-remap-3)
+    * [No_Remap:](#no_remap-4)
+    * [Visual No Remap:](#visual-no-remap-4)
+    * [No_Remap:](#no_remap-5)
+    * [Visual No Remap:](#visual-no-remap-5)
+
+<!-- vim-markdown-toc -->
+
+
 Plugins
 =======
  * [ag.vim](https://github.com/rking/ag.vim)
@@ -29,6 +55,7 @@ Plugins
  * [vim-dirdiff](https://github.com/will133/vim-dirdiff)
  * [vim-easygrep](https://github.com/dkprice/vim-easygrep)
  * [vim-fugitive](https://github.com/tpope/vim-fugitive)
+ * [vim-markdown-toc](https://github.com/mzlogin/vim-markdown-toc)
  * [vim-markdown](https://github.com/plasticboy/vim-markdown)
  * [vim-misc](https://github.com/xolox/vim-misc)
  * [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
@@ -157,6 +184,46 @@ Visual No Remap:
  * `vnoremap v` Press `vv` to quickly get into Visual Block
  * `vnoremap >` Quick indent in Visual Mode
 
+Normal No Remap:
+----------------
+ * `nnoremap *` Don't move away when you hit the star key
+ * `nnoremap :` Switch `:`/`;`
+ * `nnoremap ;` Switch `:`/`;`
+ * `nnoremap <bs>` Backspace button deletes even in normal mode
+ * `nnoremap <c-i>` Move around windows (Not Working)
+ * `nnoremap <c-j>` Move around windows (Not Working)
+ * `nnoremap <c-k>` Move around windows (Not Working)
+ * `nnoremap <c-l>` Move around windows (Not Working)
+ * `nnoremap <return>` Enter button returns even in normal mode
+ * `nnoremap <silent><A-j>` Alt-J/Alt-K
+ * `nnoremap <silent><A-k>` Alt-J/Alt-K
+ * `nnoremap <space>` Space button adds space in normal mode
+ * `nnoremap v` Pressing `v` now selects entire line.
+ * `nnoremap U` Redo
+ * `nnoremap Z` Close and save
+ * `nnoremap Q` Close without saving
+ * `nnoremap zc` Moves cursor to center of screen as you close vimfold
+ * `nnoremap zo` Moves cursor to top of screen as you open vimfold
+ * `nnoremap {` When searching through blocks, center screen
+ * `nnoremap }` When searching through blocks, center screen
+
+No_Remap:
+---------
+ * `noremap <F5>` Toggles Undo Tree
+ * `noremap H` Right hand shift canvas control
+ * `noremap J` Right hand shift canvas control
+ * `noremap K` Right hand shift canvas control
+ * `noremap L` Right hand shift canvas control
+
+Visual No Remap:
+----------------
+ * `vnoremap :` Switch `:`/`;`
+ * `vnoremap ;` Switch `:`/`;`
+ * `vnoremap <` Quick indent in Visual Mode
+ * `vnoremap <C-C>` Copies selection into system clipboard
+ * `vnoremap v` Press `vv` to quickly get into Visual Block
+ * `vnoremap >` Quick indent in Visual Mode
+
 
 Leader Mapping
 ==============
@@ -195,6 +262,16 @@ Normal No Remap:
  * `nnoremap <leader>wl` Swap Window Right
  * `nnoremap <leader>ym` Yanks from mark `t` to mark `b`
  * `nnoremap <leader>{` Make vim fold around block and closes it
+
+No_Remap:
+---------
+ * `noremap <leader>so` sources .vimrc
+ * `noremap <leader>soz` sources .vimrc and closes
+ * `noremap <leader>u` Open URI in chrome
+
+Visual No Remap:
+----------------
+ * `vnoremap <leader>;` In visual mode, it will do `:@\"`
 
 No_Remap:
 ---------
