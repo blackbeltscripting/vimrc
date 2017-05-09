@@ -4,16 +4,16 @@ let g:functions = []
 let l = ['PopulateReadme', "Gets all Plugins, Functions, and Leader Maps and places them inside the README file."] " {{{
 :call add(g:functions, l)
 function! PopulateReadme()
-    vs $HOME/vimrc/README.md
+    " vs $HOME/vimrc/README.md
     call YankAndPutVariables('Plugins')
     call YankAndPutVariables('Functions')
     call YankAndPutMapping('Key')
     call YankAndPutMapping('Leader')
-    normal! ZZ
+    " normal! ZZ
 endfunction
 " }}}"
 function! YankAndPutVariables(t)
-    " vs $HOME/vimrc/README.md
+    vs $HOME/vimrc/README.md
     call search(a:t . "\\n=*", 'W')
     normal! 2j0d}k
     let line = []
@@ -32,12 +32,12 @@ function! YankAndPutVariables(t)
     endfor
     call sort(line)
     silent! put=line
-    " normal! ZZ
+    normal! ZZ
 endfunction
 " }}}"
 
 function! YankAndPutMapping(t)
-    " vs $HOME/vimrc/README.md
+    vs $HOME/vimrc/README.md
     call search(a:t . " Mapping\\n=*", 'W')
     normal! 2j
     call search("\\n\\n\\n", 'esW')
@@ -61,7 +61,7 @@ function! YankAndPutMapping(t)
         endif
     endfor
     put=line
-    " normal! ZZ
+    normal! ZZ
 endfunction
 let l = ['Col80', "Fires a vertical line if cursor reaches over the 80th column."] " {{{
 :call add(g:functions, l)
