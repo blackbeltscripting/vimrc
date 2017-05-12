@@ -182,6 +182,7 @@ nnoremap:
 normap:
 -------
  * `noremap <leader>so` sources .vimrc
+ * `noremap <leader>sog` source .vimrc and do last command
  * `noremap <leader>soz` sources .vimrc and closes
  * `noremap <leader>u` Open URI in chrome
 
