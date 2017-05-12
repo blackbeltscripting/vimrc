@@ -10,6 +10,8 @@ function! PopulateReadme()
     call YankAndPutMapping('Leader')
 endfunction
 " }}}"
+let l = ['YankAndPutVariables', "BOOMS!"] " {{{
+:call add(g:functions, l)
 function! YankAndPutVariables(t)
     if (split(expand('%:p:h'), '/')[-1] != 'vimrc' || expand('%:t') != 'README.md')
        vs $HOME/vimrc/README.md
