@@ -42,17 +42,16 @@ function! YankAndPutVariables(t)
     normal! ZZ
 endfunction
 " }}}"
-
 let l = ['YankAndPutMapping', "Gets Key, Leader, or LocalLeader and populates it to README.md file."] " {{{
 :call add(g:functions, l)
 function! YankAndPutMapping(t)
     if (split(expand('%:p:h'), '/')[-1] != 'vimrc' || expand('%:t') != 'README.md')
         vs $HOME/vimrc/README.md
     endif
-    let top = search(a:t . " Mapping\\n=*", 'W')
+    let top = search(a:t . ' Mapping\n=*', 'W')
     if top > 0
         normal! 2j
-        call search("\\n\\n\\n", 'esW')
+        call search('\n\n\n', 'esW')
         normal! kd`'ddk
         execute ('vs $HOME/vimrc/' . a:t . 'Mapping.vim')
         normal! }j"by}ZQ
