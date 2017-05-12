@@ -8,7 +8,7 @@ function! PopulateReadme()
     call YankAndPutVariables('Functions')
     call YankAndPutMapping('Key')
     call YankAndPutMapping('Leader')
-    !git commit -am 'Auto-populating README.md with newest changes.'
+    !git commit -am 'Auto-commit using PopulateReadMe() vim function.'
     !git push
 endfunction
 " }}}"
