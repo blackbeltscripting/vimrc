@@ -8,7 +8,7 @@ Most of my configuration is stored here.  Only highly sensitive work will not be
 
 This readme (most likely) contains an up-to-date list of all plugins, functions, key mappings, and leader mappings.
 
-Don't even touch this page. I swear to God it's sensitive as hell!
+This page is kind of sensitive starting at 'Table of Contents' and below. I highly advise not trying to edit anything after 'Description'.
 
 Enjoy! \m/(~.^)\m/
 
