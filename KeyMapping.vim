@@ -2,13 +2,13 @@
 " Key Mapping:
 " ============
 
-" Insert No Remap: {{{
-" --------------------
+" inoremap: {{{
+" -------------
 inoremap <C-A> <C-O>yiW<End>=<C-R>=<C-R>0<CR>| " While in insert mode, press `<C-A>` and it will do mathematics. Ex: `5+3<C-A>`
 inoremap <C-P> <esc>"+p| " Pastes from clipboard
 " }}}
-" Normal No Remap: {{{
-" --------------------
+" nnoremap: {{{
+" -------------
 nnoremap * *N| " Don't move away when you hit the star key
 nnoremap : ;| " Switch `:`/`;`
 nnoremap ; :| " Switch `:`/`;`
@@ -30,16 +30,16 @@ nnoremap zo zozt| " Moves cursor to top of screen as you open vimfold
 nnoremap { {zt| " When searching through blocks, center screen
 nnoremap } }zt| " When searching through blocks, center screen
 " }}}
-" No_Remap: {{{
-" -------------
+" noremap: {{{
+" ------------
 noremap <F5> :UndotreeToggle<cr>| " Toggles Undo Tree
 noremap H ^| " Right hand shift canvas control
 noremap J H48jzt| " Right hand shift canvas control
 noremap K H48kzt| " Right hand shift canvas control
 noremap L $| " Right hand shift canvas control
 " }}}
-" Visual No Remap: {{{
-" --------------------
+" vnoremap: {{{
+" -------------
 vnoremap : ;| " Switch `:`/`;`
 vnoremap ; :| " Switch `:`/`;`
 vnoremap < <gv| " Quick indent in Visual Mode

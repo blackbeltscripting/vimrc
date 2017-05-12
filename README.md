@@ -19,14 +19,14 @@ Table of Contents
 * [Plugins](#plugins)
 * [Functions](#functions)
 * [Key Mapping](#key-mapping)
-    * [Insert No Remap:](#insert-no-remap)
-    * [Normal No Remap:](#normal-no-remap)
-    * [No_Remap:](#no_remap)
-    * [Visual No Remap:](#visual-no-remap)
+    * [inoremap:](#inoremap)
+    * [nnoremap:](#nnoremap)
+    * [noremap:](#noremap)
+    * [vnoremap:](#vnoremap)
 * [Leader Mapping](#leader-mapping)
-    * [Normal No Remap:](#normal-no-remap-1)
-    * [No_Remap:](#no_remap-1)
-    * [Visual No Remap:](#visual-no-remap-1)
+    * [nnoremap:](#nnoremap-1)
+    * [normap:](#normap)
+    * [vnoremap:](#vnoremap-1)
 
 <!-- vim-markdown-toc -->
 
@@ -93,13 +93,13 @@ Functions
 
 Key Mapping
 ===========
-Insert No Remap:
-----------------
+inoremap:
+---------
  * `inoremap <C-A>` While in insert mode, press `<C-A>` and it will do mathematics. Ex: `5+3<C-A>`
  * `inoremap <C-P>` Pastes from clipboard
 
-Normal No Remap:
-----------------
+nnoremap:
+---------
  * `nnoremap *` Don't move away when you hit the star key
  * `nnoremap :` Switch `:`/`;`
  * `nnoremap ;` Switch `:`/`;`
@@ -121,16 +121,16 @@ Normal No Remap:
  * `nnoremap {` When searching through blocks, center screen
  * `nnoremap }` When searching through blocks, center screen
 
-No_Remap:
----------
+noremap:
+--------
  * `noremap <F5>` Toggles Undo Tree
  * `noremap H` Right hand shift canvas control
  * `noremap J` Right hand shift canvas control
  * `noremap K` Right hand shift canvas control
  * `noremap L` Right hand shift canvas control
 
-Visual No Remap:
-----------------
+vnoremap:
+---------
  * `vnoremap :` Switch `:`/`;`
  * `vnoremap ;` Switch `:`/`;`
  * `vnoremap <` Quick indent in Visual Mode
@@ -141,8 +141,8 @@ Visual No Remap:
 
 Leader Mapping
 ==============
-Normal No Remap:
-----------------
+nnoremap:
+---------
  * `nnoremap <leader>;` Adds semicolon at EOL
  * `nnoremap <leader><space>` Unhighlight Search word
  * `nnoremap <leader>c` Saves, then sends command to tmux
@@ -177,14 +177,14 @@ Normal No Remap:
  * `nnoremap <leader>ym` Yanks from mark `t` to mark `b`
  * `nnoremap <leader>{` Make vim fold around block and closes it
 
-No_Remap:
----------
+normap:
+-------
  * `noremap <leader>so` sources .vimrc
  * `noremap <leader>soz` sources .vimrc and closes
  * `noremap <leader>u` Open URI in chrome
 
-Visual No Remap:
-----------------
+vnoremap:
+---------
  * `vnoremap <leader>;` In visual mode, it will do `:@\"`
 
 

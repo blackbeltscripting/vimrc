@@ -2,8 +2,8 @@
 " Leader Mapping:
 " ===============
 
-" Normal No Remap: {{{
-" --------------------
+" nnoremap: {{{
+" -------------
 nnoremap <leader>; $a;<esc>| " Adds semicolon at EOL
 nnoremap <leader><space> :nohls<cr>| " Unhighlight Search word
 nnoremap <leader>c :w<cr>:VtrSendCommandToRunner<cr>:VtrFocusRunner<cr>| " Saves, then sends command to tmux
@@ -38,14 +38,14 @@ nnoremap <leader>wl <c-w>L| " Swap Window Right
 nnoremap <leader>ym 'ty'b| " Yanks from mark `t` to mark `b`
 nnoremap <leader>{ $a <esc>3a{<esc>}O<esc>3a}<esc>:Commentary<cr>zM| " Make vim fold around block and closes it
 " }}}
-" No_Remap: {{{
-" -------------
+" normap: {{{
+" -----------
 noremap <leader>so :w<cr>:so $MYVIMRC<cr>zM| " sources .vimrc
 noremap <leader>soz :w<cr>:so $MYVIMRC<cr>:q<cr>| " sources .vimrc and closes
 noremap <leader>u :call HandleURL()<cr>| " Open URI in chrome
 " }}}
-" Visual No Remap: {{{
-" --------------------
+" vnoremap: {{{
+" -------------
 vnoremap <leader>; y:@"<cr>| " In visual mode, it will do `:@\"`
 " }}}
 

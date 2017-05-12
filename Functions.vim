@@ -4,63 +4,69 @@ let g:functions = []
 let l = ['PopulateReadme', "Gets all Plugins, Functions, and Leader Maps and places them inside the README file."] " {{{
 :call add(g:functions, l)
 function! PopulateReadme()
-    " vs $HOME/vimrc/README.md
     call YankAndPutVariables('Plugins')
     call YankAndPutVariables('Functions')
     call YankAndPutMapping('Key')
     call YankAndPutMapping('Leader')
-    " normal! ZZ
 endfunction
 " }}}"
 function! YankAndPutVariables(t)
-    vs $HOME/vimrc/README.md
-    call search(a:t . "\\n=*", 'W')
-    normal! 2j0d}k
-    let line = []
-    if a:t == 'Plugins'
-        let w_l = g:plugins
-    elseif a:t == 'Functions'
-        let w_l = g:functions
+    if (split(expand('%:p:h'), '/')[-1] != 'vimrc' || expand('%:t') != 'README.md')
+       vs $HOME/vimrc/README.md
     endif
-    for plug in w_l
+    let top = search(a:t . '\\n=*', 'W')
+    if top > 0
+        normal! 2j0d}k
+        let line = []
         if a:t == 'Plugins'
-            let p = split(plug[0], '/')
-            call add(line, ' * [' . p[1] . '](https://github.com/' . plug[0] . ')')
+            let w_l = g:plugins
         elseif a:t == 'Functions'
-            call add(line, ' * `' . plug[0] . '()` ' . plug[1])
+            let w_l = g:functions
         endif
-    endfor
-    call sort(line)
-    silent! put=line
+        for plug in w_l
+            if a:t == 'Plugins'
+                let p = split(plug[0], '/')
+                call add(line, ' * [' . p[1] . '](https://github.com/' . plug[0] . ')')
+            elseif a:t == 'Functions'
+                call add(line, ' * `' . plug[0] . '()` ' . plug[1])
+            endif
+        endfor
+        call sort(line)
+        silent! put=line
+    endif
     normal! ZZ
 endfunction
 " }}}"
 
 function! YankAndPutMapping(t)
-    vs $HOME/vimrc/README.md
-    call search(a:t . " Mapping\\n=*", 'W')
-    normal! 2j
-    call search("\\n\\n\\n", 'esW')
-    normal! kd`'ddk
-    execute ('vs $HOME/vimrc/' . a:t . 'Mapping.vim')
-    normal! }j"by}ZQ
-    let lines = split(@b, '\n')
-    let line = []
-    for l in lines
-        if l[0] == '"'
-            if len(l[2:-5]) >  0
-                call add(line, l[2:-5])
+    if (split(expand('%:p:h'), '/')[-1] != 'vimrc' || expand('%:t') != 'README.md')
+        vs $HOME/vimrc/README.md
+    endif
+    let top = search(a:t . " Mapping\\n=*", 'W')
+    if top > 0
+        normal! 2j
+        call search("\\n\\n\\n", 'esW')
+        normal! kd`'ddk
+        execute ('vs $HOME/vimrc/' . a:t . 'Mapping.vim')
+        normal! }j"by}ZQ
+        let lines = split(@b, '\n')
+        let line = []
+        for l in lines
+            if l[0] == '"'
+                if len(l[2:-5]) >  0
+                    call add(line, l[2:-5])
+                else
+                    call add(line, '')
+                endif
             else
-                call add(line, '')
+                let s = split(l, "| ")
+                let mapping = split(s[0], " ")
+                let ll = ' * `' . join(mapping[0:1], ' ') . '` ' . s[1][2:]
+                call add(line, ll)
             endif
-        else
-            let s = split(l, "| ")
-            let mapping = split(s[0], " ")
-            let ll = ' * `' . join(mapping[0:1], ' ') . '` ' . s[1][2:]
-            call add(line, ll)
-        endif
-    endfor
-    put=line
+        endfor
+        put=line
+    endif
     normal! ZZ
 endfunction
 let l = ['Col80', "Fires a vertical line if cursor reaches over the 80th column."] " {{{
