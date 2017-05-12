@@ -40,8 +40,8 @@ nnoremap <leader>{ $a <esc>3a{<esc>}O<esc>3a}<esc>:Commentary<cr>zM| " Make vim 
 " }}}
 " normap: {{{
 " -----------
-noremap <leader>so :w<cr>:so $MYVIMRC<cr>zM| " sources .vimrc
-noremap <leader>sog :w<cr>:so $MYVIMRC<cr>@:| " source .vimrc and do last command
+noremap <leader>so :w<cr>:so $MYVIMRC<cr>zMzo| " sources .vimrc
+noremap <leader>sog :w<cr>:so $MYVIMRC<cr>zMzo@:| " source .vimrc and do last command
 noremap <leader>soz :w<cr>:so $MYVIMRC<cr>:q<cr>| " sources .vimrc and closes
 noremap <leader>u :call HandleURL()<cr>| " Open URI in chrome
 " }}}
