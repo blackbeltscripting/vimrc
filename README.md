@@ -80,7 +80,7 @@ Functions
  * `Install()` Upgrades Plug Install, Does Plug Install, Populate Readme
  * `MoveLeft()` Move selection to the left.
  * `MoveRight()` Move selection to the right.
- * `PopulateReadme()` Gets all Plugins, Functions, and Leader Maps and places them inside the README file.
+ * `PopulateReadme()` Gets all Plugins, Functions, and Leader Maps and places them inside the README file. Then automatically commits changes to github.
  * `Replace()` Replaces word in all buffers (I think).
  * `Resolve_mode()` Find out if type is linewise, blockwise, or motion.
  * `Search()` Searches with Ag.

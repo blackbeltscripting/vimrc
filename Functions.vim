@@ -1,7 +1,7 @@
 " Functions:
 let g:functions = []
 
-let l = ['PopulateReadme', "Gets all Plugins, Functions, and Leader Maps and places them inside the README file."] " {{{
+let l = ['PopulateReadme', "Gets all Plugins, Functions, and Leader Maps and places them inside the README file. Then automatically commits changes to github."] " {{{
 :call add(g:functions, l)
 function! PopulateReadme()
     call YankAndPutVariables('Plugins')
