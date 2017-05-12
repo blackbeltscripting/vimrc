@@ -9,17 +9,15 @@ function! PopulateReadme()
     call YankAndPutMapping('Key')
     call YankAndPutMapping('Leader')
     !git add .
-    !git commit -m 'Updating README list.'
+    !git commit -m 'Auto-populating README.md with newest changes.'
     !git push
 endfunction
 " }}}"
-let l = ['YankAndPutVariables', "BOOMS!"] " {{{
-:call add(g:functions, l)
 function! YankAndPutVariables(t)
     if (split(expand('%:p:h'), '/')[-1] != 'vimrc' || expand('%:t') != 'README.md')
        vs $HOME/vimrc/README.md
     endif
-    let top = search(a:t . '\\n=*', 'W')
+    let top = search(a:t . '\n=*', 'W')
     if top > 0
         normal! 2j0d}k
         let line = []
