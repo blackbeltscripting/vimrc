@@ -13,6 +13,8 @@ function! PopulateReadme()
     !git push
 endfunction
 " }}}"
+let l = ['YankAndPutVariables', "Gets variables and populates it to README.md file."] " {{{
+:call add(g:functions, l)
 function! YankAndPutVariables(t)
     if (split(expand('%:p:h'), '/')[-1] != 'vimrc' || expand('%:t') != 'README.md')
        vs $HOME/vimrc/README.md
