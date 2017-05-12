@@ -41,7 +41,7 @@ function! YankAndPutVariables(t)
     endif
     normal! ZZ
 endfunction
-" }}}"
+" }}}
 let l = ['YankAndPutMapping', "Gets Key, Leader, or LocalLeader and populates it to README.md file."] " {{{
 :call add(g:functions, l)
 function! YankAndPutMapping(t)
@@ -65,8 +65,8 @@ function! YankAndPutMapping(t)
                     call add(line, '')
                 endif
             else
-                let s = split(l, "| ")
-                let mapping = split(s[0], " ")
+                let s = split(l, '| ')
+                let mapping = split(s[0], ' ')
                 let ll = ' * `' . join(mapping[0:1], ' ') . '` ' . s[1][2:]
                 call add(line, ll)
             endif
