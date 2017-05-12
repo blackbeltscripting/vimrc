@@ -89,6 +89,7 @@ Functions
  * `TrimSpaces()` Removes extra white spaces before EOL.
  * `Unobscure()` ... in alpha stage.
  * `VimFold()` Automatically folds some files.
+ * `YankAndPutMapping()` Gets Key, Leader, or LocalLeader and populates it to README.md file.
  * `YankAndPutVariables()` Gets variables and populates it to README.md file.
 
 

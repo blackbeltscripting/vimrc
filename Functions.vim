@@ -43,6 +43,8 @@ function! YankAndPutVariables(t)
 endfunction
 " }}}"
 
+let l = ['YankAndPutMapping', "Gets Key, Leader, or LocalLeader and populates it to README.md file."] " {{{
+:call add(g:functions, l)
 function! YankAndPutMapping(t)
     if (split(expand('%:p:h'), '/')[-1] != 'vimrc' || expand('%:t') != 'README.md')
         vs $HOME/vimrc/README.md
@@ -74,6 +76,7 @@ function! YankAndPutMapping(t)
     endif
     normal! ZZ
 endfunction
+" }}}
 let l = ['Col80', "Fires a vertical line if cursor reaches over the 80th column."] " {{{
 :call add(g:functions, l)
 function! Col80()
