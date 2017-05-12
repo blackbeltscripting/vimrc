@@ -57,6 +57,7 @@ Plugins
  * [vim-paste-operator](https://github.com/blackbeltscripting/vim-paste-operator)
  * [vim-repeat](https://github.com/tpope/vim-repeat)
  * [vim-snippets](https://github.com/honza/vim-snippets)
+ * [vim-sort-motion](https://github.com/christoomey/vim-sort-motion)
  * [vim-srcery](https://github.com/roosta/vim-srcery)
  * [vim-startify](https://github.com/mhinz/vim-startify)
  * [vim-surround](https://github.com/tpope/vim-surround)

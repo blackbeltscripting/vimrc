@@ -5,6 +5,7 @@ let g:plugins = [
             \ ['bling/vim-airline'],
             \ ['christoomey/vim-tmux-navigator'],
             \ ['christoomey/vim-tmux-runner'],
+            \ ['christoomey/vim-sort-motion'],
             \ ['christoomey/vim-system-copy'],
             \ ['dkprice/vim-easygrep'],
             \ ['eshion/vim-sync'],
