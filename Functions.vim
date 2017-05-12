@@ -145,15 +145,15 @@ function! HandleURL()
     endif
 endfunction
 " }}}
-let l = ['Install', "Upgrades Plug Install, Does Plug Install, Populate Readme"] " {{{
+let l = ['Update', "Upgrades Vim-Plug, Updates Plugins, Fires Populate Readme"] " {{{
 :call add(g:functions, l)
-function! Install()
+function! Update()
     :PlugUpgrade
     :PlugUpdate
-    :call PopulateReadme()
+    call PopulateReadme()
 endfunction
 
-command! Install :call Install()
+command! Update :call Update()
 " }}}
 let l = ['Replace', "Replaces word in all buffers (I think)."] " {{{
 :call add(g:functions, l)

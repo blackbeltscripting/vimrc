@@ -77,7 +77,6 @@ Functions
  * `ExecuteMacroOverVisualRange()` Don't remember what this does...
  * `GetFunctionName()` Prints word before the '(' in buffer.
  * `HandleURL()` Opens URL/URI
- * `Install()` Upgrades Plug Install, Does Plug Install, Populate Readme
  * `MoveLeft()` Move selection to the left.
  * `MoveRight()` Move selection to the right.
  * `PopulateReadme()` Gets all Plugins, Functions, and Leader Maps and places them inside the README file. Then automatically commits changes to github.
@@ -88,6 +87,7 @@ Functions
  * `SpaceTabRetab()` ReTabs and removes the spaces from file.
  * `TrimSpaces()` Removes extra white spaces before EOL.
  * `Unobscure()` ... in alpha stage.
+ * `Update()` Upgrades Vim-Plug, Updates Plugins, Fires Populate Readme
  * `VimFold()` Automatically folds some files.
  * `YankAndPutMapping()` Gets Key, Leader, or LocalLeader and populates it to README.md file.
  * `YankAndPutVariables()` Gets variables and populates it to README.md file.
