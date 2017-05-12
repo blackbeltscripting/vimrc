@@ -8,6 +8,9 @@ function! PopulateReadme()
     call YankAndPutVariables('Functions')
     call YankAndPutMapping('Key')
     call YankAndPutMapping('Leader')
+    !git add .
+    :Git commit -m 'Updating README list.'
+    " :Git push
 endfunction
 " }}}"
 let l = ['YankAndPutVariables', "BOOMS!"] " {{{
