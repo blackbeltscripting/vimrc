@@ -1,4 +1,5 @@
-" Plugins: {{{
+" Plugins:
+" ========
 let g:plugins = [
             \ ['blackbeltscripting/vim-paste-operator'],
             \ ['benmills/vimux'],
@@ -38,4 +39,3 @@ let g:plugins = [
     \ ]
             " \ ['Valloric/YouCompleteMe'],
             " \ ['vim-scripts/tComment'],
-" Plugins: }}}
