@@ -58,7 +58,7 @@ function! YankAndPutMapping(t)
         call search('\n\n\n', 'esW')
         normal! kd`'ddk
         execute ('vs $HOME/vimrc/' . a:t . 'Mapping.vim')
-        normal! }j"by}ZQ
+        normal! gg}j"by}ZQ
         let lines = split(@b, '\n')
         let line = []
         for l in lines

@@ -24,6 +24,9 @@ Table of Contents
     * [Normal, Visual, Select, Operator-pending:](#normal-visual-select-operator-pending)
     * [Visual Mode:](#visual-mode)
 * [Leader Mapping](#leader-mapping)
+    * [nnoremap:](#nnoremap)
+    * [normap:](#normap)
+    * [vnoremap:](#vnoremap)
 
 <!-- vim-markdown-toc -->
 
@@ -138,24 +141,52 @@ Visual Mode:
 
 Leader Mapping
 ==============
-Deprecated
-cv: Faster variable value fetching
+nnoremap:
+---------
+ * <kbd>\<leader\>;</kbd> Adds semicolon at EOL
+ * <kbd>\<leader\>\<space\></kbd> Unhighlight Search word
+ * <kbd>\<leader\>ap</kbd> Pastes into plugin list from system clipboard and does `:Update` function
+ * <kbd>\<leader\>c</kbd> Saves, then sends command to tmux
+ * <kbd>\<leader\>cm</kbd> Sends make command to runner and focuses the pane
+ * <kbd>\<leader\>conc</kbd> Concatonates inside parentheses using '.' delimiter
+ * <kbd>\<leader\>h</kbd> Resize Split to the left
+ * <kbd>\<leader\>j</kbd> Maximize Splits
+ * <kbd>\<leader\>k</kbd> Restore Splits
+ * <kbd>\<leader\>l</kbd> Resize Split to the right
+ * <kbd>\<leader\>mh</kbd> Move word to the left
+ * <kbd>\<leader\>ml</kbd> Move word to the right
+ * <kbd>\<leader\>o</kbd> Open Startify
+ * <kbd>\<leader\>s</kbd> Saves file
+ * <kbd>\<leader\>src</kbd> Open .vimrc
+ * <kbd>\<leader\>tab</kbd> Retabs the entire pane
+ * <kbd>\<leader\>tl</kbd> Toggle relativenumber
+ * <kbd>\<leader\>ts</kbd> Toggle spell
+ * <kbd>\<leader\>tw</kbd> Toggle wrap
+ * <kbd>\<leader\>v</kbd> Vertical Split Startify [Default]
+ * <kbd>\<leader\>vF</kbd> Vertical Split FZF
+ * <kbd>\<leader\>vf</kbd> Vertical Split Functions.vim
+ * <kbd>\<leader\>vh</kbd> Vertical Split help of current word in pointer
+ * <kbd>\<leader\>vk</kbd> Vertical Split KeyMapping.vim
+ * <kbd>\<leader\>vl</kbd> Vertical Split LeaderMapping.vim
+ * <kbd>\<leader\>vll</kbd> Vertical Split LocalLeaderMapping.vim
+ * <kbd>\<leader\>vp</kbd> Vertical Split Plugins.vim
+ * <kbd>\<leader\>vs</kbd> Vertical Split .vimrc
+ * <kbd>\<leader\>wh</kbd> Swap Window Left
+ * <kbd>\<leader\>wj</kbd> Swap Window Down
+ * <kbd>\<leader\>wk</kbd> Swap Window Up
+ * <kbd>\<leader\>wl</kbd> Swap Window Right
+ * <kbd>\<leader\>ym</kbd> Yanks from mark `t` to mark `b`
+ * <kbd>\<leader\>{</kbd> Make vim fold around block and closes it
 
-cw: Copy Word
+normap:
+-------
+ * <kbd>\<leader\>so</kbd> sources .vimrc
+ * <kbd>\<leader\>sog</kbd> source .vimrc and do last command
+ * <kbd>\<leader\>soz</kbd> sources .vimrc and closes
+ * <kbd>\<leader\>u</kbd> Open URI in chrome
 
-cvar: Fetch variable and its value
-
-df: Do Difference of FTP file
-
-ds: Saves both files and returns to local
-
-Vimgrep hotkeys
-
-snip: Get snippet file
-
-pv: Not sure... pastes it all?
-
-pvar: Search and paste value fetched
-
+vnoremap:
+---------
+ * <kbd>\<leader\>;</kbd> In visual mode, it will do `:@\"`
 
 
