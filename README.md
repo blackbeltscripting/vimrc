@@ -191,10 +191,12 @@ Leader Mapping
 ==============
 Normal Mode:
 ------------
+ * <kbd>\<leader\>-j</kbd> A rough way to add '-' below a line.
+ * <kbd>\<leader\>-k</kbd> A rough way to add '-' above a line.
  * <kbd>\<leader\>;</kbd> Adds semicolon at EOL
  * <kbd>\<leader\>\<space\></kbd> Unhighlight Search word
- * <kbd>\<leader\>\<space\></kbd> Unhighlight Search word
- * <kbd>\<leader\>\<space\></kbd> Unhighlight Search word
+ * <kbd>\<leader\>=j</kbd> A rough way to add '=' below a line.
+ * <kbd>\<leader\>=k</kbd> A rough way to add '=' above a line.
  * <kbd>\<leader\>ap</kbd> Pastes into plugin list from system clipboard and does `:Update` function
  * <kbd>\<leader\>c</kbd> Saves, then sends command to tmux
  * <kbd>\<leader\>cm</kbd> Sends make command to runner and focuses the pane
