@@ -6,6 +6,7 @@
 " -------------
 nnoremap <leader>; $a;<esc>| " Adds semicolon at EOL
 nnoremap <leader><space> :nohls<cr>| " Unhighlight Search word
+nnoremap <leader>ap :vs ~/vimrc/Plugins.vim<cr>5jYPvi'"+pF'l<C-V>}kk:sort<cr>ZZ:Update<cr> | " Pastes into plugin list from system clipboard and does `:Update`
 nnoremap <leader>c :w<cr>:VtrSendCommandToRunner<cr>:VtrFocusRunner<cr>| " Saves, then sends command to tmux
 nnoremap <leader>cm :VtrSendCommandToRunner make<CR>:VtrFocusRunner<CR>| " Sends make command to runner and focuses the pane
 nnoremap <leader>conc :call Concatonate()<cr>| " Concatonates inside parentheses using '.' delimiter
@@ -50,8 +51,6 @@ noremap <leader>u :call HandleURL()<cr>| " Open URI in chrome
 vnoremap <leader>; y:@"<cr>| " In visual mode, it will do `:@\"`
 " }}}
 
-nnoremap <leader>ap :vs ~/vimrc/Plugins.vim<cr>5jYPvi'"+pF'l<C-V>}kk:sort<cr>ZZ:Update<cr> | " Pastes into plugin list from system clipboard and does `:Update`
-
 " Deprecated {{{
 " cv: Faster variable value fetching {{{
 nnoremap <leader>cv "vdwdw"rd$dd/<C-r>v<del><cr>viw"rp
@@ -83,3 +82,48 @@ nnoremap <leader>pv nviw"rp
 nnoremap <leader>pvar /v<del><cr>viw"rp
 " }}}
 " }}}
+inoremap:
+---------
+ * `inoremap <C-A>` While in insert mode, press `<C-A>` and it will do mathematics. Ex: `5+3<C-A>`
+ * `inoremap <C-P>` Pastes from clipboard
+
+nnoremap:
+---------
+ * `nnoremap *` Don't move away when you hit the star key
+ * `nnoremap :` Switch `:`/`;`
+ * `nnoremap ;` Switch `:`/`;`
+ * `nnoremap <bs>` Backspace button deletes even in normal mode
+ * `nnoremap <c-i>` Move around windows (Not Working)
+ * `nnoremap <c-j>` Move around windows (Not Working)
+ * `nnoremap <c-k>` Move around windows (Not Working)
+ * `nnoremap <c-l>` Move around windows (Not Working)
+ * `nnoremap <return>` Enter button returns even in normal mode
+ * `nnoremap <silent><A-j>` Alt-J/Alt-K
+ * `nnoremap <silent><A-k>` Alt-J/Alt-K
+ * `nnoremap <space>` Space button adds space in normal mode
+ * `nnoremap v` Pressing `v` now selects entire line.
+ * `nnoremap U` Redo
+ * `nnoremap Z` Close and save
+ * `nnoremap Q` Close without saving
+ * `nnoremap zc` Moves cursor to center of screen as you close vimfold
+ * `nnoremap zo` Moves cursor to top of screen as you open vimfold
+ * `nnoremap {` When searching through blocks, center screen
+ * `nnoremap }` When searching through blocks, center screen
+
+noremap:
+--------
+ * `noremap <F5>` Toggles Undo Tree
+ * `noremap H` Right hand shift canvas control
+ * `noremap J` Right hand shift canvas control
+ * `noremap K` Right hand shift canvas control
+ * `noremap L` Right hand shift canvas control
+
+vnoremap:
+---------
+ * `vnoremap :` Switch `:`/`;`
+ * `vnoremap ;` Switch `:`/`;`
+ * `vnoremap <` Quick indent in Visual Mode
+ * `vnoremap <C-C>` Copies selection into system clipboard
+ * `vnoremap v` Press `vv` to quickly get into Visual Block
+ * `vnoremap >` Quick indent in Visual Mode
+

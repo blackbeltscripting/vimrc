@@ -44,6 +44,7 @@ Plugins
  * [vim-coloresque](https://github.com/gorodinskiy/vim-coloresque)
  * [vim-commentary](https://github.com/tpope/vim-commentary)
  * [vim-dirdiff](https://github.com/will133/vim-dirdiff)
+ * [vim-dotoo](https://github.com/dhruvasagar/vim-dotoo)
  * [vim-easygrep](https://github.com/dkprice/vim-easygrep)
  * [vim-fugitive](https://github.com/tpope/vim-fugitive)
  * [vim-markdown-toc](https://github.com/mzlogin/vim-markdown-toc)
