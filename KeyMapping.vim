@@ -4,7 +4,7 @@
 
 " Insert Mode: {{{
 " ----------------
-inoremap <C-A> <C-O>yiW<End>=<C-R>=<C-R>0<CR>| " While in insert mode, press `<kbd>\<C-A\></kbd>` and it will do mathematics. Ex: `5+3<kbd>\<C-A\></kbd>`
+inoremap <C-A> <C-O>yiW<End>=<C-R>=<C-R>0<CR>| " While in insert mode, press <kbd>\<C-A\></kbd> and it will do mathematics. Ex: `5+3`<kbd>\<C-A\></kbd>
 inoremap <C-P> <esc>"+p| " Pastes from clipboard
 " }}}
 " Normal Mode: {{{
@@ -37,7 +37,7 @@ noremap L $| " Go to EOL
 " Visual Mode: {{{
 " ----------------
 vnoremap : ;| " Enter Command Line
-vnoremap ; :| " Does next `f/F/t/T`
+vnoremap ; :| " Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
 vnoremap < <gv| " Quick indent in Visual Mode
 vnoremap <C-C> "+y| " Copies selection into system clipboard
 vnoremap v <C-V>| " Press `vv` to quickly get into Visual Block

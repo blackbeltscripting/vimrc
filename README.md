@@ -99,7 +99,7 @@ Key Mapping
 ===========
 Insert Mode:
 ------------
- * <kbd>\<C-A\></kbd> While in insert mode, press `<kbd>\<C-A\></kbd>` and it will do mathematics. Ex: `5+3<kbd>\<C-A\></kbd>`
+ * <kbd>\<C-A\></kbd> While in insert mode, press <kbd>\<C-A\></kbd> and it will do mathematics. Ex: `5+3`<kbd>\<C-A\></kbd>
  * <kbd>\<C-P\></kbd> Pastes from clipboard
 
 Normal Mode:
@@ -132,7 +132,7 @@ Normal, Visual, Select, Operator-pending:
 Visual Mode:
 ------------
  * <kbd>:</kbd> Enter Command Line
- * <kbd>;</kbd> Does next `f/F/t/T`
+ * <kbd>;</kbd> Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
  * <kbd>\<</kbd> Quick indent in Visual Mode
  * <kbd>\<C-C\></kbd> Copies selection into system clipboard
  * <kbd>v</kbd> Press `vv` to quickly get into Visual Block
