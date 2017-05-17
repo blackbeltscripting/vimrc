@@ -13,8 +13,8 @@ This README (most likely) contains an up-to-date list of:
  * Leader Mappings
  * Local Leader Mappings
 
-New to VIM?
------------
+###New to VIM?
+
 If you are new to vim here are a few things to keep in mind:
 1. Plugins are what make vim powerful.  I'd suggest googling it if you haven't already.  I use [vim-plug](https://github.com/junegunn/vim-plug) to manage my plugins because it updates asynchronously if you're using [neovim](https://neovim.io).  My plugin list is located in the [vimrc/Plugins.vim](https://github.com/blackbeltscripting/vimrc/blob/master/Plugins.vim) file.  I've made a [Leader Mapping](#normal-mode-1) to easily insert a plugin into that list.  You don't need to add the "https://github.com/" part, just the user/project.
 2. [Functions](https://github.com/blackbeltscripting/vimrc/blob/master/Functions.vim) are accessed by typing the colon key, followed by the plugin: <kbd>:</kbd>`plugin-name` (<kbd>;</kbd>`plugin-name` in **MY** vimrc).  I've made a full [list](#functions) of them below along with a brief description of what it does.
