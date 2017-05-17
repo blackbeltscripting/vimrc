@@ -104,9 +104,9 @@ inoremap:
 
 nnoremap:
 ---------
- * `nnoremap *` Don't move away when you hit the star key
- * `nnoremap :` Switch `:`/`;`
- * `nnoremap ;` Switch `:`/`;`
+ * `nnoremap *` Don't move away from word the first time
+ * `nnoremap :` Enter Command Line
+ * `nnoremap ;` Does next `f/F/t/T`
  * `nnoremap <bs>` Delete without needing to go to insert mode
  * `nnoremap <c-i>` Move around windows
  * `nnoremap <c-j>` Move around windows

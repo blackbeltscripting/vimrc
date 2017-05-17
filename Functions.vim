@@ -21,6 +21,7 @@ function! YankAndPutVariables(t)
     if (split(expand('%:p:h'), '/')[-1] != 'vimrc' || expand('%:t') != 'README.md')
        vs $HOME/vimrc/README.md
     endif
+    normal! gg
     let top = search(a:t . '\n=*', 'W')
     if top > 0
         normal! 2j0d}k
@@ -50,6 +51,7 @@ function! YankAndPutMapping(t)
     if (split(expand('%:p:h'), '/')[-1] != 'vimrc' || expand('%:t') != 'README.md')
         vs $HOME/vimrc/README.md
     endif
+    normal! gg
     let top = search(a:t . ' Mapping\n=*', 'W')
     if top > 0
         normal! 2j

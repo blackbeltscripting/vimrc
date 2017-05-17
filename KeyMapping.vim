@@ -9,9 +9,9 @@ inoremap <C-P> <esc>"+p| " Pastes from clipboard
 " }}}
 " nnoremap: {{{
 " -------------
-nnoremap * *N| " Don't move away when you hit the star key
-nnoremap : ;| " Switch `:`/`;`
-nnoremap ; :| " Switch `:`/`;`
+nnoremap * *N| " Don't move away from word the first time
+nnoremap : ;| " Enter Command Line
+nnoremap ; :| " Does next `f/F/t/T`
 nnoremap <bs> i<bs><esc>l| " Delete without needing to go to insert mode
 nnoremap <c-i> <c-w><c-k><c-w>=<c-w>_| " Move around windows
 nnoremap <c-j> <c-w>h| " Move around windows
