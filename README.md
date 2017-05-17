@@ -18,8 +18,8 @@ New to VIM?
 If you are new to vim here are a few things to keep in mind:
 1. Plugins are what make vim powerful.  I'd suggest googling it if you haven't already.  I use [vim-plug](https://github.com/junegunn/vim-plug) to manage my plugins because it updates asynchronously if you're using [neovim](https://neovim.io).  My plugin list is located in the [vimrc/Plugins.vim](https://github.com/blackbeltscripting/vimrc/blob/master/Plugins.vim) file.  I've made a [Leader Mapping](#normal-mode-1) to easily insert a plugin into that list.  You don't need to add the "https://github.com/" part, just the user/project.
 2. [Functions](https://github.com/blackbeltscripting/vimrc/blob/master/Functions.vim) are accessed by typing the colon key, followed by the plugin: <kbd>:</kbd>`plugin-name` (<kbd>;</kbd>`plugin-name` in *MY* vimrc).  I've made a full [list](#functions) of them below along with a brief description of what it does.
-3. [Mappings](http://learnvimscriptthehardway.stevelosh.com/chapters/03.html)  are what you tell vim unique.  You can tell vim to do anything when you type into the keyboard.
-   * [Key Mappings](https://github.com/blackbeltscripting/vimrc/blob/master/KeyMapping.vim) tells vim to do something when you hit the key in whatever [mode](https://en.wikibooks.org/wiki/Learning_the_vi_Editor/Vim/Modes#Modes) you're in.
+3. [Mappings](http://learnvimscriptthehardway.stevelosh.com/chapters/03.html) are what you tell vim unique.  You can tell vim to do anything when you type into the keyboard. When you press a key in a certain [mode](https://en.wikibooks.org/wiki/Learning_the_vi_Editor/Vim/Modes#Modes), vim operates a function.  When you hit a `<leader>` key then a series of combinations, vim will fire different functions.
+   * [Key Mappings](https://github.com/blackbeltscripting/vimrc/blob/master/KeyMapping.vim) operates functions when you hit the key.
    * [Leader Mapping](https://github.com/blackbeltscripting/vimrc/blob/master/LeaderMapping.vim) is <kbd>\<space\></kbd>.
    * [Local Leader Mapping](https://github.com/blackbeltscripting/vimrc/blob/master/LocalLeaderMapping.vim) is <kbd>,,</kbd>.
 
