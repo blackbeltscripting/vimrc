@@ -24,6 +24,9 @@ Table of Contents
     * [noremap:](#noremap)
     * [vnoremap:](#vnoremap)
 * [Leader Mapping](#leader-mapping)
+    * [nnoremap:](#nnoremap-1)
+    * [normap:](#normap)
+    * [vnoremap:](#vnoremap-1)
 
 <!-- vim-markdown-toc -->
 
@@ -44,7 +47,6 @@ Plugins
  * [vim-coloresque](https://github.com/gorodinskiy/vim-coloresque)
  * [vim-commentary](https://github.com/tpope/vim-commentary)
  * [vim-dirdiff](https://github.com/will133/vim-dirdiff)
- * [vim-dotoo](https://github.com/dhruvasagar/vim-dotoo)
  * [vim-easygrep](https://github.com/dkprice/vim-easygrep)
  * [vim-fugitive](https://github.com/tpope/vim-fugitive)
  * [vim-markdown-toc](https://github.com/mzlogin/vim-markdown-toc)
@@ -142,24 +144,51 @@ vnoremap:
 
 Leader Mapping
 ==============
-Deprecated
-cv: Faster variable value fetching
+nnoremap:
+---------
+ * `nnoremap <leader>;` Adds semicolon at EOL
+ * `nnoremap <leader><space>` Unhighlight Search word
+ * `nnoremap <leader>c` Saves, then sends command to tmux
+ * `nnoremap <leader>cm` Sends make command to runner and focuses the pane
+ * `nnoremap <leader>conc` Concatonates inside parentheses using '.' delimiter
+ * `nnoremap <leader>h` Resize Split to the left
+ * `nnoremap <leader>j` Maximize Splits
+ * `nnoremap <leader>k` Restore Splits
+ * `nnoremap <leader>l` Resize Split to the right
+ * `nnoremap <leader>mh` Move word to the left
+ * `nnoremap <leader>ml` Move word to the right
+ * `nnoremap <leader>o` Open Startify
+ * `nnoremap <leader>q` Vertical split LeaderMapping.vim and dumps macro at reg q
+ * `nnoremap <leader>s` Saves file
+ * `nnoremap <leader>src` Open .vimrc
+ * `nnoremap <leader>tab` Retabs the entire pane
+ * `nnoremap <leader>tl` Toggle relativenumber
+ * `nnoremap <leader>ts` Toggle spell
+ * `nnoremap <leader>tw` Toggle wrap
+ * `nnoremap <leader>v` Vertical Split Startify [Default]
+ * `nnoremap <leader>vF` Vertical Split FZF
+ * `nnoremap <leader>vf` Vertical Split Functions.vim
+ * `nnoremap <leader>vh` Vertical Split help of current word in pointer
+ * `nnoremap <leader>vk` Vertical Split KeyMapping.vim
+ * `nnoremap <leader>vl` Vertical Split LeaderMapping.vim
+ * `nnoremap <leader>vp` Vertical Split Plugins.vim
+ * `nnoremap <leader>vs` Vertical Split .vimrc
+ * `nnoremap <leader>wh` Swap Window Left
+ * `nnoremap <leader>wj` Swap Window Down
+ * `nnoremap <leader>wk` Swap Window Up
+ * `nnoremap <leader>wl` Swap Window Right
+ * `nnoremap <leader>ym` Yanks from mark `t` to mark `b`
+ * `nnoremap <leader>{` Make vim fold around block and closes it
 
-cw: Copy Word
+normap:
+-------
+ * `noremap <leader>so` sources .vimrc
+ * `noremap <leader>sog` source .vimrc and do last command
+ * `noremap <leader>soz` sources .vimrc and closes
+ * `noremap <leader>u` Open URI in chrome
 
-cvar: Fetch variable and its value
-
-df: Do Difference of FTP file
-
-ds: Saves both files and returns to local
-
-Vimgrep hotkeys
-
-snip: Get snippet file
-
-pv: Not sure... pastes it all?
-
-pvar: Search and paste value fetched
-
+vnoremap:
+---------
+ * `vnoremap <leader>;` In visual mode, it will do `:@\"`
 
 
