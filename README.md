@@ -6,7 +6,55 @@ Description
 ===========
 Most of my configuration is stored here.  Only highly sensitive work will not be stored online.
 
-This readme (most likely) contains an up-to-date list of all plugins, functions, key mappings, and leader mappings.
+This README (most likely) contains an up-to-date list of:
+ * Plugins
+ * Functions (with a brief description)
+ * [ag.vim](https://github.com/rking/ag.vim)
+ * [auto-pairs](https://github.com/jiangmiao/auto-pairs)
+ * [ctrlp.vim](https://github.com/kien/ctrlp.vim)
+ * [emmet-vim](https://github.com/mattn/emmet-vim)
+ * [fzf](https://github.com/junegunn/fzf)
+ * [python-mode](https://github.com/python-mode/python-mode)
+ * [syntastic](https://github.com/scrooloose/syntastic)
+ * [ultisnips](https://github.com/SirVer/ultisnips)
+ * [undotree](https://github.com/mbbill/undotree)
+ * [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
+ * [vim-airline](https://github.com/bling/vim-airline)
+ * [vim-coloresque](https://github.com/gorodinskiy/vim-coloresque)
+ * [vim-commentary](https://github.com/tpope/vim-commentary)
+ * [vim-dirdiff](https://github.com/will133/vim-dirdiff)
+ * [vim-dotoo](https://github.com/dhruvasagar/vim-dotoo)
+ * [vim-easygrep](https://github.com/dkprice/vim-easygrep)
+ * [vim-fugitive](https://github.com/tpope/vim-fugitive)
+ * [vim-markdown-toc](https://github.com/mzlogin/vim-markdown-toc)
+ * [vim-markdown](https://github.com/plasticboy/vim-markdown)
+ * [vim-misc](https://github.com/xolox/vim-misc)
+ * [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
+ * [vim-notes](https://github.com/xolox/vim-notes)
+ * [vim-paste-operator](https://github.com/blackbeltscripting/vim-paste-operator)
+ * [vim-repeat](https://github.com/tpope/vim-repeat)
+ * [vim-snippets](https://github.com/honza/vim-snippets)
+ * [vim-sort-motion](https://github.com/christoomey/vim-sort-motion)
+ * [vim-srcery](https://github.com/roosta/vim-srcery)
+ * [vim-startify](https://github.com/mhinz/vim-startify)
+ * [vim-surround](https://github.com/tpope/vim-surround)
+ * [vim-sync](https://github.com/eshion/vim-sync)
+ * [vim-system-copy](https://github.com/christoomey/vim-system-copy)
+ * [vim-tmux-focus-events](https://github.com/tmux-plugins/vim-tmux-focus-events)
+ * [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
+ * [vim-tmux-runner](https://github.com/christoomey/vim-tmux-runner)
+ * [vim-visual-increment](https://github.com/triglav/vim-visual-increment)
+ * [vimux](https://github.com/benmills/vimux)
+
+New to VIM?
+-----------
+If you are new to vim here are a few things to keep in mind:
+    1. Plugins are what make vim powerful.  I'd suggest googling it if you haven't already.  I use [vim-plug](https://github.com/junegunn/vim-plug) to manage my plugins because it updates asynchronously if you're using [neovim](https://neovim.io).  My plugin list is located in the [vimrc/Plugins.vim](https://github.com/blackbeltscripting/vimrc/blob/master/Plugins.vim) file.  I've made a [Leader Mapping](#normal-mode-1) to easily insert a plugin into that list.  You don't need to add the "https://github.com/" part, just the user/project.
+    2. [Functions](https://github.com/blackbeltscripting/vimrc/blob/master/Functions.vim) are accessed by typing the colon key, followed by the plugin: <kbd>:</kbd>`plugin-name` (<kbd>;</kbd>`plugin-name` in *MY* vimrc).  I've made a full [list](#functions) of them below along with a brief description of what it does.
+    3. [Mappings](http://learnvimscriptthehardway.stevelosh.com/chapters/03.html) are what you tell vim unique.  You can tell vim to do anything when you type into the keyboard.
+       [Key Mappings](https://github.com/blackbeltscripting/vimrc/blob/master/KeyMapping.vim) tells vim to do something when you hit the key in whatever [mode](https://en.wikibooks.org/wiki/Learning_the_vi_Editor/Vim/Modes#Modes) you're in.
+       [Leader Mapping](https://github.com/blackbeltscripting/vimrc/blob/master/LeaderMapping.vim) is <kbd>\<space\></kbd>.
+       [Local Leader Mapping](https://github.com/blackbeltscripting/vimrc/blob/master/LocalLeaderMapping.vim) is <kbd>,,</kbd>.
 
 This page is kind of sensitive starting at 'Table of Contents' and below. I highly advise not trying to edit anything after 'Description'.
 
