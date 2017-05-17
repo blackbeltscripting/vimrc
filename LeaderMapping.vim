@@ -16,7 +16,6 @@ nnoremap <leader>l <c-w>10>| " Resize Split to the right
 nnoremap <leader>mh :call SwitchWord('left')<cr>| " Move word to the left
 nnoremap <leader>ml :call SwitchWord('right')<cr>| " Move word to the right
 nnoremap <leader>o :Startify<cr>| " Open Startify
-nnoremap <leader>q :vsplit ~/vimrc/LeaderMapping.vim<cr>zMjzoztonnoremap normal! <esc>"vq0ea| " Vertical split LeaderMapping.vim and dumps macro at reg q
 nnoremap <leader>s :w<cr>| " Saves file
 nnoremap <leader>src :e $MYVIMRC<cr>| " Open .vimrc
 nnoremap <leader>tab :call SpaceTabRetab()<cr>| " Retabs the entire pane
@@ -29,6 +28,7 @@ nnoremap <leader>vf :vsplit ~/vimrc/Functions.vim<cr>zM| " Vertical Split Functi
 nnoremap <leader>vh *:vert h <C-R>/<cr>| " Vertical Split help of current word in pointer
 nnoremap <leader>vk :vsplit ~/vimrc/KeyMapping.vim<cr>zM| " Vertical Split KeyMapping.vim
 nnoremap <leader>vl :vsplit ~/vimrc/LeaderMapping.vim<cr>zM| " Vertical Split LeaderMapping.vim
+nnoremap <leader>vll :vsplit ~/vimrc/LocalLeaderMapping.vim<cr>zM| " Vertical Split LocalLeaderMapping.vim
 nnoremap <leader>vp :vsplit ~/vimrc/Plugins.vim<cr>zo| " Vertical Split Plugins.vim
 nnoremap <leader>vs :vsplit $MYVIMRC<cr>| " Vertical Split .vimrc
 nnoremap <leader>wh <c-w>H| " Swap Window Left
@@ -40,8 +40,8 @@ nnoremap <leader>{ $a <esc>3a{<esc>}O<esc>3a}<esc>:Commentary<cr>zM| " Make vim 
 " }}}
 " normap: {{{
 " -----------
-noremap <leader>so :w<cr>:so $MYVIMRC<cr>zMzo| " sources .vimrc
-noremap <leader>sog :w<cr>:so $MYVIMRC<cr>zMzo@:| " source .vimrc and do last command
+noremap <leader>so :w<cr>:so $MYVIMRC<cr>zMzA| " sources .vimrc
+noremap <leader>sog :w<cr>:so $MYVIMRC<cr>zMzA@:| " source .vimrc and do last command
 noremap <leader>soz :w<cr>:so $MYVIMRC<cr>:q<cr>| " sources .vimrc and closes
 noremap <leader>u :call HandleURL()<cr>| " Open URI in chrome
 " }}}
@@ -49,6 +49,8 @@ noremap <leader>u :call HandleURL()<cr>| " Open URI in chrome
 " -------------
 vnoremap <leader>; y:@"<cr>| " In visual mode, it will do `:@\"`
 " }}}
+
+nnoremap <leader>ap :vs ~/vimrc/Plugins.vim<cr>5jYPvi'"+pF'l<C-V>}kk:sort<cr>ZZ:Update<cr> | " Pastes into plugin list from system clipboard and does `:Update`
 
 " Deprecated {{{
 " cv: Faster variable value fetching {{{

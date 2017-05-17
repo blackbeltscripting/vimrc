@@ -1,19 +1,23 @@
+" ========
 " Plugins:
 " ========
+
 let g:plugins = [
-            \ ['blackbeltscripting/vim-paste-operator'],
+            \ ['SirVer/ultisnips'],
             \ ['benmills/vimux'],
+            \ ['blackbeltscripting/vim-paste-operator'],
             \ ['bling/vim-airline'],
-            \ ['christoomey/vim-tmux-navigator'],
-            \ ['christoomey/vim-tmux-runner'],
             \ ['christoomey/vim-sort-motion'],
             \ ['christoomey/vim-system-copy'],
+            \ ['christoomey/vim-tmux-navigator'],
+            \ ['christoomey/vim-tmux-runner'],
+            \ ['dhruvasagar/vim-dotoo'],
             \ ['dkprice/vim-easygrep'],
             \ ['eshion/vim-sync'],
             \ ['gorodinskiy/vim-coloresque'],
             \ ['honza/vim-snippets'],
-            \ ['junegunn/fzf', "{ 'dir': '~/.fzf', 'do': './install --all' }"],
             \ ['jiangmiao/auto-pairs'],
+            \ ['junegunn/fzf', "{ 'dir': '~/.fzf', 'do': './install --all' }"],
             \ ['kien/ctrlp.vim'],
             \ ['mattn/emmet-vim'],
             \ ['mbbill/undotree'],
@@ -28,14 +32,14 @@ let g:plugins = [
             \ ['tmux-plugins/vim-tmux-focus-events'],
             \ ['tpope/vim-commentary'],
             \ ['tpope/vim-fugitive'],
-            \ ['tpope/vim-surround'],
             \ ['tpope/vim-repeat'],
+            \ ['tpope/vim-surround'],
             \ ['triglav/vim-visual-increment'],
             \ ['vim-airline/vim-airline-themes'],
             \ ['will133/vim-dirdiff'],
             \ ['xolox/vim-misc'],
             \ ['xolox/vim-notes'],
-            \ ['SirVer/ultisnips'],
     \ ]
+
             " \ ['Valloric/YouCompleteMe'],
             " \ ['vim-scripts/tComment'],

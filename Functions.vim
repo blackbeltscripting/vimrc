@@ -1,4 +1,7 @@
+" ==========
 " Functions:
+" ==========
+
 let g:functions = []
 
 let l = ['PopulateReadme', "Gets all Plugins, Functions, and Leader Maps and places them inside the README file. Then automatically commits changes to github."] " {{{
@@ -224,18 +227,18 @@ endfunction
 " }}}
 let l = ['VimFold', "Automatically folds some files."] " {{{
 :call add(g:functions, l)
-function! VimFold() " {{{
+function! VimFold()
     setl fdm=marker
     norm! zM
 endfunction
 " }}}
 
-" functions MoveRight/MoveLeft: Move Left/Right by mapping m[h/l] {{{
+" instantiate resolve modes {{{
 let s:blockwise = 'blockwise visual'
 let s:visual = 'visual'
 let s:motion = 'motion'
 let s:linewise = 'linewise'
-
+" }}}
 let l = ['MoveRight', "Move selection to the right."] " {{{
 :call add(g:functions, l)
 function! MoveRight(type, ...) abort
@@ -244,7 +247,7 @@ function! MoveRight(type, ...) abort
         silent exe 'normal! `[v`]"hdB"hPb'
     endif
 endfunction
-
+" }}}
 let l = ['MoveLeft', "Move selection to the left."] " {{{
 :call add(g:functions, l)
 function! MoveLeft(type, ...) abort
@@ -253,7 +256,7 @@ function! MoveLeft(type, ...) abort
         silent exe 'normal! `[v`]"ldW"lPb'
     endif
 endfunction
-
+" }}}
 let l = ['Resolve_mode', "Find out if type is linewise, blockwise, or motion."] " {{{
 :call add(g:functions, l)
 function! Resolve_mode(type, arg)
@@ -266,9 +269,35 @@ function! Resolve_mode(type, arg)
         return s:motion
     endif
 endfunction
-
+" }}}
+" Mapping MoveLeft/MoveRight {{{
 nnoremap <silent> <Plug>MoveLeft :<C-U>set opfunc=MoveLeft<CR>g@
 nnoremap <silent> <Plug>MoveRight :<C-U>set opfunc=MoveRight<CR>g@
 nmap mh <Plug>MoveLeft
 nmap ml <Plug>MoveRight
 " }}}
+
+function! SortAllFolds()
+    let foldlist = []
+    let poslist = []
+    let old_f = @f
+    normal! ggzjzc"fyy
+    " First we get the position of all folds.
+    " Then we temporarily yank the fold to register 'f'
+    while len(poslist) == 0 || poslist[-1] != getpos('.')
+        call add(poslist, getpos('.'))
+        call add(foldlist, @f)
+        call setpos('.', poslist[-1])
+        normal zjzc"fyy
+    endwhile
+    let foldlist = sort(foldlist)
+    let i = 0
+    if len(poslist) == len(foldlist)
+        while i <= len(poslist)
+            call setpos('.', poslist[i])
+            normal! dd
+            put = foldlist[i]
+            let i += 1
+        endwhile
+    endif
+endfunction
