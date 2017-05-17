@@ -2,13 +2,13 @@
 " Key Mapping:
 " ============
 
-" inoremap: {{{
-" -------------
+" Insert Mode: {{{
+" ----------------
 inoremap <C-A> <C-O>yiW<End>=<C-R>=<C-R>0<CR>| " While in insert mode, press `<C-A>` and it will do mathematics. Ex: `5+3<C-A>`
 inoremap <C-P> <esc>"+p| " Pastes from clipboard
 " }}}
-" nnoremap: {{{
-" -------------
+" Normal Mode: {{{
+" ----------------
 nnoremap * *N| " Don't move away from word the first time
 nnoremap : ;| " Enter Command Line
 nnoremap ; :| " Does next `f/F/t/T`
@@ -26,16 +26,16 @@ nnoremap U <c-r>| " Redo
 nnoremap Z ZZ| " Close and save
 nnoremap Q ZQ| " Close without saving
 " }}}
-" noremap: {{{
-" ------------
+" Normal, Visual, Select, Operator-pending: {{{
+" ---------------------------------------------
 noremap <F5> :UndotreeToggle<cr>| " Toggles Undo Tree
 noremap H ^| " Go to first nonwhite space of line
 noremap J H48jzt| " Page Down (assuming we have 48 lines)
 noremap K H48kzt| " Page Up (assuming we have 48 lines)
 noremap L $| " Go to EOL
 " }}}
-" vnoremap: {{{
-" -------------
+" Visual Mode: {{{
+" ----------------
 vnoremap : ;| " Enter Command Line
 vnoremap ; :| " Does next `f/F/t/T`
 vnoremap < <gv| " Quick indent in Visual Mode
