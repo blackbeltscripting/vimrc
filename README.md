@@ -206,6 +206,6 @@ Normal, Visual, Select, Operator-pending:
 
 Visual Mode:
 ---------
- * <kbd>\<leader\>;</kbd> In visual mode, it will do `:@\"`
+ * <kbd>\<leader\>;</kbd> This will do `:@\"`
 
 
