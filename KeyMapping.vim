@@ -12,36 +12,32 @@ inoremap <C-P> <esc>"+p| " Pastes from clipboard
 nnoremap * *N| " Don't move away when you hit the star key
 nnoremap : ;| " Switch `:`/`;`
 nnoremap ; :| " Switch `:`/`;`
-nnoremap <bs> i<bs><esc>l| " Backspace button deletes even in normal mode
-nnoremap <c-i> <c-w><c-k><c-w>=<c-w>_| " Move around windows (Not Working)
-nnoremap <c-j> <c-w>h| " Move around windows (Not Working)
-nnoremap <c-k> <c-w><c-j><c-w>=<c-w>_| " Move around windows (Not Working)
-nnoremap <c-l> <c-w>l| " Move around windows (Not Working)
-nnoremap <return> i<return><esc>| " Enter button returns even in normal mode
-nnoremap <silent><A-j> :set paste<CR>m`o<esc>``:set nopaste<CR>| " Alt-J/Alt-K
-nnoremap <silent><A-k> :set paste<CR>m`O<esc>``:set nopaste<CR>| " Alt-J/Alt-K
+nnoremap <bs> i<bs><esc>l| " Delete without needing to go to insert mode
+nnoremap <c-i> <c-w><c-k><c-w>=<c-w>_| " Move around windows
+nnoremap <c-j> <c-w>h| " Move around windows
+nnoremap <c-k> <c-w><c-j><c-w>=<c-w>_| " Move around windows
+nnoremap <c-l> <c-w>l| " Move around windows
+nnoremap <return> i<return><esc>| " Adds a new line without needing to go to insert mode
+nnoremap <silent><A-j> :set paste<CR>m`o<esc>``:set nopaste<CR>| " Puts a new line below without moving cursor
+nnoremap <silent><A-k> :set paste<CR>m`O<esc>``:set nopaste<CR>| " Puts a new line above without moving cursor
 nnoremap <space> i<space><esc>l| " Space button adds space in normal mode
-nnoremap v V| " Pressing `v` now selects entire line.
+nnoremap v V| " Visual line as 'v'. Hitting 'v' again should enter into visual block.
 nnoremap U <c-r>| " Redo
 nnoremap Z ZZ| " Close and save
 nnoremap Q ZQ| " Close without saving
-nnoremap zc zczz| " Moves cursor to center of screen as you close vimfold
-nnoremap zo zozt| " Moves cursor to top of screen as you open vimfold
-nnoremap { {zt| " When searching through blocks, center screen
-nnoremap } }zt| " When searching through blocks, center screen
 " }}}
 " noremap: {{{
 " ------------
 noremap <F5> :UndotreeToggle<cr>| " Toggles Undo Tree
-noremap H ^| " Right hand shift canvas control
-noremap J H48jzt| " Right hand shift canvas control
-noremap K H48kzt| " Right hand shift canvas control
-noremap L $| " Right hand shift canvas control
+noremap H ^| " Go to first nonwhite space of line
+noremap J H48jzt| " Page Down (assuming we have 48 lines)
+noremap K H48kzt| " Page Up (assuming we have 48 lines)
+noremap L $| " Go to EOL
 " }}}
 " vnoremap: {{{
 " -------------
-vnoremap : ;| " Switch `:`/`;`
-vnoremap ; :| " Switch `:`/`;`
+vnoremap : ;| " Enter Command Line
+vnoremap ; :| " Does next `f/F/t/T`
 vnoremap < <gv| " Quick indent in Visual Mode
 vnoremap <C-C> "+y| " Copies selection into system clipboard
 vnoremap v <C-V>| " Press `vv` to quickly get into Visual Block

@@ -107,36 +107,32 @@ nnoremap:
  * `nnoremap *` Don't move away when you hit the star key
  * `nnoremap :` Switch `:`/`;`
  * `nnoremap ;` Switch `:`/`;`
- * `nnoremap <bs>` Backspace button deletes even in normal mode
- * `nnoremap <c-i>` Move around windows (Not Working)
- * `nnoremap <c-j>` Move around windows (Not Working)
- * `nnoremap <c-k>` Move around windows (Not Working)
- * `nnoremap <c-l>` Move around windows (Not Working)
- * `nnoremap <return>` Enter button returns even in normal mode
- * `nnoremap <silent><A-j>` Alt-J/Alt-K
- * `nnoremap <silent><A-k>` Alt-J/Alt-K
+ * `nnoremap <bs>` Delete without needing to go to insert mode
+ * `nnoremap <c-i>` Move around windows
+ * `nnoremap <c-j>` Move around windows
+ * `nnoremap <c-k>` Move around windows
+ * `nnoremap <c-l>` Move around windows
+ * `nnoremap <return>` Adds a new line without needing to go to insert mode
+ * `nnoremap <silent><A-j>` Puts a new line below without moving cursor
+ * `nnoremap <silent><A-k>` Puts a new line above without moving cursor
  * `nnoremap <space>` Space button adds space in normal mode
- * `nnoremap v` Pressing `v` now selects entire line.
+ * `nnoremap v` Visual line as 'v'. Hitting 'v' again should enter into visual block.
  * `nnoremap U` Redo
  * `nnoremap Z` Close and save
  * `nnoremap Q` Close without saving
- * `nnoremap zc` Moves cursor to center of screen as you close vimfold
- * `nnoremap zo` Moves cursor to top of screen as you open vimfold
- * `nnoremap {` When searching through blocks, center screen
- * `nnoremap }` When searching through blocks, center screen
 
 noremap:
 --------
  * `noremap <F5>` Toggles Undo Tree
- * `noremap H` Right hand shift canvas control
- * `noremap J` Right hand shift canvas control
- * `noremap K` Right hand shift canvas control
- * `noremap L` Right hand shift canvas control
+ * `noremap H` Go to first nonwhite space of line
+ * `noremap J` Page Down (assuming we have 48 lines)
+ * `noremap K` Page Up (assuming we have 48 lines)
+ * `noremap L` Go to EOL
 
 vnoremap:
 ---------
- * `vnoremap :` Switch `:`/`;`
- * `vnoremap ;` Switch `:`/`;`
+ * `vnoremap :` Enter Command Line
+ * `vnoremap ;` Does next `f/F/t/T`
  * `vnoremap <` Quick indent in Visual Mode
  * `vnoremap <C-C>` Copies selection into system clipboard
  * `vnoremap v` Press `vv` to quickly get into Visual Block
