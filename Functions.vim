@@ -1,4 +1,5 @@
 " ==========
+
 " Functions:
 " ==========
 
@@ -71,7 +72,7 @@ function! YankAndPutMapping(t)
             else
                 let s = split(l, '| ')
                 let mapping = split(s[0], ' ')
-                let ll = ' * <kbd>' . escape(mapping[1], '\') . '</kbd> ' . s[1][2:]
+                let ll = ' * <kbd>' . escape(mapping[1], '<>') . '</kbd> ' . s[1][2:]
                 call add(line, ll)
             endif
         endfor

@@ -99,23 +99,23 @@ Key Mapping
 ===========
 inoremap:
 ---------
- * <kbd><C-A></kbd> While in insert mode, press `<C-A>` and it will do mathematics. Ex: `5+3<C-A>`
- * <kbd><C-P></kbd> Pastes from clipboard
+ * <kbd>\<C-A\></kbd> While in insert mode, press `<C-A>` and it will do mathematics. Ex: `5+3<C-A>`
+ * <kbd>\<C-P\></kbd> Pastes from clipboard
 
 nnoremap:
 ---------
  * <kbd>*</kbd> Don't move away from word the first time
  * <kbd>:</kbd> Enter Command Line
  * <kbd>;</kbd> Does next `f/F/t/T`
- * <kbd><bs></kbd> Delete without needing to go to insert mode
- * <kbd><c-i></kbd> Move around windows
- * <kbd><c-j></kbd> Move around windows
- * <kbd><c-k></kbd> Move around windows
- * <kbd><c-l></kbd> Move around windows
- * <kbd><return></kbd> Adds a new line without needing to go to insert mode
- * <kbd><silent><A-j></kbd> Puts a new line below without moving cursor
- * <kbd><silent><A-k></kbd> Puts a new line above without moving cursor
- * <kbd><space></kbd> Space button adds space in normal mode
+ * <kbd>\<bs\></kbd> Delete without needing to go to insert mode
+ * <kbd>\<c-i\></kbd> Move around windows
+ * <kbd>\<c-j\></kbd> Move around windows
+ * <kbd>\<c-k\></kbd> Move around windows
+ * <kbd>\<c-l\></kbd> Move around windows
+ * <kbd>\<return\></kbd> Adds a new line without needing to go to insert mode
+ * <kbd>\<silent\>\<A-j\></kbd> Puts a new line below without moving cursor
+ * <kbd>\<silent\>\<A-k\></kbd> Puts a new line above without moving cursor
+ * <kbd>\<space\></kbd> Space button adds space in normal mode
  * <kbd>v</kbd> Visual line as 'v'. Hitting 'v' again should enter into visual block.
  * <kbd>U</kbd> Redo
  * <kbd>Z</kbd> Close and save
@@ -123,7 +123,7 @@ nnoremap:
 
 noremap:
 --------
- * <kbd><F5></kbd> Toggles Undo Tree
+ * <kbd>\<F5\></kbd> Toggles Undo Tree
  * <kbd>H</kbd> Go to first nonwhite space of line
  * <kbd>J</kbd> Page Down (assuming we have 48 lines)
  * <kbd>K</kbd> Page Up (assuming we have 48 lines)
@@ -133,60 +133,60 @@ vnoremap:
 ---------
  * <kbd>:</kbd> Enter Command Line
  * <kbd>;</kbd> Does next `f/F/t/T`
- * <kbd><</kbd> Quick indent in Visual Mode
- * <kbd><C-C></kbd> Copies selection into system clipboard
+ * <kbd>\<</kbd> Quick indent in Visual Mode
+ * <kbd>\<C-C\></kbd> Copies selection into system clipboard
  * <kbd>v</kbd> Press `vv` to quickly get into Visual Block
- * <kbd>></kbd> Quick indent in Visual Mode
+ * <kbd>\></kbd> Quick indent in Visual Mode
 
 
 Leader Mapping
 ==============
 nnoremap:
 ---------
- * <kbd><leader>;</kbd> Adds semicolon at EOL
- * <kbd><leader><space></kbd> Unhighlight Search word
- * <kbd><leader>ap</kbd> Pastes into plugin list from system clipboard and does `:Update` function
- * <kbd><leader>c</kbd> Saves, then sends command to tmux
- * <kbd><leader>cm</kbd> Sends make command to runner and focuses the pane
- * <kbd><leader>conc</kbd> Concatonates inside parentheses using '.' delimiter
- * <kbd><leader>h</kbd> Resize Split to the left
- * <kbd><leader>j</kbd> Maximize Splits
- * <kbd><leader>k</kbd> Restore Splits
- * <kbd><leader>l</kbd> Resize Split to the right
- * <kbd><leader>mh</kbd> Move word to the left
- * <kbd><leader>ml</kbd> Move word to the right
- * <kbd><leader>o</kbd> Open Startify
- * <kbd><leader>s</kbd> Saves file
- * <kbd><leader>src</kbd> Open .vimrc
- * <kbd><leader>tab</kbd> Retabs the entire pane
- * <kbd><leader>tl</kbd> Toggle relativenumber
- * <kbd><leader>ts</kbd> Toggle spell
- * <kbd><leader>tw</kbd> Toggle wrap
- * <kbd><leader>v</kbd> Vertical Split Startify [Default]
- * <kbd><leader>vF</kbd> Vertical Split FZF
- * <kbd><leader>vf</kbd> Vertical Split Functions.vim
- * <kbd><leader>vh</kbd> Vertical Split help of current word in pointer
- * <kbd><leader>vk</kbd> Vertical Split KeyMapping.vim
- * <kbd><leader>vl</kbd> Vertical Split LeaderMapping.vim
- * <kbd><leader>vll</kbd> Vertical Split LocalLeaderMapping.vim
- * <kbd><leader>vp</kbd> Vertical Split Plugins.vim
- * <kbd><leader>vs</kbd> Vertical Split .vimrc
- * <kbd><leader>wh</kbd> Swap Window Left
- * <kbd><leader>wj</kbd> Swap Window Down
- * <kbd><leader>wk</kbd> Swap Window Up
- * <kbd><leader>wl</kbd> Swap Window Right
- * <kbd><leader>ym</kbd> Yanks from mark `t` to mark `b`
- * <kbd><leader>{</kbd> Make vim fold around block and closes it
+ * <kbd>\<leader\>;</kbd> Adds semicolon at EOL
+ * <kbd>\<leader\>\<space\></kbd> Unhighlight Search word
+ * <kbd>\<leader\>ap</kbd> Pastes into plugin list from system clipboard and does `:Update` function
+ * <kbd>\<leader\>c</kbd> Saves, then sends command to tmux
+ * <kbd>\<leader\>cm</kbd> Sends make command to runner and focuses the pane
+ * <kbd>\<leader\>conc</kbd> Concatonates inside parentheses using '.' delimiter
+ * <kbd>\<leader\>h</kbd> Resize Split to the left
+ * <kbd>\<leader\>j</kbd> Maximize Splits
+ * <kbd>\<leader\>k</kbd> Restore Splits
+ * <kbd>\<leader\>l</kbd> Resize Split to the right
+ * <kbd>\<leader\>mh</kbd> Move word to the left
+ * <kbd>\<leader\>ml</kbd> Move word to the right
+ * <kbd>\<leader\>o</kbd> Open Startify
+ * <kbd>\<leader\>s</kbd> Saves file
+ * <kbd>\<leader\>src</kbd> Open .vimrc
+ * <kbd>\<leader\>tab</kbd> Retabs the entire pane
+ * <kbd>\<leader\>tl</kbd> Toggle relativenumber
+ * <kbd>\<leader\>ts</kbd> Toggle spell
+ * <kbd>\<leader\>tw</kbd> Toggle wrap
+ * <kbd>\<leader\>v</kbd> Vertical Split Startify [Default]
+ * <kbd>\<leader\>vF</kbd> Vertical Split FZF
+ * <kbd>\<leader\>vf</kbd> Vertical Split Functions.vim
+ * <kbd>\<leader\>vh</kbd> Vertical Split help of current word in pointer
+ * <kbd>\<leader\>vk</kbd> Vertical Split KeyMapping.vim
+ * <kbd>\<leader\>vl</kbd> Vertical Split LeaderMapping.vim
+ * <kbd>\<leader\>vll</kbd> Vertical Split LocalLeaderMapping.vim
+ * <kbd>\<leader\>vp</kbd> Vertical Split Plugins.vim
+ * <kbd>\<leader\>vs</kbd> Vertical Split .vimrc
+ * <kbd>\<leader\>wh</kbd> Swap Window Left
+ * <kbd>\<leader\>wj</kbd> Swap Window Down
+ * <kbd>\<leader\>wk</kbd> Swap Window Up
+ * <kbd>\<leader\>wl</kbd> Swap Window Right
+ * <kbd>\<leader\>ym</kbd> Yanks from mark `t` to mark `b`
+ * <kbd>\<leader\>{</kbd> Make vim fold around block and closes it
 
 normap:
 -------
- * <kbd><leader>so</kbd> sources .vimrc
- * <kbd><leader>sog</kbd> source .vimrc and do last command
- * <kbd><leader>soz</kbd> sources .vimrc and closes
- * <kbd><leader>u</kbd> Open URI in chrome
+ * <kbd>\<leader\>so</kbd> sources .vimrc
+ * <kbd>\<leader\>sog</kbd> source .vimrc and do last command
+ * <kbd>\<leader\>soz</kbd> sources .vimrc and closes
+ * <kbd>\<leader\>u</kbd> Open URI in chrome
 
 vnoremap:
 ---------
- * <kbd><leader>;</kbd> In visual mode, it will do `:@\"`
+ * <kbd>\<leader\>;</kbd> In visual mode, it will do `:@\"`
 
 
