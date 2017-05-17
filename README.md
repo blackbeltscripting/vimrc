@@ -47,6 +47,7 @@ Plugins
  * [vim-coloresque](https://github.com/gorodinskiy/vim-coloresque)
  * [vim-commentary](https://github.com/tpope/vim-commentary)
  * [vim-dirdiff](https://github.com/will133/vim-dirdiff)
+ * [vim-dotoo](https://github.com/dhruvasagar/vim-dotoo)
  * [vim-easygrep](https://github.com/dkprice/vim-easygrep)
  * [vim-fugitive](https://github.com/tpope/vim-fugitive)
  * [vim-markdown-toc](https://github.com/mzlogin/vim-markdown-toc)
@@ -148,6 +149,7 @@ nnoremap:
 ---------
  * `nnoremap <leader>;` Adds semicolon at EOL
  * `nnoremap <leader><space>` Unhighlight Search word
+ * `nnoremap <leader>ap` Pastes into plugin list from system clipboard and does `:Update` function
  * `nnoremap <leader>c` Saves, then sends command to tmux
  * `nnoremap <leader>cm` Sends make command to runner and focuses the pane
  * `nnoremap <leader>conc` Concatonates inside parentheses using '.' delimiter
@@ -158,7 +160,6 @@ nnoremap:
  * `nnoremap <leader>mh` Move word to the left
  * `nnoremap <leader>ml` Move word to the right
  * `nnoremap <leader>o` Open Startify
- * `nnoremap <leader>q` Vertical split LeaderMapping.vim and dumps macro at reg q
  * `nnoremap <leader>s` Saves file
  * `nnoremap <leader>src` Open .vimrc
  * `nnoremap <leader>tab` Retabs the entire pane
@@ -171,6 +172,7 @@ nnoremap:
  * `nnoremap <leader>vh` Vertical Split help of current word in pointer
  * `nnoremap <leader>vk` Vertical Split KeyMapping.vim
  * `nnoremap <leader>vl` Vertical Split LeaderMapping.vim
+ * `nnoremap <leader>vll` Vertical Split LocalLeaderMapping.vim
  * `nnoremap <leader>vp` Vertical Split Plugins.vim
  * `nnoremap <leader>vs` Vertical Split .vimrc
  * `nnoremap <leader>wh` Swap Window Left
