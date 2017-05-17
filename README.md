@@ -20,7 +20,7 @@ If you are new to vim here are a few things to keep in mind:
 2. [Functions](https://github.com/blackbeltscripting/vimrc/blob/master/Functions.vim) are accessed by typing the colon key, followed by the plugin: <kbd>:</kbd>`plugin-name` (<kbd>;</kbd>`plugin-name` in *MY* vimrc).  I've made a full [list](#functions) of them below along with a brief description of what it does.
 3. [Mappings](http://learnvimscriptthehardway.stevelosh.com/chapters/03.html) tell vim to do any operation when you type into the keyboard. When you press a key in a certain [mode](https://en.wikibooks.org/wiki/Learning_the_vi_Editor/Vim/Modes#Modes), vim operates a function.  When you hit a `<leader>` key then a series of combinations, vim will fire different operations.
    * [Key Mappings](https://github.com/blackbeltscripting/vimrc/blob/master/KeyMapping.vim) operates command when you hit the key.
-   * [Leader Mapping](https://github.com/blackbeltscripting/vimrc/blob/master/LeaderMapping.vim) in this vimrc is <kbd>\<space\></kbd>.
+   * [Leader Mapping](https://github.com/blackbeltscripting/vimrc/blob/master/LeaderMapping.vim) in this vimrc is <kbd>space</kbd>.
    * [Local Leader Mapping](https://github.com/blackbeltscripting/vimrc/blob/master/LocalLeaderMapping.vim) in this vimrc is <kbd>,,</kbd>.
 
 This page is kind of sensitive starting at 'Table of Contents' and below. I highly advise not trying to edit this page unless you know **EXACTLY** what you're doing.
