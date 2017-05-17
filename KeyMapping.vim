@@ -4,14 +4,14 @@
 
 " Insert Mode: {{{
 " ----------------
-inoremap <C-A> <C-O>yiW<End>=<C-R>=<C-R>0<CR>| " While in insert mode, press `<C-A>` and it will do mathematics. Ex: `5+3<C-A>`
+inoremap <C-A> <C-O>yiW<End>=<C-R>=<C-R>0<CR>| " While in insert mode, press `<kbd>\<C-A\></kbd>` and it will do mathematics. Ex: `5+3<kbd>\<C-A\></kbd>`
 inoremap <C-P> <esc>"+p| " Pastes from clipboard
 " }}}
 " Normal Mode: {{{
 " ----------------
 nnoremap * *N| " Don't move away from word the first time
 nnoremap : ;| " Enter Command Line
-nnoremap ; :| " Does next `f/F/t/T`
+nnoremap ; :| " Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
 nnoremap <bs> i<bs><esc>l| " Delete without needing to go to insert mode
 nnoremap <c-i> <c-w><c-k><c-w>=<c-w>_| " Move around windows
 nnoremap <c-j> <c-w>h| " Move around windows

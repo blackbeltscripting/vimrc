@@ -99,14 +99,14 @@ Key Mapping
 ===========
 Insert Mode:
 ------------
- * <kbd>\<C-A\></kbd> While in insert mode, press `<C-A>` and it will do mathematics. Ex: `5+3<C-A>`
+ * <kbd>\<C-A\></kbd> While in insert mode, press `<kbd>\<C-A\></kbd>` and it will do mathematics. Ex: `5+3<kbd>\<C-A\></kbd>`
  * <kbd>\<C-P\></kbd> Pastes from clipboard
 
 Normal Mode:
 ------------
  * <kbd>*</kbd> Don't move away from word the first time
  * <kbd>:</kbd> Enter Command Line
- * <kbd>;</kbd> Does next `f/F/t/T`
+ * <kbd>;</kbd> Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
  * <kbd>\<bs\></kbd> Delete without needing to go to insert mode
  * <kbd>\<c-i\></kbd> Move around windows
  * <kbd>\<c-j\></kbd> Move around windows
