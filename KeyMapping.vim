@@ -21,7 +21,7 @@ nnoremap <return> i<return><esc>| " Adds a new line without needing to go to ins
 nnoremap <silent><A-j> :set paste<CR>m`o<esc>``:set nopaste<CR>| " Puts a new line below without moving cursor
 nnoremap <silent><A-k> :set paste<CR>m`O<esc>``:set nopaste<CR>| " Puts a new line above without moving cursor
 nnoremap <space> i<space><esc>l| " Space button adds space in normal mode
-nnoremap v V| " Visual line as <kdb>v</kdb>. Hitting <kdb>v</kdb> again should enter into visual block.
+nnoremap v V| " Visual line as <kbd>v</kbd>. Hitting <kbd>v</kbd> again should enter into visual block.
 nnoremap U <c-r>| " Redo
 nnoremap Z ZZ| " Close and save
 nnoremap Q ZQ| " Close without saving
