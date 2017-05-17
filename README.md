@@ -114,19 +114,19 @@ Key Mapping
 ===========
 Insert Mode:
 ------------
- * <kbd>\<C-A\></kbd> While in insert mode, press <kbd>\<C-A\></kbd> and it will do mathematics. Ex: `5+3`<kbd>\<C-A\></kbd>
- * <kbd>\<C-P\></kbd> Pastes from clipboard
+ * <kbd>\<C-A\></kbd> Do mathematics. Ex: `5+3`<kbd>\<C-A\></kbd>
+ * <kbd>\<C-P\></kbd> Quick paste from clipboard
 
 Normal Mode:
 ------------
- * <kbd>*</kbd> Don't move away from word the first time
- * <kbd>:</kbd> Enter Command Line
- * <kbd>;</kbd> Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
+ * <kbd>*</kbd> Prevents cursor from moving when hitting the star key.
+ * <kbd>;</kbd> Enter Command Line
+ * <kbd>:</kbd> Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
  * <kbd>\<BS\></kbd> Delete without needing to go to insert mode
- * <kbd>\<C-I\></kbd> Move around windows
- * <kbd>\<C-J\></kbd> Move around windows
- * <kbd>\<C-K\></kbd> Move around windows
- * <kbd>\<C-L\></kbd> Move around windows
+ * <kbd>\<C-H\></kbd> Move to left split
+ * <kbd>\<C-J\></kbd> Move to down split
+ * <kbd>\<C-K\></kbd> Move to up split
+ * <kbd>\<C-L\></kbd> Move move to right split
  * <kbd>\<RETURN\></kbd> Adds a new line without needing to go to insert mode
  * <kbd>\<SILENT\>\<A-J\></kbd> Puts a new line below without moving cursor
  * <kbd>\<SILENT\>\<A-K\></kbd> Puts a new line above without moving cursor
@@ -146,12 +146,12 @@ Normal, Visual, Select, Operator-pending:
 
 Visual Mode:
 ------------
- * <kbd>:</kbd> Enter Command Line
- * <kbd>;</kbd> Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
- * <kbd>\<</kbd> Quick indent in Visual Mode
+ * <kbd>;</kbd> Enter Command Line
+ * <kbd>:</kbd> Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
+ * <kbd>\<</kbd> Quick indent
  * <kbd>\<C-C\></kbd> Copies selection into system clipboard
  * <kbd>v</kbd> Press <kbd>vv</kbd> to quickly get into Visual Block
- * <kbd>\></kbd> Quick indent in Visual Mode
+ * <kbd>\></kbd> Quick indent
 
 
 Leader Mapping

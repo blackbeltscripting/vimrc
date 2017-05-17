@@ -4,19 +4,19 @@
 
 " Insert Mode: {{{
 " ----------------
-inoremap <C-A> <C-O>yiW<End>=<C-R>=<C-R>0<CR>| " While in insert mode, press <kbd>\<C-A\></kbd> and it will do mathematics. Ex: `5+3`<kbd>\<C-A\></kbd>
-inoremap <C-P> <esc>"+p| " Pastes from clipboard
+inoremap <C-A> <C-O>yiW<End>=<C-R>=<C-R>0<CR>| " Do mathematics. Ex: `5+3`<kbd>\<C-A\></kbd>
+inoremap <C-P> <esc>"+p| " Quick paste from clipboard
 " }}}
 " Normal Mode: {{{
 " ----------------
-nnoremap * *N| " Don't move away from word the first time
-nnoremap : ;| " Enter Command Line
-nnoremap ; :| " Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
+nnoremap * *N| " Prevents cursor from moving when hitting the star key.
+nnoremap ; :| " Enter Command Line
+nnoremap : ;| " Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
 nnoremap <BS> i<bs><esc>l| " Delete without needing to go to insert mode
-nnoremap <C-I> <c-w><c-k><c-w>=<c-w>_| " Move around windows
-nnoremap <C-J> <c-w>h| " Move around windows
-nnoremap <C-K> <c-w><c-j><c-w>=<c-w>_| " Move around windows
-nnoremap <C-L> <c-w>l| " Move around windows
+nnoremap <C-H> <c-w><c-k><c-w>=<c-w>_| " Move to left split
+nnoremap <C-J> <c-w>h| " Move to down split
+nnoremap <C-K> <c-w><c-j><c-w>=<c-w>_| " Move to up split
+nnoremap <C-L> <c-w>l| " Move move to right split
 nnoremap <RETURN> i<return><esc>| " Adds a new line without needing to go to insert mode
 nnoremap <SILENT><A-J> :set paste<CR>m`o<esc>``:set nopaste<CR>| " Puts a new line below without moving cursor
 nnoremap <SILENT><A-K> :set paste<CR>m`O<esc>``:set nopaste<CR>| " Puts a new line above without moving cursor
@@ -36,12 +36,12 @@ noremap L $| " Go to EOL
 " }}}
 " Visual Mode: {{{
 " ----------------
-vnoremap : ;| " Enter Command Line
-vnoremap ; :| " Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
-vnoremap < <gv| " Quick indent in Visual Mode
+vnoremap ; :| " Enter Command Line
+vnoremap : ;| " Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
+vnoremap < <gv| " Quick indent
 vnoremap <C-C> "+y| " Copies selection into system clipboard
 vnoremap v <C-V>| " Press <kbd>vv</kbd> to quickly get into Visual Block
-vnoremap > >gv| " Quick indent in Visual Mode
+vnoremap > >gv| " Quick indent
 " }}}
 
 " Deprecated: {{{
