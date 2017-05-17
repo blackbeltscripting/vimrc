@@ -24,9 +24,9 @@ Table of Contents
     * [Normal, Visual, Select, Operator-pending:](#normal-visual-select-operator-pending)
     * [Visual Mode:](#visual-mode)
 * [Leader Mapping](#leader-mapping)
-    * [nnoremap:](#nnoremap)
-    * [normap:](#normap)
-    * [vnoremap:](#vnoremap)
+    * [Normal Mode:](#normal-mode-1)
+    * [Normal, Visual, Select, Operator-pending:](#normal-visual-select-operator-pending-1)
+    * [Visual Mode:](#visual-mode-1)
 
 <!-- vim-markdown-toc -->
 
@@ -141,9 +141,11 @@ Visual Mode:
 
 Leader Mapping
 ==============
-nnoremap:
----------
+Normal Mode:
+------------
  * <kbd>\<leader\>;</kbd> Adds semicolon at EOL
+ * <kbd>\<leader\>\<space\></kbd> Unhighlight Search word
+ * <kbd>\<leader\>\<space\></kbd> Unhighlight Search word
  * <kbd>\<leader\>\<space\></kbd> Unhighlight Search word
  * <kbd>\<leader\>ap</kbd> Pastes into plugin list from system clipboard and does `:Update` function
  * <kbd>\<leader\>c</kbd> Saves, then sends command to tmux
@@ -178,14 +180,14 @@ nnoremap:
  * <kbd>\<leader\>ym</kbd> Yanks from mark `t` to mark `b`
  * <kbd>\<leader\>{</kbd> Make vim fold around block and closes it
 
-normap:
--------
+Normal, Visual, Select, Operator-pending:
+-----------------------------------------
  * <kbd>\<leader\>so</kbd> sources .vimrc
  * <kbd>\<leader\>sog</kbd> source .vimrc and do last command
  * <kbd>\<leader\>soz</kbd> sources .vimrc and closes
- * <kbd>\<leader\>u</kbd> Open URI in chrome
+ * <kbd>\<leader\>u</kbd> open uri in chrome
 
-vnoremap:
+Visual Mode:
 ---------
  * <kbd>\<leader\>;</kbd> In visual mode, it will do `:@\"`
 

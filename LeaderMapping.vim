@@ -2,11 +2,14 @@
 " Leader Mapping:
 " ===============
 
-" nnoremap: {{{
-" -------------
+" Normal Mode: {{{
+" ----------------
 nnoremap <leader>-j 0Ypw<C-V>$r-
+nnoremap <leader>-k 0YPzow<C-V>$r-
 nnoremap <leader>; $a;<esc>| " Adds semicolon at EOL
 nnoremap <leader><space> :nohls<cr>| " Unhighlight Search word
+nnoremap <leader>=j 0Ypw<C-V>$r=
+nnoremap <leader>=k 0YPzow<C-V>$r=
 nnoremap <leader>ap :vs ~/vimrc/Plugins.vim<cr>5jYPvi'"+pF'l<C-V>}kk:sort<cr>ZZ:Update<cr> | " Pastes into plugin list from system clipboard and does `:Update` function
 nnoremap <leader>c :w<cr>:VtrSendCommandToRunner<cr>:VtrFocusRunner<cr>| " Saves, then sends command to tmux
 nnoremap <leader>cm :VtrSendCommandToRunner make<CR>:VtrFocusRunner<CR>| " Sends make command to runner and focuses the pane
@@ -40,14 +43,14 @@ nnoremap <leader>wl <c-w>L| " Swap Window Right
 nnoremap <leader>ym 'ty'b| " Yanks from mark `t` to mark `b`
 nnoremap <leader>{ $a <esc>3a{<esc>}O<esc>3a}<esc>:Commentary<cr>zM| " Make vim fold around block and closes it
 " }}}
-" normap: {{{
-" -----------
-noremap <leader>so :w<cr>:so $MYVIMRC<cr>zMzA| " sources .vimrc
-noremap <leader>sog :w<cr>:so $MYVIMRC<cr>zMzA@:| " source .vimrc and do last command
-noremap <leader>soz :w<cr>:so $MYVIMRC<cr>:q<cr>| " sources .vimrc and closes
-noremap <leader>u :call HandleURL()<cr>| " Open URI in chrome
+" Normal, Visual, Select, Operator-pending: {{{
+" ---------------------------------------------
+noremap <leader>so :w<cr>:so $myvimrc<cr>zmza| " sources .vimrc
+noremap <leader>sog :w<cr>:so $myvimrc<cr>zmza@:| " source .vimrc and do last command
+noremap <leader>soz :w<cr>:so $myvimrc<cr>:q<cr>| " sources .vimrc and closes
+noremap <leader>u :call handleurl()<cr>| " open uri in chrome
 " }}}
-" vnoremap: {{{
+" Visual Mode: {{{
 " -------------
 vnoremap <leader>; y:@"<cr>| " In visual mode, it will do `:@\"`
 " }}}
@@ -68,7 +71,7 @@ nnoremap <leader>df :call DiffFTP()<cr><c-w>hgg]c
 " ds: Saves both files and returns to local {{{
 nnoremap <leader>ds :w<cr><C-W>l :w<cr><C-W>h
 " }}}
-" Vimgrep hotkeys {{{
+ " Vimgrep hotkeys {{{
 nnoremap <leader>find :call Search()<cr>
 nnoremap <leader>n :cnext<cr>
 nnoremap <leader>m :cprev<cr>
