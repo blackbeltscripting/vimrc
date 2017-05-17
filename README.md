@@ -11,7 +11,6 @@ This readme (most likely) contains an up-to-date list of all plugins, functions,
 This page is kind of sensitive starting at 'Table of Contents' and below. I highly advise not trying to edit anything after 'Description'.
 
 Enjoy! \m/(~.^)\m/
-<kbd>Testing</kbd>
 
 
 Table of Contents
@@ -100,94 +99,94 @@ Key Mapping
 ===========
 inoremap:
 ---------
- * `inoremap <C-A>` While in insert mode, press `<C-A>` and it will do mathematics. Ex: `5+3<C-A>`
- * `inoremap <C-P>` Pastes from clipboard
+ * <kbd><C-A></kbd> While in insert mode, press `<C-A>` and it will do mathematics. Ex: `5+3<C-A>`
+ * <kbd><C-P></kbd> Pastes from clipboard
 
 nnoremap:
 ---------
- * `nnoremap *` Don't move away from word the first time
- * `nnoremap :` Enter Command Line
- * `nnoremap ;` Does next `f/F/t/T`
- * `nnoremap <bs>` Delete without needing to go to insert mode
- * `nnoremap <c-i>` Move around windows
- * `nnoremap <c-j>` Move around windows
- * `nnoremap <c-k>` Move around windows
- * `nnoremap <c-l>` Move around windows
- * `nnoremap <return>` Adds a new line without needing to go to insert mode
- * `nnoremap <silent><A-j>` Puts a new line below without moving cursor
- * `nnoremap <silent><A-k>` Puts a new line above without moving cursor
- * `nnoremap <space>` Space button adds space in normal mode
- * `nnoremap v` Visual line as 'v'. Hitting 'v' again should enter into visual block.
- * `nnoremap U` Redo
- * `nnoremap Z` Close and save
- * `nnoremap Q` Close without saving
+ * <kbd>*</kbd> Don't move away from word the first time
+ * <kbd>:</kbd> Enter Command Line
+ * <kbd>;</kbd> Does next `f/F/t/T`
+ * <kbd><bs></kbd> Delete without needing to go to insert mode
+ * <kbd><c-i></kbd> Move around windows
+ * <kbd><c-j></kbd> Move around windows
+ * <kbd><c-k></kbd> Move around windows
+ * <kbd><c-l></kbd> Move around windows
+ * <kbd><return></kbd> Adds a new line without needing to go to insert mode
+ * <kbd><silent><A-j></kbd> Puts a new line below without moving cursor
+ * <kbd><silent><A-k></kbd> Puts a new line above without moving cursor
+ * <kbd><space></kbd> Space button adds space in normal mode
+ * <kbd>v</kbd> Visual line as 'v'. Hitting 'v' again should enter into visual block.
+ * <kbd>U</kbd> Redo
+ * <kbd>Z</kbd> Close and save
+ * <kbd>Q</kbd> Close without saving
 
 noremap:
 --------
- * `noremap <F5>` Toggles Undo Tree
- * `noremap H` Go to first nonwhite space of line
- * `noremap J` Page Down (assuming we have 48 lines)
- * `noremap K` Page Up (assuming we have 48 lines)
- * `noremap L` Go to EOL
+ * <kbd><F5></kbd> Toggles Undo Tree
+ * <kbd>H</kbd> Go to first nonwhite space of line
+ * <kbd>J</kbd> Page Down (assuming we have 48 lines)
+ * <kbd>K</kbd> Page Up (assuming we have 48 lines)
+ * <kbd>L</kbd> Go to EOL
 
 vnoremap:
 ---------
- * `vnoremap :` Enter Command Line
- * `vnoremap ;` Does next `f/F/t/T`
- * `vnoremap <` Quick indent in Visual Mode
- * `vnoremap <C-C>` Copies selection into system clipboard
- * `vnoremap v` Press `vv` to quickly get into Visual Block
- * `vnoremap >` Quick indent in Visual Mode
+ * <kbd>:</kbd> Enter Command Line
+ * <kbd>;</kbd> Does next `f/F/t/T`
+ * <kbd><</kbd> Quick indent in Visual Mode
+ * <kbd><C-C></kbd> Copies selection into system clipboard
+ * <kbd>v</kbd> Press `vv` to quickly get into Visual Block
+ * <kbd>></kbd> Quick indent in Visual Mode
 
 
 Leader Mapping
 ==============
 nnoremap:
 ---------
- * `nnoremap <leader>;` Adds semicolon at EOL
- * `nnoremap <leader><space>` Unhighlight Search word
- * `nnoremap <leader>ap` Pastes into plugin list from system clipboard and does `:Update` function
- * `nnoremap <leader>c` Saves, then sends command to tmux
- * `nnoremap <leader>cm` Sends make command to runner and focuses the pane
- * `nnoremap <leader>conc` Concatonates inside parentheses using '.' delimiter
- * `nnoremap <leader>h` Resize Split to the left
- * `nnoremap <leader>j` Maximize Splits
- * `nnoremap <leader>k` Restore Splits
- * `nnoremap <leader>l` Resize Split to the right
- * `nnoremap <leader>mh` Move word to the left
- * `nnoremap <leader>ml` Move word to the right
- * `nnoremap <leader>o` Open Startify
- * `nnoremap <leader>s` Saves file
- * `nnoremap <leader>src` Open .vimrc
- * `nnoremap <leader>tab` Retabs the entire pane
- * `nnoremap <leader>tl` Toggle relativenumber
- * `nnoremap <leader>ts` Toggle spell
- * `nnoremap <leader>tw` Toggle wrap
- * `nnoremap <leader>v` Vertical Split Startify [Default]
- * `nnoremap <leader>vF` Vertical Split FZF
- * `nnoremap <leader>vf` Vertical Split Functions.vim
- * `nnoremap <leader>vh` Vertical Split help of current word in pointer
- * `nnoremap <leader>vk` Vertical Split KeyMapping.vim
- * `nnoremap <leader>vl` Vertical Split LeaderMapping.vim
- * `nnoremap <leader>vll` Vertical Split LocalLeaderMapping.vim
- * `nnoremap <leader>vp` Vertical Split Plugins.vim
- * `nnoremap <leader>vs` Vertical Split .vimrc
- * `nnoremap <leader>wh` Swap Window Left
- * `nnoremap <leader>wj` Swap Window Down
- * `nnoremap <leader>wk` Swap Window Up
- * `nnoremap <leader>wl` Swap Window Right
- * `nnoremap <leader>ym` Yanks from mark `t` to mark `b`
- * `nnoremap <leader>{` Make vim fold around block and closes it
+ * <kbd><leader>;</kbd> Adds semicolon at EOL
+ * <kbd><leader><space></kbd> Unhighlight Search word
+ * <kbd><leader>ap</kbd> Pastes into plugin list from system clipboard and does `:Update` function
+ * <kbd><leader>c</kbd> Saves, then sends command to tmux
+ * <kbd><leader>cm</kbd> Sends make command to runner and focuses the pane
+ * <kbd><leader>conc</kbd> Concatonates inside parentheses using '.' delimiter
+ * <kbd><leader>h</kbd> Resize Split to the left
+ * <kbd><leader>j</kbd> Maximize Splits
+ * <kbd><leader>k</kbd> Restore Splits
+ * <kbd><leader>l</kbd> Resize Split to the right
+ * <kbd><leader>mh</kbd> Move word to the left
+ * <kbd><leader>ml</kbd> Move word to the right
+ * <kbd><leader>o</kbd> Open Startify
+ * <kbd><leader>s</kbd> Saves file
+ * <kbd><leader>src</kbd> Open .vimrc
+ * <kbd><leader>tab</kbd> Retabs the entire pane
+ * <kbd><leader>tl</kbd> Toggle relativenumber
+ * <kbd><leader>ts</kbd> Toggle spell
+ * <kbd><leader>tw</kbd> Toggle wrap
+ * <kbd><leader>v</kbd> Vertical Split Startify [Default]
+ * <kbd><leader>vF</kbd> Vertical Split FZF
+ * <kbd><leader>vf</kbd> Vertical Split Functions.vim
+ * <kbd><leader>vh</kbd> Vertical Split help of current word in pointer
+ * <kbd><leader>vk</kbd> Vertical Split KeyMapping.vim
+ * <kbd><leader>vl</kbd> Vertical Split LeaderMapping.vim
+ * <kbd><leader>vll</kbd> Vertical Split LocalLeaderMapping.vim
+ * <kbd><leader>vp</kbd> Vertical Split Plugins.vim
+ * <kbd><leader>vs</kbd> Vertical Split .vimrc
+ * <kbd><leader>wh</kbd> Swap Window Left
+ * <kbd><leader>wj</kbd> Swap Window Down
+ * <kbd><leader>wk</kbd> Swap Window Up
+ * <kbd><leader>wl</kbd> Swap Window Right
+ * <kbd><leader>ym</kbd> Yanks from mark `t` to mark `b`
+ * <kbd><leader>{</kbd> Make vim fold around block and closes it
 
 normap:
 -------
- * `noremap <leader>so` sources .vimrc
- * `noremap <leader>sog` source .vimrc and do last command
- * `noremap <leader>soz` sources .vimrc and closes
- * `noremap <leader>u` Open URI in chrome
+ * <kbd><leader>so</kbd> sources .vimrc
+ * <kbd><leader>sog</kbd> source .vimrc and do last command
+ * <kbd><leader>soz</kbd> sources .vimrc and closes
+ * <kbd><leader>u</kbd> Open URI in chrome
 
 vnoremap:
 ---------
- * `vnoremap <leader>;` In visual mode, it will do `:@\"`
+ * <kbd><leader>;</kbd> In visual mode, it will do `:@\"`
 
 
