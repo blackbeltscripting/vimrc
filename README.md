@@ -122,15 +122,15 @@ Normal Mode:
  * <kbd>*</kbd> Don't move away from word the first time
  * <kbd>:</kbd> Enter Command Line
  * <kbd>;</kbd> Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
- * <kbd>\<bs\></kbd> Delete without needing to go to insert mode
- * <kbd>\<c-i\></kbd> Move around windows
- * <kbd>\<c-j\></kbd> Move around windows
- * <kbd>\<c-k\></kbd> Move around windows
- * <kbd>\<c-l\></kbd> Move around windows
- * <kbd>\<return\></kbd> Adds a new line without needing to go to insert mode
- * <kbd>\<silent\>\<A-j\></kbd> Puts a new line below without moving cursor
- * <kbd>\<silent\>\<A-k\></kbd> Puts a new line above without moving cursor
- * <kbd>\<space\></kbd> Space button adds space in normal mode
+ * <kbd>\<BS\></kbd> Delete without needing to go to insert mode
+ * <kbd>\<C-I\></kbd> Move around windows
+ * <kbd>\<C-J\></kbd> Move around windows
+ * <kbd>\<C-K\></kbd> Move around windows
+ * <kbd>\<C-L\></kbd> Move around windows
+ * <kbd>\<RETURN\></kbd> Adds a new line without needing to go to insert mode
+ * <kbd>\<SILENT\>\<A-J\></kbd> Puts a new line below without moving cursor
+ * <kbd>\<SILENT\>\<A-K\></kbd> Puts a new line above without moving cursor
+ * <kbd>\<SPACE\></kbd> Space button adds space in normal mode
  * <kbd>v</kbd> Visual line as <kbd>v</kbd>. Hitting <kbd>v</kbd> again should enter into visual block.
  * <kbd>U</kbd> Redo
  * <kbd>Z</kbd> Close and save

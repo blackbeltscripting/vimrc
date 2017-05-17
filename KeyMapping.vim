@@ -12,15 +12,15 @@ inoremap <C-P> <esc>"+p| " Pastes from clipboard
 nnoremap * *N| " Don't move away from word the first time
 nnoremap : ;| " Enter Command Line
 nnoremap ; :| " Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
-nnoremap <bs> i<bs><esc>l| " Delete without needing to go to insert mode
-nnoremap <c-i> <c-w><c-k><c-w>=<c-w>_| " Move around windows
-nnoremap <c-j> <c-w>h| " Move around windows
-nnoremap <c-k> <c-w><c-j><c-w>=<c-w>_| " Move around windows
-nnoremap <c-l> <c-w>l| " Move around windows
-nnoremap <return> i<return><esc>| " Adds a new line without needing to go to insert mode
-nnoremap <silent><A-j> :set paste<CR>m`o<esc>``:set nopaste<CR>| " Puts a new line below without moving cursor
-nnoremap <silent><A-k> :set paste<CR>m`O<esc>``:set nopaste<CR>| " Puts a new line above without moving cursor
-nnoremap <space> i<space><esc>l| " Space button adds space in normal mode
+nnoremap <BS> i<bs><esc>l| " Delete without needing to go to insert mode
+nnoremap <C-I> <c-w><c-k><c-w>=<c-w>_| " Move around windows
+nnoremap <C-J> <c-w>h| " Move around windows
+nnoremap <C-K> <c-w><c-j><c-w>=<c-w>_| " Move around windows
+nnoremap <C-L> <c-w>l| " Move around windows
+nnoremap <RETURN> i<return><esc>| " Adds a new line without needing to go to insert mode
+nnoremap <SILENT><A-J> :set paste<CR>m`o<esc>``:set nopaste<CR>| " Puts a new line below without moving cursor
+nnoremap <SILENT><A-K> :set paste<CR>m`O<esc>``:set nopaste<CR>| " Puts a new line above without moving cursor
+nnoremap <SPACE> i<space><esc>l| " Space button adds space in normal mode
 nnoremap v V| " Visual line as <kbd>v</kbd>. Hitting <kbd>v</kbd> again should enter into visual block.
 nnoremap U <c-r>| " Redo
 nnoremap Z ZZ| " Close and save
