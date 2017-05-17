@@ -116,7 +116,7 @@ Normal Mode:
  * <kbd>\<silent\>\<A-j\></kbd> Puts a new line below without moving cursor
  * <kbd>\<silent\>\<A-k\></kbd> Puts a new line above without moving cursor
  * <kbd>\<space\></kbd> Space button adds space in normal mode
- * <kbd>v</kbd> Visual line as 'v'. Hitting 'v' again should enter into visual block.
+ * <kbd>v</kbd> Visual line as <kdb>v</kdb>. Hitting <kdb>v</kdb> again should enter into visual block.
  * <kbd>U</kbd> Redo
  * <kbd>Z</kbd> Close and save
  * <kbd>Q</kbd> Close without saving
@@ -135,7 +135,7 @@ Visual Mode:
  * <kbd>;</kbd> Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
  * <kbd>\<</kbd> Quick indent in Visual Mode
  * <kbd>\<C-C\></kbd> Copies selection into system clipboard
- * <kbd>v</kbd> Press `vv` to quickly get into Visual Block
+ * <kbd>v</kbd> Press <kbd>vv</kbd> to quickly get into Visual Block
  * <kbd>\></kbd> Quick indent in Visual Mode
 
 
