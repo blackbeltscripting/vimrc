@@ -322,7 +322,6 @@ let filestosource = [
             \ 'LocalLeaderMapping.vim',
             \ 'Functions.vim',
             \ 'Sensitive.vim',
-            \ 'concatonate.vim',
             \ ]
 for f in filestosource
     let file = $VIMHOME . f

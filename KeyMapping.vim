@@ -5,43 +5,43 @@
 " Insert Mode: {{{
 " ----------------
 inoremap <C-A> <C-O>yiW<End>=<C-R>=<C-R>0<CR>| " Do mathematics. Ex: `5+3`<kbd>\<C-A\></kbd>
-inoremap <C-P> <esc>"+p| " Quick paste from clipboard
+inoremap <C-P> <esc>"+p|                       " Quick paste from clipboard
 " }}}
 " Normal Mode: {{{
 " ----------------
-nnoremap * *N| " Prevents cursor from moving when hitting the star key.
-nnoremap ; :| " Enter Command Line
-nnoremap : ;| " Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
-nnoremap <BS> i<bs><esc>l| " Delete without needing to go to insert mode
-nnoremap <C-H> <c-w><c-k><c-w>=<c-w>_| " Move to left split
-nnoremap <C-J> <c-w>h| " Move to down split
-nnoremap <C-K> <c-w><c-j><c-w>=<c-w>_| " Move to up split
-nnoremap <C-L> <c-w>l| " Move move to right split
-nnoremap <RETURN> i<return><esc>| " Adds a new line without needing to go to insert mode
+nnoremap * *N|                                                   " Prevents cursor from moving when hitting the star key.
+nnoremap ; :|                                                    " Enter Command Line
+nnoremap : ;|                                                    " Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
+nnoremap <BS> i<bs><esc>l|                                       " Delete without needing to go to insert mode
+nnoremap <C-H> <c-w><c-k><c-w>=<c-w>_|                           " Move to left split
+nnoremap <C-J> <c-w>h|                                           " Move to down split
+nnoremap <C-K> <c-w><c-j><c-w>=<c-w>_|                           " Move to up split
+nnoremap <C-L> <c-w>l|                                           " Move move to right split
+nnoremap <RETURN> i<return><esc>|                                " Adds a new line without needing to go to insert mode
 nnoremap <SILENT><A-J> :set paste<CR>m`o<esc>``:set nopaste<CR>| " Puts a new line below without moving cursor
 nnoremap <SILENT><A-K> :set paste<CR>m`O<esc>``:set nopaste<CR>| " Puts a new line above without moving cursor
-nnoremap <SPACE> i<space><esc>l| " Space button adds space in normal mode
-nnoremap v V| " Visual line as <kbd>v</kbd>. Hitting <kbd>v</kbd> again should enter into visual block.
-nnoremap U <c-r>| " Redo
-nnoremap Z ZZ| " Close and save
-nnoremap Q ZQ| " Close without saving
+nnoremap <SPACE> i<space><esc>l|                                 " Space button adds space in normal mode
+nnoremap v V|                                                    " Visual line as <kbd>v</kbd>. Hitting <kbd>v</kbd> again should enter into visual block.
+nnoremap U <c-r>|                                                " Redo
+nnoremap Z ZZ|                                                   " Close and save
+nnoremap Q ZQ|                                                   " Close without saving
 " }}}
 " Normal, Visual, Select, Operator-pending: {{{
 " ---------------------------------------------
 noremap <F5> :UndotreeToggle<cr>| " Toggles Undo Tree
-noremap H ^| " Go to first nonwhite space of line
-noremap J H48jzt| " Page Down (assuming we have 48 lines)
-noremap K H48kzt| " Page Up (assuming we have 48 lines)
-noremap L $| " Go to EOL
+noremap H ^|                      " Go to first nonwhite space of line
+noremap J H48jzt|                 " Page Down (assuming we have 48 lines)
+noremap K H48kzt|                 " Page Up (assuming we have 48 lines)
+noremap L $|                      " Go to EOL
 " }}}
 " Visual Mode: {{{
 " ----------------
-vnoremap ; :| " Enter Command Line
-vnoremap : ;| " Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
-vnoremap < <gv| " Quick indent
+vnoremap ; :|       " Enter Command Line
+vnoremap : ;|       " Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
+vnoremap < <gv|     " Quick indent
 vnoremap <C-C> "+y| " Copies selection into system clipboard
-vnoremap v <C-V>| " Press <kbd>vv</kbd> to quickly get into Visual Block
-vnoremap > >gv| " Quick indent
+vnoremap v <C-V>|   " Press <kbd>vv</kbd> to quickly get into Visual Block
+vnoremap > >gv|     " Quick indent
 " }}}
 
 " Deprecated: {{{
