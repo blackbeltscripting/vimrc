@@ -9,42 +9,9 @@ Most of my configuration is stored here.  Only highly sensitive work will not be
 This README (most likely) contains an up-to-date list of:
  * Plugins
  * Functions (with a brief description)
- * [ag.vim](https://github.com/rking/ag.vim)
- * [auto-pairs](https://github.com/jiangmiao/auto-pairs)
- * [ctrlp.vim](https://github.com/kien/ctrlp.vim)
- * [emmet-vim](https://github.com/mattn/emmet-vim)
- * [fzf](https://github.com/junegunn/fzf)
- * [python-mode](https://github.com/python-mode/python-mode)
- * [syntastic](https://github.com/scrooloose/syntastic)
- * [ultisnips](https://github.com/SirVer/ultisnips)
- * [undotree](https://github.com/mbbill/undotree)
- * [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
- * [vim-airline](https://github.com/bling/vim-airline)
- * [vim-coloresque](https://github.com/gorodinskiy/vim-coloresque)
- * [vim-commentary](https://github.com/tpope/vim-commentary)
- * [vim-dirdiff](https://github.com/will133/vim-dirdiff)
- * [vim-dotoo](https://github.com/dhruvasagar/vim-dotoo)
- * [vim-easygrep](https://github.com/dkprice/vim-easygrep)
- * [vim-fugitive](https://github.com/tpope/vim-fugitive)
- * [vim-markdown-toc](https://github.com/mzlogin/vim-markdown-toc)
- * [vim-markdown](https://github.com/plasticboy/vim-markdown)
- * [vim-misc](https://github.com/xolox/vim-misc)
- * [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
- * [vim-notes](https://github.com/xolox/vim-notes)
- * [vim-paste-operator](https://github.com/blackbeltscripting/vim-paste-operator)
- * [vim-repeat](https://github.com/tpope/vim-repeat)
- * [vim-snippets](https://github.com/honza/vim-snippets)
- * [vim-sort-motion](https://github.com/christoomey/vim-sort-motion)
- * [vim-srcery](https://github.com/roosta/vim-srcery)
- * [vim-startify](https://github.com/mhinz/vim-startify)
- * [vim-surround](https://github.com/tpope/vim-surround)
- * [vim-sync](https://github.com/eshion/vim-sync)
- * [vim-system-copy](https://github.com/christoomey/vim-system-copy)
- * [vim-tmux-focus-events](https://github.com/tmux-plugins/vim-tmux-focus-events)
- * [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
- * [vim-tmux-runner](https://github.com/christoomey/vim-tmux-runner)
- * [vim-visual-increment](https://github.com/triglav/vim-visual-increment)
- * [vimux](https://github.com/benmills/vimux)
+ * Key Mappings
+ * Leader Mappings
+ * Local Leader Mappings
 
 ### New to VIM?
 
