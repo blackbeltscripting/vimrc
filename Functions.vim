@@ -11,6 +11,7 @@ function! PopulateReadme()
     call YankAndPutVariables('Functions')
     call YankAndPutMapping('Key')
     call YankAndPutMapping('Leader')
+    call YankAndPutMapping('LocalLeader')
     !git commit -am 'Auto-commit using PopulateReadMe() vim function.'
     !git push
 endfunction
