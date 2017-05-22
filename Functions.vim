@@ -22,7 +22,7 @@ function! YankAndPutVariables(t)
        vs $HOME/vimrc/README.md
     endif
     normal! gg
-    let top = search(a:t . '\n=*', 'W')
+    let top = search(a:t . '\n=*', 'b')
     if top > 0
         normal! 2j0d}k
         let line = []
