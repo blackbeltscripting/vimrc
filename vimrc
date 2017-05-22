@@ -37,6 +37,7 @@ set ignorecase                          " Ignores Case in Search
 set hlsearch				" Sets search highlighting
 set laststatus=2			" Shows status bar by default
 set mouse=n				" Mouse touch in normal mode only
+set nowrap                              " Don't wrap by default.
 set number numberwidth=2		" Turns on line with width up to 9999;
 set relativenumber			" Turns on relative numbering
 " set shiftwidth=4			" Sets the tab in block to 1 tab
