@@ -19,10 +19,10 @@ Table of Contents
 * [Plugins](#plugins)
 * [Functions](#functions)
 * [Key Mapping](#key-mapping)
-* [Leader Mapping](#leader-mapping)
-    * [Normal No Remap:](#normal-no-remap)
-    * [No_Remap:](#no_remap)
-    * [Visual No Remap:](#visual-no-remap)
+    * [Insert Mode:](#insert-mode)
+    * [Normal Mode:](#normal-mode)
+    * [Normal, Visual, Select, Operator-pending:](#normal-visual-select-operator-pending)
+    * [Visual Mode:](#visual-mode)
 
 <!-- vim-markdown-toc -->
 
@@ -75,10 +75,9 @@ Functions
  * `ExecuteMacroOverVisualRange()` Don't remember what this does...
  * `GetFunctionName()` Prints word before the '(' in buffer.
  * `HandleURL()` Opens URL/URI
- * `Install()` Upgrades Plug Install, Does Plug Install, Populate Readme
  * `MoveLeft()` Move selection to the left.
  * `MoveRight()` Move selection to the right.
- * `PopulateReadme()` Gets all Plugins, Functions, and Leader Maps and places them inside the README file.
+ * `PopulateReadme()` Gets all Plugins, Functions, and Leader Maps and places them inside the README file. Then automatically commits changes to github.
  * `Replace()` Replaces word in all buffers (I think).
  * `Resolve_mode()` Find out if type is linewise, blockwise, or motion.
  * `Search()` Searches with Ag.
@@ -86,59 +85,54 @@ Functions
  * `SpaceTabRetab()` ReTabs and removes the spaces from file.
  * `TrimSpaces()` Removes extra white spaces before EOL.
  * `Unobscure()` ... in alpha stage.
+ * `Update()` Upgrades Vim-Plug, Updates Plugins, Fires Populate Readme
  * `VimFold()` Automatically folds some files.
- * `YankAndPutVariables()` Yanks variable from vimrc to put into README.md file.
+ * `YankAndPutMapping()` Gets Key, Leader, or LocalLeader and populates it to README.md file.
+ * `YankAndPutVariables()` Gets variables and populates it to README.md file.
 
 
 Key Mapping
 ===========
+Insert Mode:
+------------
+ * <kbd>\<C-A\></kbd> Do mathematics. Ex: `5+3`<kbd>\<C-A\></kbd>
+ * <kbd>\<C-P\></kbd>                     " Quick paste from clipboard
 
-Leader Mapping
-==============
-Normal No Remap:
-----------------
- * `nnoremap <leader>;` Adds semicolon at EOL
- * `nnoremap <leader><space>` Unhighlight Search word
- * `nnoremap <leader>c` Saves, then sends command to tmux
- * `nnoremap <leader>cm` Sends make command to runner and focuses the pane
- * `nnoremap <leader>conc` Concatonates inside parentheses using '.' delimiter
- * `nnoremap <leader>h` Resize Split to the left
- * `nnoremap <leader>j` Maximize Splits
- * `nnoremap <leader>k` Restore Splits
- * `nnoremap <leader>l` Resize Split to the right
- * `nnoremap <leader>mh` Move word to the left
- * `nnoremap <leader>ml` Move word to the right
- * `nnoremap <leader>o` Open Startify
- * `nnoremap <leader>q` Vertical split LeaderMapping.vim and dumps macro at reg q
- * `nnoremap <leader>s` Saves file
- * `nnoremap <leader>src` Open .vimrc
- * `nnoremap <leader>tab` Retabs the entire pane
- * `nnoremap <leader>tl` Toggle relativenumber
- * `nnoremap <leader>ts` Toggle spell
- * `nnoremap <leader>tw` Toggle wrap
- * `nnoremap <leader>v` Vertical Split Startify [Default]
- * `nnoremap <leader>vF` Vertical Split FZF
- * `nnoremap <leader>vf` Vertical Split Functions.vim
- * `nnoremap <leader>vh` Vertical Split help of current word in pointer
- * `nnoremap <leader>vk` Vertical Split KeyMapping.vim
- * `nnoremap <leader>vl` Vertical Split LeaderMapping.vim
- * `nnoremap <leader>vp` Vertical Split Plugins.vim
- * `nnoremap <leader>vs` Vertical Split .vimrc
- * `nnoremap <leader>wh` Swap Window Left
- * `nnoremap <leader>wj` Swap Window Down
- * `nnoremap <leader>wk` Swap Window Up
- * `nnoremap <leader>wl` Swap Window Right
- * `nnoremap <leader>ym` Yanks from mark `t` to mark `b`
- * `nnoremap <leader>{` Make vim fold around block and closes it
+Normal Mode:
+------------
+ * <kbd>*</kbd>                                                 " Prevents cursor from moving when hitting the star key.
+ * <kbd>;</kbd>                                                  " Enter Command Line
+ * <kbd>:</kbd>                                                  " Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
+ * <kbd>\<BS\></kbd>                                     " Delete without needing to go to insert mode
+ * <kbd>\<C-H\></kbd>                         " Move to left split
+ * <kbd>\<C-J\></kbd>                                         " Move to down split
+ * <kbd>\<C-K\></kbd>                         " Move to up split
+ * <kbd>\<C-L\></kbd>                                         " Move move to right split
+ * <kbd>\<RETURN\></kbd>                              " Adds a new line without needing to go to insert mode
+ * <kbd>\<SILENT\>\<A-J\></kbd> Puts a new line below without moving cursor
+ * <kbd>\<SILENT\>\<A-K\></kbd> Puts a new line above without moving cursor
+ * <kbd>\<SPACE\></kbd>                               " Space button adds space in normal mode
+ * <kbd>v</kbd>                                                  " Visual line as <kbd>v</kbd>. Hitting <kbd>v</kbd> again should enter into visual block.
+ * <kbd>v</kbd>                                                  " Visual line as <kbd>v</kbd>. Hitting <kbd>v</kbd> again should enter into visual block.
+ * <kbd>U</kbd>                                              " Redo
+ * <kbd>Z</kbd>                                                 " Close and save
+ * <kbd>Q</kbd>                                                 " Close without saving
 
-No_Remap:
----------
- * `noremap <leader>so` sources .vimrc
- * `noremap <leader>soz` sources .vimrc and closes
- * `noremap <leader>u` Open URI in chrome
+Normal, Visual, Select, Operator-pending:
+-----------------------------------------
+ * <kbd>\<F5\></kbd> Toggles Undo Tree
+ * <kbd>H</kbd>                    " Go to first nonwhite space of line
+ * <kbd>J</kbd>               " Page Down (assuming we have 48 lines)
+ * <kbd>K</kbd>               " Page Up (assuming we have 48 lines)
+ * <kbd>L</kbd>                    " Go to EOL
 
-Visual No Remap:
-----------------
- * `vnoremap <leader>;` In visual mode, it will do `:@\"`
+Visual Mode:
+------------
+ * <kbd>;</kbd>     " Enter Command Line
+ * <kbd>:</kbd>     " Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
+ * <kbd>\<</kbd>   " Quick indent
+ * <kbd>\<C-C\></kbd> Copies selection into system clipboard
+ * <kbd>v</kbd> " Press <kbd>vv</kbd> to quickly get into Visual Block
+ * <kbd>\></kbd>   " Quick indent
 
 

@@ -53,31 +53,42 @@ function! YankAndPutMapping(t)
         vs $HOME/vimrc/README.md
     endif
     normal! gg
-    let top = search(a:t . ' Mapping\n=*', 'W')
-    if top > 0
-        normal! 2j
-        call search('\n\n\n', 'esW')
-        normal! kd`'ddk
-        execute ('vs $HOME/vimrc/' . a:t . 'Mapping.vim')
-        normal! gg}j"by}ZQ
-        let lines = split(@b, '\n')
-        let line = []
-        for l in lines
-            if l[0] == '"'
-                if len(l[2:-5]) >  0
-                    call add(line, l[2:-5])
-                else
-                    call add(line, '')
-                endif
-            else
-                let s = split(l, '| ')
-                let mapping = split(s[0], ' ')
-                let ll = ' * <kbd>' . escape(mapping[1], '<>') . '</kbd> ' . s[1][2:]
-                call add(line, ll)
-            endif
-        endfor
-        put=line
+    let search = a:t . ' Mapping'
+    let top = search(search . '\n=*', 'W')
+    echo top
+    if top == 0
+        echo 'No ' . search . ' Found. Making it at the bottom.'
+        let temp = @m
+        let @m = search . "\n"
+        normal! G2"mpjVr=$
+        let @m = " * temp \n\n\n"
+        normal! "mp2k0
+        let @m = temp
     endif
+    normal! 2j
+    call search('\n\n\n', 'esW')
+    normal! kd`'ddk
+    execute ('vs $HOME/vimrc/' . a:t . 'Mapping.vim')
+    normal! gg}j"by}ZQ
+    let lines = split(@b, '\n')
+    let line = []
+    for l in lines
+        if l[0] == '"'
+            if len(l[2:-5]) >  0
+                call add(line, l[2:-5])
+            else
+                call add(line, '')
+            endif
+        else
+            let s = split(l, '|[ ]')
+            let comment = substitute(s[1], '^\s*"', '', 'g')
+            echo comment
+            let mapping = split(s[0], ' ')
+            let ll = ' * <kbd>' . escape(mapping[1], '<>') . '</kbd>' . comment
+            call add(line, ll)
+        endif
+    endfor
+    put=line
 endfunction
 " }}}
 let l = ['Col80', "Fires a vertical line if cursor reaches over the 80th column."] " {{{

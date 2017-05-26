@@ -13,10 +13,10 @@ nnoremap * *N|                                                   " Prevents curs
 nnoremap ; :|                                                    " Enter Command Line
 nnoremap : ;|                                                    " Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
 nnoremap <BS> i<bs><esc>l|                                       " Delete without needing to go to insert mode
-nnoremap <C-H> <c-w><c-k><c-w>=<c-w>_|                           " Move to left split
+nnoremap <C-H> :TmuxNavigateLeft<cr>                             " Move to left split
 nnoremap <C-J> <c-w>h|                                           " Move to down split
 nnoremap <C-K> <c-w><c-j><c-w>=<c-w>_|                           " Move to up split
-nnoremap <C-L> <c-w>l|                                           " Move move to right split
+nnoremap <C-L> :TmuxNavigateRight<cr>                            " Move move to right split
 nnoremap <RETURN> i<return><esc>|                                " Adds a new line without needing to go to insert mode
 nnoremap <SILENT><A-J> :set paste<CR>m`o<esc>``:set nopaste<CR>| " Puts a new line below without moving cursor
 nnoremap <SILENT><A-K> :set paste<CR>m`O<esc>``:set nopaste<CR>| " Puts a new line above without moving cursor
