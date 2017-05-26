@@ -6,24 +6,9 @@ Description
 ===========
 Most of my configuration is stored here.  Only highly sensitive work will not be stored online.
 
-This README (most likely) contains an up-to-date list of:
- * Plugins
- * Functions (with a brief description)
- * Key Mappings
- * Leader Mappings
- * Local Leader Mappings
+This readme (most likely) contains an up-to-date list of all plugins, functions, key mappings, and leader mappings.
 
-### New to VIM?
-
-If you are new to vim here are a few things to keep in mind:
-1. Plugins are what make vim powerful.  I'd suggest googling it if you haven't already.  I use [vim-plug](https://github.com/junegunn/vim-plug) to manage my plugins because it updates asynchronously if you're using [neovim](https://neovim.io).  My plugin list is located in the [vimrc/Plugins.vim](https://github.com/blackbeltscripting/vimrc/blob/master/Plugins.vim) file.  I've made a [Leader Mapping](#normal-mode-1) to easily insert a plugin into that list.  You don't need to add the "https://github.com/" part, just the user/project.
-2. [Functions](https://github.com/blackbeltscripting/vimrc/blob/master/Functions.vim) are accessed by typing the colon key, followed by the plugin: <kbd>:</kbd>`plugin-name` (<kbd>;</kbd>`plugin-name` in *MY* vimrc).  I've made a full [list](#functions) of them below along with a brief description of what it does.
-3. [Mappings](http://learnvimscriptthehardway.stevelosh.com/chapters/03.html) tell vim to do any operation when you type into the keyboard. When you press a key in a certain [mode](https://en.wikibooks.org/wiki/Learning_the_vi_Editor/Vim/Modes#Modes), vim operates a function.  When you hit a `<leader>` key then a series of combinations, vim will fire different operations.
-   * [Key Mappings](https://github.com/blackbeltscripting/vimrc/blob/master/KeyMapping.vim) operates command when you hit the key.
-   * [Leader Mapping](https://github.com/blackbeltscripting/vimrc/blob/master/LeaderMapping.vim) in this vimrc is <kbd>space</kbd>.
-   * [Local Leader Mapping](https://github.com/blackbeltscripting/vimrc/blob/master/LocalLeaderMapping.vim) in this vimrc is <kbd>,,</kbd>.
-
-This page is kind of sensitive starting at 'Table of Contents' and below. I highly advise not trying to edit this page unless you know **EXACTLY** what you're doing.
+Don't even touch this page. I swear to God it's sensitive as hell!
 
 Enjoy! \m/(~.^)\m/
 
@@ -34,16 +19,10 @@ Table of Contents
 * [Plugins](#plugins)
 * [Functions](#functions)
 * [Key Mapping](#key-mapping)
-    * [Insert Mode:](#insert-mode)
-    * [Normal Mode:](#normal-mode)
-    * [Normal, Visual, Select, Operator-pending:](#normal-visual-select-operator-pending)
-    * [Visual Mode:](#visual-mode)
 * [Leader Mapping](#leader-mapping)
-    * [Normal Mode:](#normal-mode-1)
-    * [Normal, Visual, Select, Operator-pending:](#normal-visual-select-operator-pending-1)
-    * [Visual Mode:](#visual-mode-1)
-* [LocalLeader Mapping](#localleader-mapping)
-    * [Normal Mode:](#normal-mode-2)
+    * [Normal No Remap:](#normal-no-remap)
+    * [No_Remap:](#no_remap)
+    * [Visual No Remap:](#visual-no-remap)
 
 <!-- vim-markdown-toc -->
 
@@ -96,9 +75,10 @@ Functions
  * `ExecuteMacroOverVisualRange()` Don't remember what this does...
  * `GetFunctionName()` Prints word before the '(' in buffer.
  * `HandleURL()` Opens URL/URI
+ * `Install()` Upgrades Plug Install, Does Plug Install, Populate Readme
  * `MoveLeft()` Move selection to the left.
  * `MoveRight()` Move selection to the right.
- * `PopulateReadme()` Gets all Plugins, Functions, and Leader Maps and places them inside the README file. Then automatically commits changes to github.
+ * `PopulateReadme()` Gets all Plugins, Functions, and Leader Maps and places them inside the README file.
  * `Replace()` Replaces word in all buffers (I think).
  * `Resolve_mode()` Find out if type is linewise, blockwise, or motion.
  * `Search()` Searches with Ag.
@@ -106,117 +86,59 @@ Functions
  * `SpaceTabRetab()` ReTabs and removes the spaces from file.
  * `TrimSpaces()` Removes extra white spaces before EOL.
  * `Unobscure()` ... in alpha stage.
- * `Update()` Upgrades Vim-Plug, Updates Plugins, Fires Populate Readme
  * `VimFold()` Automatically folds some files.
- * `YankAndPutMapping()` Gets Key, Leader, or LocalLeader and populates it to README.md file.
- * `YankAndPutVariables()` Gets variables and populates it to README.md file.
+ * `YankAndPutVariables()` Yanks variable from vimrc to put into README.md file.
 
 
 Key Mapping
 ===========
-Insert Mode:
-------------
- * <kbd>\<C-A\></kbd> Do mathematics. Ex: `5+3`<kbd>\<C-A\></kbd>
- * <kbd>\<C-P\></kbd>                     " Quick paste from clipboard
-
-Normal Mode:
-------------
- * <kbd>*</kbd>                                                 " Prevents cursor from moving when hitting the star key.
- * <kbd>;</kbd>                                                  " Enter Command Line
- * <kbd>:</kbd>                                                  " Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
- * <kbd>\<BS\></kbd>                                     " Delete without needing to go to insert mode
- * <kbd>\<C-H\></kbd>                         " Move to left split
- * <kbd>\<C-J\></kbd>                                         " Move to down split
- * <kbd>\<C-K\></kbd>                         " Move to up split
- * <kbd>\<C-L\></kbd>                                         " Move move to right split
- * <kbd>\<RETURN\></kbd>                              " Adds a new line without needing to go to insert mode
- * <kbd>\<SILENT\>\<A-J\></kbd> Puts a new line below without moving cursor
- * <kbd>\<SILENT\>\<A-K\></kbd> Puts a new line above without moving cursor
- * <kbd>\<SPACE\></kbd>                               " Space button adds space in normal mode
- * <kbd>v</kbd>                                                  " Visual line as <kbd>v</kbd>. Hitting <kbd>v</kbd> again should enter into visual block.
- * <kbd>U</kbd>                                              " Redo
- * <kbd>Z</kbd>                                                 " Close and save
- * <kbd>Q</kbd>                                                 " Close without saving
-
-Normal, Visual, Select, Operator-pending:
------------------------------------------
- * <kbd>\<F5\></kbd> Toggles Undo Tree
- * <kbd>H</kbd>                    " Go to first nonwhite space of line
- * <kbd>J</kbd>               " Page Down (assuming we have 48 lines)
- * <kbd>K</kbd>               " Page Up (assuming we have 48 lines)
- * <kbd>L</kbd>                    " Go to EOL
-
-Visual Mode:
-------------
- * <kbd>;</kbd>     " Enter Command Line
- * <kbd>:</kbd>     " Does next <kbd>f</kbd>/<kbd>F</kbd>/<kbd>t</kbd>/<kbd>T</kbd>
- * <kbd>\<</kbd>   " Quick indent
- * <kbd>\<C-C\></kbd> Copies selection into system clipboard
- * <kbd>v</kbd> " Press <kbd>vv</kbd> to quickly get into Visual Block
- * <kbd>\></kbd>   " Quick indent
-
 
 Leader Mapping
 ==============
-Normal Mode:
-------------
- * <kbd>\<leader\>-j</kbd> A rough way to add '-' below a line.
- * <kbd>\<leader\>-k</kbd> A rough way to add '-' above a line.
- * <kbd>\<leader\>;</kbd> Adds semicolon at EOL
- * <kbd>\<leader\>\<space\></kbd> Unhighlight Search word
- * <kbd>\<leader\>=j</kbd> A rough way to add '=' below a line.
- * <kbd>\<leader\>=k</kbd> A rough way to add '=' above a line.
- * <kbd>\<leader\>ap</kbd> Pastes into plugin list from system clipboard and does `:Update` function
- * <kbd>\<leader\>c</kbd> Saves, then sends command to tmux
- * <kbd>\<leader\>cm</kbd> Sends make command to runner and focuses the pane
- * <kbd>\<leader\>conc</kbd> Concatonates inside parentheses using '.' delimiter
- * <kbd>\<leader\>h</kbd> Resize Split to the left
- * <kbd>\<leader\>j</kbd> Maximize Splits
- * <kbd>\<leader\>k</kbd> Restore Splits
- * <kbd>\<leader\>l</kbd> Resize Split to the right
- * <kbd>\<leader\>mh</kbd> Move word to the left
- * <kbd>\<leader\>ml</kbd> Move word to the right
- * <kbd>\<leader\>o</kbd> Open Startify
- * <kbd>\<leader\>s</kbd> Saves file
- * <kbd>\<leader\>src</kbd> Open .vimrc
- * <kbd>\<leader\>tab</kbd> Retabs the entire pane
- * <kbd>\<leader\>tl</kbd> Toggle relativenumber
- * <kbd>\<leader\>ts</kbd> Toggle spell
- * <kbd>\<leader\>tw</kbd> Toggle wrap
- * <kbd>\<leader\>v</kbd> Vertical Split Startify [Default]
- * <kbd>\<leader\>vF</kbd> Vertical Split FZF
- * <kbd>\<leader\>vf</kbd> Vertical Split Functions.vim
- * <kbd>\<leader\>vh</kbd> Vertical Split help of current word in pointer
- * <kbd>\<leader\>vk</kbd> Vertical Split KeyMapping.vim
- * <kbd>\<leader\>vl</kbd> Vertical Split LeaderMapping.vim
- * <kbd>\<leader\>vll</kbd> Vertical Split LocalLeaderMapping.vim
- * <kbd>\<leader\>vp</kbd> Vertical Split Plugins.vim
- * <kbd>\<leader\>vs</kbd> Vertical Split .vimrc
- * <kbd>\<leader\>wh</kbd> Swap Window Left
- * <kbd>\<leader\>wj</kbd> Swap Window Down
- * <kbd>\<leader\>wk</kbd> Swap Window Up
- * <kbd>\<leader\>wl</kbd> Swap Window Right
- * <kbd>\<leader\>ym</kbd> Yanks from mark `t` to mark `b`
- * <kbd>\<leader\>{</kbd> Make vim fold around block and closes it
+Normal No Remap:
+----------------
+ * `nnoremap <leader>;` Adds semicolon at EOL
+ * `nnoremap <leader><space>` Unhighlight Search word
+ * `nnoremap <leader>c` Saves, then sends command to tmux
+ * `nnoremap <leader>cm` Sends make command to runner and focuses the pane
+ * `nnoremap <leader>conc` Concatonates inside parentheses using '.' delimiter
+ * `nnoremap <leader>h` Resize Split to the left
+ * `nnoremap <leader>j` Maximize Splits
+ * `nnoremap <leader>k` Restore Splits
+ * `nnoremap <leader>l` Resize Split to the right
+ * `nnoremap <leader>mh` Move word to the left
+ * `nnoremap <leader>ml` Move word to the right
+ * `nnoremap <leader>o` Open Startify
+ * `nnoremap <leader>q` Vertical split LeaderMapping.vim and dumps macro at reg q
+ * `nnoremap <leader>s` Saves file
+ * `nnoremap <leader>src` Open .vimrc
+ * `nnoremap <leader>tab` Retabs the entire pane
+ * `nnoremap <leader>tl` Toggle relativenumber
+ * `nnoremap <leader>ts` Toggle spell
+ * `nnoremap <leader>tw` Toggle wrap
+ * `nnoremap <leader>v` Vertical Split Startify [Default]
+ * `nnoremap <leader>vF` Vertical Split FZF
+ * `nnoremap <leader>vf` Vertical Split Functions.vim
+ * `nnoremap <leader>vh` Vertical Split help of current word in pointer
+ * `nnoremap <leader>vk` Vertical Split KeyMapping.vim
+ * `nnoremap <leader>vl` Vertical Split LeaderMapping.vim
+ * `nnoremap <leader>vp` Vertical Split Plugins.vim
+ * `nnoremap <leader>vs` Vertical Split .vimrc
+ * `nnoremap <leader>wh` Swap Window Left
+ * `nnoremap <leader>wj` Swap Window Down
+ * `nnoremap <leader>wk` Swap Window Up
+ * `nnoremap <leader>wl` Swap Window Right
+ * `nnoremap <leader>ym` Yanks from mark `t` to mark `b`
+ * `nnoremap <leader>{` Make vim fold around block and closes it
 
-Normal, Visual, Select, Operator-pending:
------------------------------------------
- * <kbd>\<leader\>so</kbd>  " sources .vimrc
- * <kbd>\<leader\>sog</kbd> sources .vimrc and do last command
- * <kbd>\<leader\>soz</kbd> sources .vimrc and closes
- * <kbd>\<leader\>u</kbd>        " open uri in chrome
-
-Visual Mode:
+No_Remap:
 ---------
- * <kbd>\<leader\>;</kbd> This will do `:@\"`
+ * `noremap <leader>so` sources .vimrc
+ * `noremap <leader>soz` sources .vimrc and closes
+ * `noremap <leader>u` Open URI in chrome
 
-
-LocalLeader Mapping
-===================
-Normal Mode:
-------------
- * <kbd>\<localleader\>h</kbd> Quickly access help
- * <kbd>\<localleader\>so</kbd> Source this file
- * <kbd>\<localleader\>;</kbd> Yanks from mark `t` to mark `b` then run it in command mode
+Visual No Remap:
+----------------
+ * `vnoremap <leader>;` In visual mode, it will do `:@\"`
 
 

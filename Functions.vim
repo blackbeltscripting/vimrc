@@ -14,6 +14,7 @@ function! PopulateReadme()
     call YankAndPutMapping('LocalLeader')
     !git commit -am 'Auto-commit using PopulateReadMe() vim function.'
     !git push
+    normal! ZZ
 endfunction
 " }}}"
 let l = ['YankAndPutVariables', "Gets variables and populates it to README.md file."] " {{{
@@ -43,7 +44,6 @@ function! YankAndPutVariables(t)
         call sort(line)
         silent! put=line
     endif
-    normal! ZZ
 endfunction
 " }}}
 let l = ['YankAndPutMapping', "Gets Key, Leader, or LocalLeader and populates it to README.md file."] " {{{
@@ -78,7 +78,6 @@ function! YankAndPutMapping(t)
         endfor
         put=line
     endif
-    normal! ZZ
 endfunction
 " }}}
 let l = ['Col80', "Fires a vertical line if cursor reaches over the 80th column."] " {{{

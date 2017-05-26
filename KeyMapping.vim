@@ -22,6 +22,7 @@ nnoremap <SILENT><A-J> :set paste<CR>m`o<esc>``:set nopaste<CR>| " Puts a new li
 nnoremap <SILENT><A-K> :set paste<CR>m`O<esc>``:set nopaste<CR>| " Puts a new line above without moving cursor
 nnoremap <SPACE> i<space><esc>l|                                 " Space button adds space in normal mode
 nnoremap v V|                                                    " Visual line as <kbd>v</kbd>. Hitting <kbd>v</kbd> again should enter into visual block.
+nnoremap zo zozt                                                 " Move fold to top after doing the `zo` command.
 nnoremap U <c-r>|                                                " Redo
 nnoremap Z ZZ|                                                   " Close and save
 nnoremap Q ZQ|                                                   " Close without saving

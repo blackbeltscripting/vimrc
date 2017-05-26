@@ -45,9 +45,9 @@ nnoremap <leader>{ $a <esc>3a{<esc>}O<esc>3a}<esc>:Commentary<cr>zM| " Make vim 
 " }}}
 " Normal, Visual, Select, Operator-pending: {{{
 " ---------------------------------------------
-noremap <leader>so :w<cr>:so $myvimrc<cr>zmza|    " sources .vimrc
-noremap <leader>sog :w<cr>:so $myvimrc<cr>zmza@:| " sources .vimrc and do last command
-noremap <leader>soz :w<cr>:so $myvimrc<cr>:q<cr>| " sources .vimrc and closes
+noremap <leader>so :w<cr>:so $MYVIMRC<cr>zmza|    " sources .vimrc
+noremap <leader>sog :w<cr>:so $MYVIMRC<cr>zmza@:| " sources .vimrc and do last command
+noremap <leader>soz :w<cr>:so $MYVIMRC<cr>:q<cr>| " sources .vimrc and closes
 noremap <leader>u :call handleurl()<cr>|          " open uri in chrome
 " }}}
 " Visual Mode: {{{
