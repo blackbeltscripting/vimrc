@@ -14,6 +14,7 @@ let g:plugins = [
             \ ['dhruvasagar/vim-dotoo'],
             \ ['dkprice/vim-easygrep'],
             \ ['eshion/vim-sync'],
+            \ ['git-time-metric/gtm-vim-plugin'],
             \ ['gorodinskiy/vim-coloresque'],
             \ ['honza/vim-snippets'],
             \ ['jiangmiao/auto-pairs'],
