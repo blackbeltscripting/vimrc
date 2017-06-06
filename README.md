@@ -8,7 +8,8 @@ Most of my configuration is stored here.  Only highly sensitive work will not be
 
 This readme (most likely) contains an up-to-date list of all plugins, functions, key mappings, and leader mappings.
 
-Don't even touch this page. It's a mess and a half...
+Don't even touch this page. It's a mess and a half... this is a test to see how to get GTM to work since its help files are quite useless!
+Well apparently I don't know what the hell is going on with this stupid thing! I'm going to try to keep working on it as much as possible though.
 
 Enjoy! \m/(~.^)\m/
 
