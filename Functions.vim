@@ -55,7 +55,6 @@ function! YankAndPutMapping(t)
     normal! gg
     let search = a:t . ' Mapping'
     let top = search(search . '\n=*', 'W')
-    echo top
     if top == 0
         echo 'No ' . search . ' Found. Making it at the bottom.'
         let temp = @m
@@ -82,7 +81,6 @@ function! YankAndPutMapping(t)
         else
             let s = split(l, '|[ ]')
             let comment = substitute(s[1], '^\s*"', '', 'g')
-            echo comment
             let mapping = split(s[0], ' ')
             let ll = ' * <kbd>' . escape(mapping[1], '<>') . '</kbd>' . comment
             call add(line, ll)

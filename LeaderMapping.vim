@@ -52,7 +52,7 @@ noremap <leader>u :call handleurl()<cr>|          " open uri in chrome
 " }}}
 " Visual Mode: {{{
 " -------------
-vnoremap <leader>; y:@"<cr>| " This will do `:@\"`
+vnoremap <leader>; y:@"<cr>| " This will do `:@"`
 " }}}
 
 " Deprecated {{{
