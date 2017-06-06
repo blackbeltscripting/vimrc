@@ -8,7 +8,7 @@ Most of my configuration is stored here.  Only highly sensitive work will not be
 
 This readme (most likely) contains an up-to-date list of all plugins, functions, key mappings, and leader mappings.
 
-Don't even touch this page. It's a mess and a half...
+Don't even touch this page. It's a mess and a half... this is a test
 
 Enjoy! \m/(~.^)\m/
 
@@ -40,6 +40,7 @@ Plugins
  * [ctrlp.vim](https://github.com/kien/ctrlp.vim)
  * [emmet-vim](https://github.com/mattn/emmet-vim)
  * [fzf](https://github.com/junegunn/fzf)
+ * [gtm-vim-plugin](https://github.com/git-time-metric/gtm-vim-plugin)
  * [python-mode](https://github.com/python-mode/python-mode)
  * [syntastic](https://github.com/scrooloose/syntastic)
  * [ultisnips](https://github.com/SirVer/ultisnips)

@@ -10,7 +10,7 @@ nnoremap <leader>; $a;<esc>| " Adds semicolon at EOL
 nnoremap <leader><space> :nohls<cr>| " Unhighlight Search word
 nnoremap <leader>=j 0Ypw<C-V>$r=| " A rough way to add '=' below a line.
 nnoremap <leader>=k 0YPzow<C-V>$r=| " A rough way to add '=' above a line.
-nnoremap <leader>ap :vs ~/vimrc/Plugins.vim<cr>5jYPvi'"+pF'l<C-V>}kk:sort<cr>ZZ:Update<cr> | " Pastes into plugin list from system clipboard and does `:Update` function
+nnoremap <leader>ap :vs ~/vimrc/Plugins.vim<cr>5jYPvi'"+pF'l<C-V>}kk:sort<cr>ZZ:call PopulateReadme()<cr> | " Pastes into plugin list from system clipboard and does `:call PopulateReadme()` function
 nnoremap <leader>c :w<cr>:VtrSendCommandToRunner<cr>:VtrFocusRunner<cr>| " Saves, then sends command to tmux
 nnoremap <leader>cm :VtrSendCommandToRunner make<CR>:VtrFocusRunner<CR>| " Sends make command to runner and focuses the pane
 nnoremap <leader>conc :call Concatonate()<cr>| " Concatonates inside parentheses using '.' delimiter
