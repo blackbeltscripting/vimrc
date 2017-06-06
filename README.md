@@ -194,7 +194,7 @@ Normal, Visual, Select, Operator-pending:
 
 Visual Mode:
 ---------
- * <kbd>\<leader\>;</kbd> This will do `:@\"`
+ * <kbd>\<leader\>;</kbd> This will do `:@"`
 
 
 LocalLeader Mapping
