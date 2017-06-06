@@ -37,6 +37,7 @@ let g:plugins = [
             \ ['tpope/vim-surround'],
             \ ['triglav/vim-visual-increment'],
             \ ['vim-airline/vim-airline-themes'],
+            \ ['wakatime/vim-wakatime'],
             \ ['will133/vim-dirdiff'],
             \ ['xolox/vim-misc'],
             \ ['xolox/vim-notes'],
